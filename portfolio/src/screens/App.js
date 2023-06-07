@@ -1,25 +1,28 @@
-import logo from '../images/logo.svg';
-import '../styles/App.css';
+import "../styles/App.css";
+import Bullet from "../components/Bullet";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="app-body">
+      <div className="app-content">
+        {/* <div className="pill-header"> <p> Lorem Ipsum</p></div> */}
+        <h1 className="introduction">Lorem Ipsum Dolor Sit Amet</h1>
+        <p className="bio">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis
+          purus commodo.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="bullet-row">
+          <Bullet text="Lorem Ipsum dolor" />
+          <Bullet text="Lorem Ipsum dolor" />
+        </div>
+        <div className="bullet-row">
+          <Bullet text="Lorem Ipsum dolor" />
+          <Bullet text="Lorem Ipsum dolor" />
+        </div>
+      </div>
+      <div className="portfolio-image"></div>
     </div>
   );
-}
+};
 
 export default App;
