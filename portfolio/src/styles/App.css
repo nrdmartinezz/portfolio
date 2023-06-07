@@ -104,54 +104,76 @@ meter {
   all: revert;
 }
 
+/** Global Variables **/
+
+:root {
+  --main-accent-color: #edb131;
+  --green-accent-color: #8fbc94;
+  --blue-accent-color: #95a4db;
+  --border-color: #e2e2e2;
+}
+
 /** Place Styling below this line **/
 
-html{
-  font-family: sans-serif;
+html {
+  font-family: "arboria", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 div {
   display: flex;
   flex: 1;
 }
+
 .app-container {
   height: 100vh;
+  width: 100vw;
   flex-direction: column;
-}
-.app-body {
-  /* min-height: 100%; */
-  flex-direction: row;
-  flex: 1;
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 
-.portfolio-image{
-  flex:1;
+.app-body {
+  flex-direction: row;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+}
+
+.portfolio-image {
+  box-sizing: border-box;
   background-image: url(../images/ProfileImage.png);
+  background-size: cover; /* Ensure the image covers the container */
+  background-position: center; /* Center the image within the container */
+  flex: 0 0 45%; /* Let the image grow or shrink if necessary */
 }
 
 .app-content {
-  border-top: 2px solid #e2e2e2;
+  box-sizing: border-box;
+  border-top: 2px solid var(--border-color);
   justify-content: center;
   flex-direction: column;
-  padding-left: 10%;
+  padding: 0 15%;
+  flex: 1 0 55%;
 }
+
 .bullet-row {
   flex-direction: row;
   flex-wrap: wrap;
   max-height: 60px;
-  width: 50%;
+
   margin: 15px 0px;
 }
+
 .bullet-container {
-  width: 185px;
   max-height: 50px;
 }
+
 .bullet-image {
   display: block;
   max-width: 50px;
   height: 50px;
   border-radius: 4px;
-  border:solid 1px black;
+  border: solid 1px var(--border-color);
 }
 
 .bullet-text {
@@ -162,16 +184,52 @@ div {
   margin-left: 15px;
 }
 
+.pill-container {
+  flex-direction: row;
+  flex: 0 0;
+  flex-wrap: wrap-reverse;
+}
+
+.pill-header {
+  width: max-content;
+  padding: 1% 2.5%;
+  border-radius: 100px;
+  text-align: center;
+  margin: 0% 2% 2% 0%;
+}
+
+.pill-header.web-dev {
+  background-color: var(--main-accent-color);
+}
+
+.pill-header.graphic-designer {
+  background-color: var(--green-accent-color);
+}
+
+.pill-header.ui-ux {
+  background-color: var(--blue-accent-color);
+}
+
+.pill-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin:0 auto;
+}
+
 .introduction {
   font-size: 42px;
+  font-family: "arboria", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .bio {
   margin: 15px 0px 35px 0px;
 }
 
-.app-navigation{
-  max-height:85px;
-  width:100vw;
+.app-navigation {
+  max-height: 85px;
+  width: 100vw;
   background: white;
 }
