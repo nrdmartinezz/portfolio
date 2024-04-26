@@ -1,0 +1,25 @@
+.app-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-direction: column;
+  flex-grow: 1;
+  height: calc(100vh - 100px);
+}
+
+.app-content{
+  height:100%;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.title-container{
+
+  max-width:50%;
+  flex-direction: column;
+}
+
+div {
+  display: flex;
+  flex: 1;
+}
