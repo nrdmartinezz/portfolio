@@ -1,31 +1,28 @@
-import {useState} from "react";
+import { useState } from "react";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Home from "./pages/home";
+import Project from "./pages/Project";
 
-function App(){
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route index element={<Home />} />
+      <Route path="/project" element={<Project />} />
+    </Route>
+  )
+);
 
-  const [activeProject, setActiveProject] = useState(null);
-  const [projects, setProjects] = useState([]);
-
-  return <div className="app-container">
-    <Navbar></Navbar>
-    <div className="app-content">
-      
-      <div className="title-container">
-        <h1 className="title comfortaa-regular">Nathanael <br/>Martinez</h1>
-        <p className="poppins-regular">I design unique user experiences with purpose and a strong attention to detail.</p>  
-      </div>
-
-      <div className="project-menu-container">
-        <ul className="project-menu">
-          <li className="project-menu-item"><a href="/project1">Project Name</a></li>
-          <li className="project-menu-item"><a href="/project2">Project Name</a></li>
-          <li className="project-menu-item"><a href="/project3">Project Name</a></li>
-          <li className="project-menu-item"><a href="/project4">Project Name</a></li>
-        </ul>
-      </div>
+function App() {
+  return (
+    <div className="app-container">
+      <RouterProvider router={router}></RouterProvider>
     </div>
-    <Footer></Footer>
-  </div>;
+  );
 }
 export default App;
