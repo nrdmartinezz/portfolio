@@ -1,0 +1,31 @@
+.flex-col {
+  flex-direction: column;
+}
+
+.accent-text {
+  color: var(--global-color-gold);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+section{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 64px 24px;
+  width: 100%;
+}
+
+.width-45{
+  max-width: 45%;
+}
+
+.width-75{
+  max-width:75%;
+}
+
+.full-vh{
+  min-height: calc(100vh - var(--global-header-max-height));
+}

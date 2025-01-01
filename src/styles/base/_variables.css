@@ -1,4 +1,11 @@
 :root{
+
+    /* Global Colors */
     --global-color-grey: #707070;
     --global-color-slate: #444444;
+    --global-color-gold: #EDB131;
+    --global-color-black:#0e0e0e;
+
+    /* Integer Variables */
+    --global-header-max-height:100px;
 }

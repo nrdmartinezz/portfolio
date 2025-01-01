@@ -2,10 +2,14 @@
 @import "base/_reset.css";
 @import "base/_typography.css";
 @import "base/_variables.css";
+
 @import "layout/_app.css";
 @import "layout/_header.css";
 @import "layout/_footer.css";
+@import "layout/_base.css";
+
 @import "pages/_home.css";
+@import "pages/_tutorlink.css";
 
 
 

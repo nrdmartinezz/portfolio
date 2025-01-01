@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import Image from "../components/Image";
 
 let Home = () => {
   let [ActiveProject, setActiveProject] = useState({});
@@ -22,10 +23,7 @@ let Home = () => {
     console.log(project, project.title);
     projectMenuItems.push(
       <li className="project-menu-item" key={project.title + "_" + i}>
-        <Link
-          to={"/project"}
-          state={{project:project}}
-        >
+        <Link to={"/project/"+project.title} state={{ project: project }}>
           {project.title}
         </Link>
       </li>
@@ -37,17 +35,23 @@ let Home = () => {
       <Navbar></Navbar>
       <div className="app-content">
         <div className="title-container">
-          <h1 className="title comfortaa-regular">
-            Nathanael <br />
-            Martinez
-          </h1>
+          <div className="">
+            <Image imgClass={"profile-image"} width={325} height={200} image={"ProfileImage2023_jlyyjl"}></Image>
+            <h1 className="title arboria-bold">
+              <div className="accent-text">
+              Hi! I'm<br />
+              </div>
+              Nate Martinez
+            </h1>
+          </div>
           <p className="poppins-regular">
-            I design unique user experiences with purpose and a strong attention
-            to detail.
+            I am a UX Designer & Web Developer,  known for my honesty empathy and loyalty. I brings in unique direction while maintaining focus on the user and their needs.
+
           </p>
         </div>
         <div className="project-menu-container">
-          <ul className="project-menu">
+          <h2 className="project-menu-title poppins-bold">Projects:</h2>
+          <ul className="project-menu poppins-regular">
             {Projects ? projectMenuItems : "Loading..."}
           </ul>
         </div>

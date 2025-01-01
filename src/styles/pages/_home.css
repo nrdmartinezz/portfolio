@@ -1,20 +1,48 @@
-div{
-  border: 1px solid #000;
-}
- 
-.title-container{
-
-  p{
-    font-size:21px;
+.title-container {
+  max-width: 70%;
+  p {
+    font-size: 21px;
   }
-  .title{
-    font-size:96px;
+  .title {
+    font-size: 84px;
+    div{
+      margin-bottom:-32px;
+    }
   }
 }
 
-
-
-
-.project-menu-container{
+.project-menu-container {
   max-width: 25%;
+  flex-direction: column;
+}
+
+.project-menu-title{
+  font-size: 24px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.project-menu {
+  list-style: none;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #00000020;
+  padding: 12px;
+  .project-menu-item a{
+    color: #333;
+  }
+}
+
+
+.profile-image{
+  img{
+    max-width:300px;
+    border-radius: 1000px;
+    margin-right: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0px 3px 10px #00000055;
+  }
 }

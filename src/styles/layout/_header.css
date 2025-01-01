@@ -4,8 +4,8 @@
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  height: 100px;
-  max-height:100px;
+  height: var(--global-header-max-height);
+  max-height:var(--global-header-max-height);;
   align-items: center;
 
   .nav-logo-container {
@@ -25,27 +25,28 @@
 
   .nav-menu-container {
     max-width: 30%;
-    align-items: center;
     justify-content: end;
-    .nav-menu-item {
+    column-gap: 64px;
+
+    a{
       padding: 16px 32px;
       font-size: 21px;
       color:var(--global-color-grey);
     }
 
-    .nav-menu-item:link{
+    a:link{
       text-decoration: none;
     }
 
-    .nav-menu-item:visited{
+    a:visited{
       color:inherit;
     }
 
-    .nav-menu-item:hover{
+    a:hover{
       color:inherit
     }
 
-    .nav-menu-item:active{
+    a:active{
       color:inherit
     }
 

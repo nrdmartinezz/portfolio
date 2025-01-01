@@ -1,0 +1,17 @@
+.project-description{
+  font-size: 32px;
+  font-weight: 600;
+  color:var(--global-color-black);
+}
+
+.project-title{
+  font-size:45px;
+  font-weight: 800;
+  color:var(--global-color-black);
+}
+
+.project-logo{
+  max-width: 260px;
+  max-height: 97px;
+  
+}
