@@ -1,17 +1,28 @@
-.project-description{
-  font-size: 32px;
-  font-weight: 600;
-  color:var(--global-color-black);
+.project-description {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--global-color-black);
 }
 
-.project-title{
-  font-size:45px;
+.tutorlink-title {
+  font-size: 64px;
   font-weight: 800;
-  color:var(--global-color-black);
+  color: var(--global-color-black);
+  margin-left: 24px;
 }
 
-.project-logo{
+.project-logo {
   max-width: 260px;
   max-height: 97px;
-  
+}
+
+.project-roles-container {
+  border-radius: 10px;
+  border: 2px solid var(--global-color-gold);
+  padding: 12px;
+  color: var(--global-color-black);
+}
+
+.tutorlink-overview {
+  column-gap: 24px;
 }

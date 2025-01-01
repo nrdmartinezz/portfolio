@@ -1,8 +1,8 @@
-import React from 'react'
 import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
+import PropTypes from 'prop-types';
 
 const Image = (props) => {
   const cld = new Cloudinary({ cloud: { cloudName: 'ddsekdku7' } });
@@ -21,6 +21,12 @@ if(props.imgClass){
 }
 
 
+};
+Image.propTypes = {
+  image: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  imgClass: PropTypes.string,
 };
 
 export default Image

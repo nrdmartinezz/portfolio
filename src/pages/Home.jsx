@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import Image from "../components/Image";
 
 let Home = () => {
-  let [ActiveProject, setActiveProject] = useState({});
   let [Projects, setProjects] = useState([]);
-  let [isModalOpen, setModalOpen] = useState(false);
-
   let projectMenuItems = [];
 
   useEffect(() => {
@@ -39,7 +36,7 @@ let Home = () => {
             <Image imgClass={"profile-image"} width={325} height={200} image={"ProfileImage2023_jlyyjl"}></Image>
             <h1 className="title arboria-bold">
               <div className="accent-text">
-              Hi! I'm<br />
+              Hi! I&apos;m<br />
               </div>
               Nate Martinez
             </h1>

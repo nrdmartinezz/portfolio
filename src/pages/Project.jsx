@@ -10,7 +10,7 @@ let Project = () => {
     <>
       <Navbar />
       <div className="app-container project-container">
-        {!!project.image ? (
+        {project.image ? (
           <div className="project-image-container">
             <Image
               width={506}

@@ -18,14 +18,39 @@ section{
   width: 100%;
 }
 
+.width-25{
+  max-width: 25%;
+}
+
 .width-45{
   max-width: 45%;
 }
 
 .width-75{
   max-width:75%;
+  flex-wrap: wrap;
+}
+
+.width-full{
+  min-width:100%;
+}
+
+.flex-wrap{
+  flex-wrap:wrap ;
+}
+
+.align-center{
+  align-content: center;
 }
 
 .full-vh{
-  min-height: calc(100vh - var(--global-header-max-height));
+  min-height: calc(100vh - 100px);
+  box-sizing: border-box;
+}
+.gap-row-12{
+  row-gap: 12px;
+}
+
+.unstyled-list{
+  list-style: none;
 }

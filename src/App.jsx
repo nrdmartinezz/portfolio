@@ -1,11 +1,9 @@
-import { useState } from "react";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Home from "./pages/home";
 import Project from "./pages/Project";
 import TutorLink from "./pages/TutorLink";
