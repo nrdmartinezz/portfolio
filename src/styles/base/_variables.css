@@ -5,6 +5,14 @@
     --global-color-slate: #444444;
     --global-color-gold: #EDB131;
     --global-color-black:#1B1212;
+    --global-color-teal: #177e89;
+    --global-color-white: #FFFFFF;
+
+    /* TutorLink Colors */
+    --tutorlink-color-blue:#44B3DA;
+    --tutorlink-color-green:#80C33A;
+    --tutorlink-color-orange:#F78A10;
+    --tutorlink-color-red:#EB2057;
 
     /* Integer Variables */
     --global-header-max-height:100px;
