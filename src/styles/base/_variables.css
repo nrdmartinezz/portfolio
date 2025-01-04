@@ -7,6 +7,7 @@
     --global-color-black:#1B1212;
     --global-color-teal: #177e89;
     --global-color-white: #FFFFFF;
+    --global-box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12);
 
     /* TutorLink Colors */
     --tutorlink-color-blue:#44B3DA;

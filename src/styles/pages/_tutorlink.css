@@ -123,12 +123,12 @@
 
 .tutor-persona-image {
   max-width: 200px;
-  img{
-    border-radius:10px
+  img {
+    border-radius: 10px;
   }
 }
 
-.persona-bio{
+.persona-bio {
   padding: 24px 0px;
 }
 
@@ -139,27 +139,79 @@
   margin-top: 96px;
 }
 
-.pain-point{
-  padding:12px 12px 32px;
+.pain-point {
+  padding: 12px 12px 32px;
   border-radius: 10px;
   border: 2px solid var(--tutorlink-color-red);
-  h3{
+  h3 {
     margin-bottom: 6px;
   }
-  h4{
+  h4 {
     margin-top: 8px;
   }
-  ul{
-    padding:unset;
+  ul {
+    padding: unset;
     margin: 0 auto;
-    li{
+    li {
       margin-bottom: 12px;
     }
   }
 }
 
-.pain-points{
+.pain-points {
   justify-content: center;
   align-content: center;
   column-gap: 24px;
+}
+
+.section-description {
+  text-align: center;
+  margin-bottom: 36px;
+  margin-top: -12px;
+}
+
+
+.empathize-summary {
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 24px;
+  margin: 96px 0px;
+  h2{
+    text-transform: uppercase;
+  }
+}
+
+.tutorlink-step-define {
+  max-height: 35vh;
+  border-radius: 10px;
+  background-color: var(--tutorlink-color-green);
+}
+
+.define-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--global-color-white);
+}
+
+.define-description {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--global-color-white);
+}
+
+
+.paper-wireframes-overview{
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  h2{
+    margin-bottom:16px;
+  }
+}
+
+.paper-wireframes-slides{
+  .slideshow-prev, .slideshow-next{
+    background-color: var(--tutorlink-color-green);
+  }
 }

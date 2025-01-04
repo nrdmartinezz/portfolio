@@ -1,5 +1,13 @@
 import Navbar from "../components/Navbar";
 import Image from "../components/Image";
+import Slideshow from "../components/Slideshow";
+
+const paperwireframes = [
+  "Home_v2_xull2w",
+  "EditProfile_V3_iwalde",
+  "View_Listings_v1_w2iteg",
+  "ViewReviews_V2_xmdxaq",
+];
 
 let TutorLink = () => {
   return (
@@ -38,9 +46,9 @@ let TutorLink = () => {
             <div className="poppins-regular project-roles-container flex-col">
               <h2>Project Steps</h2>
               <ul className="unstyled-list">
-                <li>User Research</li>
-                <li>Paper Wireframes</li>
-                <li>Digital Mockup</li>
+                <li>Understanding the User</li>
+                <li>Starting the Design</li>
+                <li>Refine the Design</li>
                 <li>Summary</li>
               </ul>
             </div>
@@ -52,7 +60,7 @@ let TutorLink = () => {
         >
           <div className="flex-col align-center width-85 center-text margin-center">
             <h2 className="poppins-bold text-uppercase empathize-title">
-              Step 1: User Research
+              Step 1: Understanding The User
             </h2>
             <p className="poppins-regular empathize-description">
               I started the project by researching the tutoring industry. I
@@ -68,7 +76,7 @@ let TutorLink = () => {
           <h2 className="poppins-bold text-uppercase center-text width-full">
             User Personas
           </h2>
-          <p className="poppins-regular center-text width-full">
+          <p className="poppins-regular center-text width-full section-description">
             I created two user personas to represent the needs and goals of both
             users. This helped create some insight on what exactly they are
             looking for.
@@ -99,16 +107,17 @@ let TutorLink = () => {
                 <h3 className="poppins-bold persona-goals-title">Goals</h3>
                 <ul className="poppins-regular unstyled-list persona-goals">
                   <li>
-                    Attract more students by showcasing her services and
-                    qualifications effectively.
+                    Find a tutor with a schedule that fits around her children’s
+                    school and extracurricular activities.
                   </li>
                   <li>
-                    Display reviews and feedback from previous students to build
-                    trust with potential clients.
+                    Ensure the tutor is qualified and has positive reviews from
+                    other parents.
                   </li>
                   <li>
-                    Use a platform that allows her to manage bookings, payments,
-                    and availability easily.
+                    Use a platform that simplifies searching, comparing, and
+                    booking tutors without needing to spend too much time on
+                    back-and-forth communication.
                   </li>
                 </ul>
               </div>
@@ -156,7 +165,7 @@ let TutorLink = () => {
             <h2 className="poppins-bold text-uppercase center-text width-full">
               Pain Points
             </h2>
-            <p className="poppins-regular center-text width-full">
+            <p className="poppins-regular center-text width-full section-description">
               I identified the pain points of both users to better understand
               their needs and goals. This helped me create features that would
               address these issues.
@@ -215,6 +224,61 @@ let TutorLink = () => {
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="flex-col center-text align-center empathize-summary">
+            <h2 className="poppins-bold">Summary</h2>
+            <p className="poppins-regular">
+              The Understanding The User phase helped me understand the needs
+              and goals of both users. I was able to identify pain points and
+              frustrations that they experience when searching for tutors or
+              attracting students. This information helped me create features
+              that would address these issues and improve the overall user
+              experience. the next phase was to begin sketching out the
+              wireframes for the application.
+            </p>
+          </div>
+        </section>
+        <section id="step-define" className="tutorlink-step-define text-white">
+          <div className="flex-col align-center width-85 center-text margin-center">
+            <h2 className="poppins-bold text-uppercase define-title">
+              Step 2: Starting The Design
+            </h2>
+            <p className="poppins-regular define-description">
+              In this phase, I began sketching out the wireframes for the
+              application. I wanted to create a user-friendly interface that
+              would allow parents to easily search for tutors and book sessions.
+              I also wanted to create a platform that would allow tutors to
+              showcase their services and manage bookings efficiently.
+            </p>
+          </div>
+        </section>
+        <section className="define-overview flex-wrap">
+          <div className="flex-wrap">
+            <div className="paper-wireframes-overview">
+              <h2 className="poppins-bold text-uppercase width-full">
+                Paper Wireframes
+              </h2>
+              <p className="poppins-regular width-full paper-wireframes-description">
+                I started by sketching out the wireframes on paper. This helped
+                me visualize the layout and structure of the application before
+                moving on to digital wireframes.
+              </p>
+            </div>
+            <Slideshow
+              width={475}
+              height={760}
+              images={paperwireframes}
+              slideshowClass={"paper-wireframes-slides"}
+            ></Slideshow>
+          </div>
+        </section>
+        <section>
+          <div className="wireframe-images">
+            <Image
+              width="200"
+              height="650"
+              image="Bookings_V2_b1bgs7"
+            ></Image>
           </div>
         </section>
       </div>
