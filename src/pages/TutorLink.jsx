@@ -2,11 +2,27 @@ import Navbar from "../components/Navbar";
 import Image from "../components/Image";
 import Slideshow from "../components/Slideshow";
 
-const paperwireframes = [
+let paperwireframes = [
   "Home_v2_xull2w",
   "EditProfile_V3_iwalde",
   "View_Listings_v1_w2iteg",
   "ViewReviews_V2_xmdxaq",
+];
+
+let digitalwireframes = [
+  "Profile_-_Wireframe_oqipk2",
+  "Search_-_Wireframe_ojswry",
+  "Bookings_Wireframe_tndigh",
+  "FavoritesWireframe_hzek6e",
+  "Account_Settings_-_Wireframe_k061nu",
+  "Book_Session_-_Step_2_-_Wireframe_v4jowb",
+];
+
+let digitalMockups = [
+  "View_Listings_-_Mockup_1_vbknim",
+  "Search_-_Mockup_2_fxdlcy",
+  "Home_-_Mockup_1_cvydrm",
+  "Bookings_-_Mockup_2_nhshcu",
 ];
 
 let TutorLink = () => {
@@ -32,7 +48,7 @@ let TutorLink = () => {
           </div>
           <div className="width-25 align-center flex-col gap-row-12">
             <div className="poppins-regular project-roles-container flex-col">
-              <h2>Project Role</h2>
+              <h2>Case Study Role</h2>
               <ul className="unstyled-list">
                 <li>UX/UI Designer</li>
               </ul>
@@ -48,8 +64,7 @@ let TutorLink = () => {
               <ul className="unstyled-list">
                 <li>Understanding the User</li>
                 <li>Starting the Design</li>
-                <li>Refine the Design</li>
-                <li>Summary</li>
+                <li>Going Forward</li>
               </ul>
             </div>
           </div>
@@ -225,18 +240,6 @@ let TutorLink = () => {
               </div>
             </div>
           </div>
-          <div className="flex-col center-text align-center empathize-summary">
-            <h2 className="poppins-bold">Summary</h2>
-            <p className="poppins-regular">
-              The Understanding The User phase helped me understand the needs
-              and goals of both users. I was able to identify pain points and
-              frustrations that they experience when searching for tutors or
-              attracting students. This information helped me create features
-              that would address these issues and improve the overall user
-              experience. the next phase was to begin sketching out the
-              wireframes for the application.
-            </p>
-          </div>
         </section>
         <section id="step-define" className="tutorlink-step-define text-white">
           <div className="flex-col align-center width-85 center-text margin-center">
@@ -265,8 +268,8 @@ let TutorLink = () => {
               </p>
             </div>
             <Slideshow
-              width={475}
-              height={760}
+              width={356}
+              height={638}
               images={paperwireframes}
               slideshowClass={"paper-wireframes-slides"}
             ></Slideshow>
@@ -275,10 +278,144 @@ let TutorLink = () => {
         <section>
           <div className="wireframe-images">
             <Image
-              width="200"
-              height="650"
+              width="235"
+              height="634"
               image="Bookings_V2_b1bgs7"
+              imgClass={"wireframe-image"}
             ></Image>
+
+            <Image
+              width={236}
+              height={525}
+              imgClass={"wireframe-image"}
+              image={"EditProfile_V4_nwea1i"}
+            ></Image>
+            <Image
+              width={306}
+              height={638}
+              imgClass={"wireframe-image"}
+              image={"PaymentMethods_V2_j8yooi"}
+            ></Image>
+          </div>
+        </section>
+        <section className="digital-wireframes-overview">
+          <Slideshow
+            width={430}
+            height={932}
+            images={digitalwireframes}
+            slideshowClass={"digital-wireframes-slides"}
+          ></Slideshow>
+          <div className="digital-wireframes flex-col align-center">
+            <h2 className="poppins-bold text-uppercase width-full">
+              Digital Wireframes
+            </h2>
+            <p className="poppins-regular width-full digital-wireframes-description">
+              After sketching out the wireframes on paper, I moved on to
+              creating digital wireframes. This allowed me to add more detail to
+              the designs and create a more polished look for the application.
+            </p>
+          </div>
+        </section>
+        <section>
+          <div className="digital-wireframe-images">
+            <Image
+              width="430"
+              height="1171"
+              image="Edit_Listings_-_Wireframe_2_o3lnhc"
+              imgClass={"wireframe-image-custom"}
+            ></Image>
+
+            <Image
+              width={"430"}
+              height={"932"}
+              imgClass={"wireframe-image-custom"}
+              image={"Book_Session_-_Step_7_-_Wireframe_do8nma"}
+            ></Image>
+            <Image
+              width={"430"}
+              height={"932"}
+              imgClass={"wireframe-image-custom"}
+              image={"Book_Session_-_Step_1_-_Wireframe_xct9sq"}
+            ></Image>
+          </div>
+        </section>
+
+        <section className="stickersheet-section">
+          <div className="stickersheet-overview flex-col align-center">
+            <h2 className="poppins-bold text-uppercase width-full">
+              Sticker Sheet
+            </h2>
+            <p className="poppins-regular width-full stickersheet-description">
+              I created a sticker sheet to help me design the application more
+              efficiently. This included buttons, icons, and other elements that
+              I could use throughout the design process.
+            </p>
+          </div>
+          <Image
+            width={"2000"}
+            height={"2000"}
+            imgClass="stickersheet-img"
+            image="Stickersheet_-_Mockup_vthfyn"
+          ></Image>
+        </section>
+
+        <section className="digital-mockup-section">
+          <Slideshow
+            width={430}
+            height={932}
+            images={digitalMockups}
+            slideshowClass={"digital-mockup-slides"}
+          ></Slideshow>
+          <div className="digital-mockup-overview flex-col align-center">
+            <h2 className="poppins-bold text-uppercase width-full">
+              Digital Mockups
+            </h2>
+            <p className="poppins-regular width-full digital-mockup-description">
+              After creating the wireframes and sticker sheet, I moved on to
+              creating digital mockups for the application. This allowed me to
+              see how the designs would look on different devices and screens.
+            </p>
+          </div>
+        </section>
+        <section>
+          <div className="digital-mockup-images">
+            <Image
+              width="430"
+              height="932"
+              image="Book_Session_-_Step_7_-_Mockup_luwi7l"
+              imgClass={"wireframe-image-custom"}
+            ></Image>
+
+            <Image
+              width={"430"}
+              height={"932"}
+              imgClass={"wireframe-image-custom"}
+              image={"Edit_Profile_-_Mockup_2_vlfz7p"}
+            ></Image>
+            <Image
+              width={"430"}
+              height={"932"}
+              imgClass={"wireframe-image-custom"}
+              image={"Account_Settings_-_Mockup_qhtrw5"}
+            ></Image>
+          </div>
+        </section>
+        <section className="tutorlink-summary">
+          <div className="tutorlink-summary-overview">
+            <h2 className="poppins-bold text-uppercase center-text width-full">
+              Going Forward...
+            </h2>
+            <p className="poppins-regular center-text width-85">
+              The Starting The Design phase helped me create wireframes and
+              mockups for the application. I started by sketching out the
+              wireframes on paper to visualize the layout and structure of the
+              app. I then moved on to creating digital wireframes to add more
+              detail to the designs. I created a sticker sheet to help me design
+              the application more efficiently and then moved on to creating
+              digital mockups to see how the designs would look on different
+              devices and screens. The next phase is to test the designs with
+              users and make any necessary adjustments.
+            </p>
           </div>
         </section>
       </div>

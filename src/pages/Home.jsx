@@ -19,7 +19,7 @@ let Home = () => {
   Projects.forEach((project, i) => {
     console.log(project, project.title);
     projectMenuItems.push(
-      <li className="project-menu-item" key={project.title + "_" + i}>
+      <li className={"project-menu-item "+ project.title} key={project.title + "_" + i}>
         <Link to={"/project/"+project.title} state={{ project: project }}>
           {project.title}
         </Link>

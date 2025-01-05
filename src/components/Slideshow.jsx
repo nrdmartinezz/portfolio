@@ -16,7 +16,7 @@ const Slideshow = ({ width,height,images, slideshowClass }) => {
   };
 
   return (
-    <div className={"slideshow poppins-bold text-uppercase " + slideshowClass}>
+    <div key={slideshowClass} className={"slideshow poppins-bold text-uppercase " + slideshowClass}>
       <div className="slideshow-prev tutorlink-green" onClick={prevSlide}>Prev</div>
       <Image width={width} height={height} imgClass={"slideshow-image"} image={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
       <div className="slideshow-next tutorlink-green" onClick={nextSlide}>Next</div>
