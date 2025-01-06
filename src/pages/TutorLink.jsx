@@ -40,10 +40,14 @@ let TutorLink = () => {
             ></Image>
             <h1 className="poppins-regular tutorlink-title">TutorLink</h1>
             <p className="width-full poppins-regular project-description">
-              TutorLink is a case study on tutor apps. TutorLink showcases
-              tutors strengths and suggest strong tutor fits to parents
-              searching. It also streamlines the booking process. The app is
-              designed to be user-friendly and easy to navigate.
+              TutorLink is a tutor recruiting application. Tutorlink makes it
+              easy to find a tutor for you or your child!
+            </p>
+            <p className="width-full poppins-regular project-description">
+              TutorLink was built with transparency in mind. The Goal was to
+              make it wasy for parents to find a tutor with availability with
+              their child. Inhrently, this makes it easier for anyone with
+              busier schedules, such as college students.
             </p>
           </div>
           <div className="width-25 align-center flex-col gap-row-12">
@@ -78,12 +82,10 @@ let TutorLink = () => {
               Step 1: Understanding The User
             </h2>
             <p className="poppins-regular empathize-description">
-              I started the project by researching the tutoring industry. I
-              wanted to understand the needs of both tutors and parents. I
-              looked into different tutoring applications online and began
-              researching their reviews. From there, I created two user personas
-              to help guide the design process. This helped reveal more areas
-              for improvment and features that would be beneficial to the user.
+              As mentioned, The main users are parents and tutors. From this i
+              began with creating user personas. The personas each had their own
+              issues and goals with gave direction for the application. This
+              helped create a unified journey for both personas.
             </p>
           </div>
         </section>
@@ -92,9 +94,9 @@ let TutorLink = () => {
             User Personas
           </h2>
           <p className="poppins-regular center-text width-full section-description">
-            I created two user personas to represent the needs and goals of both
-            users. This helped create some insight on what exactly they are
-            looking for.
+            The personas each have their own goals and pain points. This helps
+            create useful insights, leading to even better functionality. Here
+            we can begin to empathize with our users.
           </p>
           <div className="personas-container">
             <div className="persona-card width-45">
@@ -181,9 +183,9 @@ let TutorLink = () => {
               Pain Points
             </h2>
             <p className="poppins-regular center-text width-full section-description">
-              I identified the pain points of both users to better understand
-              their needs and goals. This helped me create features that would
-              address these issues.
+              Pain points cna be beneficial for learning what to avoid and what
+              to look out for. This paved the way for deciding on a simple
+              design.
             </p>
             <div className="pain-points flex-row">
               <div className="pain-point width-45 flex-col align-center">
@@ -247,11 +249,10 @@ let TutorLink = () => {
               Step 2: Starting The Design
             </h2>
             <p className="poppins-regular define-description">
-              In this phase, I began sketching out the wireframes for the
-              application. I wanted to create a user-friendly interface that
-              would allow parents to easily search for tutors and book sessions.
-              I also wanted to create a platform that would allow tutors to
-              showcase their services and manage bookings efficiently.
+              Empathizing with Lisa and Sarah started the design process off on
+              the right foot. Now we can begin ideation of screens and thinking
+              about how we are going to organize information. This is where we
+              can really innovate on designs and different layouts.
             </p>
           </div>
         </section>
@@ -262,9 +263,12 @@ let TutorLink = () => {
                 Paper Wireframes
               </h2>
               <p className="poppins-regular width-full paper-wireframes-description">
-                I started by sketching out the wireframes on paper. This helped
-                me visualize the layout and structure of the application before
-                moving on to digital wireframes.
+                Crazy 8&apos;s was the best way to start the ideation phase. Starting
+                with the home page, I created multiple variations until i landed
+                on one I felt fit out use the best. After i repeated the same
+                process for each screen. To make sure I created all the
+                appropriate screens, I had also created a sitemap for the
+                application.
               </p>
             </div>
             <Slideshow
@@ -310,9 +314,10 @@ let TutorLink = () => {
               Digital Wireframes
             </h2>
             <p className="poppins-regular width-full digital-wireframes-description">
-              After sketching out the wireframes on paper, I moved on to
-              creating digital wireframes. This allowed me to add more detail to
-              the designs and create a more polished look for the application.
+              After creating the paper wireframes, I began translating them into
+              digital wireframes on Adobe XD. Here we can really begin to see
+              the application come to life. This will give us more useful
+              insights for how we&apos;ve layed out information on each screen.
             </p>
           </div>
         </section>
@@ -346,9 +351,10 @@ let TutorLink = () => {
               Sticker Sheet
             </h2>
             <p className="poppins-regular width-full stickersheet-description">
-              I created a sticker sheet to help me design the application more
-              efficiently. This included buttons, icons, and other elements that
-              I could use throughout the design process.
+              Creating a stickersheet creates consistency for all components
+              that would be reused such as buttons and icons. This also
+              streamlined the design of the pages. After creating the sitcker
+              sheet i began making the mockups.
             </p>
           </div>
           <Image
@@ -371,9 +377,10 @@ let TutorLink = () => {
               Digital Mockups
             </h2>
             <p className="poppins-regular width-full digital-mockup-description">
-              After creating the wireframes and sticker sheet, I moved on to
-              creating digital mockups for the application. This allowed me to
-              see how the designs would look on different devices and screens.
+              Creating the mockups was very enlightening. The main challenge was
+              laying out a lot of information on small screens. I needed to
+              choose what is the most important info to display first. From
+              there I began to create the polished design.
             </p>
           </div>
         </section>
@@ -406,15 +413,17 @@ let TutorLink = () => {
               Going Forward...
             </h2>
             <p className="poppins-regular center-text width-85">
-              The Starting The Design phase helped me create wireframes and
-              mockups for the application. I started by sketching out the
-              wireframes on paper to visualize the layout and structure of the
-              app. I then moved on to creating digital wireframes to add more
-              detail to the designs. I created a sticker sheet to help me design
-              the application more efficiently and then moved on to creating
-              digital mockups to see how the designs would look on different
-              devices and screens. The next phase is to test the designs with
-              users and make any necessary adjustments.
+              The design process for TutorLink was a great learning experience.
+              I was able to empathize with the users and create a design that
+              was simple and easy to use. The next steps would be to test the
+              design with users and make any necessary changes. I am excited to
+              see how the application will help parents and tutors find each
+              other easily.
+              <br />
+              <br />
+              From here I would begin to create a prototype and test it with a
+              user groupn that matches the personas. This will help refine the
+              design more and create an even better experience.
             </p>
           </div>
         </section>

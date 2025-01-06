@@ -17,6 +17,7 @@ let Navbar = () => {
             height={50}
             width={268}
             image={"NRD.Martinez_n8pplu"}
+            imgClass={"nav-logo"}
           ></Image>
         </Link>
       </div>

@@ -1,0 +1,83 @@
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* Nav Responsive Styles */
+  nav.nav-container {
+    max-width: 100vw;
+    padding: 12px 24px;
+
+    .nav-logo-container {
+      max-width: 153px;
+      .nav-logo img {
+        max-width: 163px;
+        height: 34.24px;
+      }
+      span {
+        padding-left: 14px;
+      }
+    }
+    .nav-menu-container {
+      column-gap: 24px;
+      a {
+        padding: 0px;
+        svg {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  /* Home Page Responsive Styles */
+  .app-content {
+    max-width: 100vw;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .title-container {
+    max-width: 100%;
+    padding: 0px 24px;
+    div {
+      flex-wrap: wrap;
+    }
+    .profile-image {
+      min-width: 100%;
+      img{
+        margin: 0 auto;
+      }
+    }
+    .title {
+      min-width: 100%;
+      text-align: center;
+      font-size: 48px;
+
+      .accent-text {
+        margin-bottom: -16px;
+        text-align: center;
+        min-width: 100%;
+        justify-content: center;
+        align-content: center;
+      }
+    }
+  }
+
+  .project-menu-container{
+    margin-top:64px;
+  }
+
+
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
