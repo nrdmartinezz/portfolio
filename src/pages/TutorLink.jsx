@@ -321,7 +321,7 @@ let TutorLink = () => {
             </p>
           </div>
         </section>
-        <section>
+        <section className="digital-wireframes-image-col">
           <div className="digital-wireframe-images">
             <Image
               width="430"
@@ -344,9 +344,8 @@ let TutorLink = () => {
             ></Image>
           </div>
         </section>
-
         <section className="stickersheet-section">
-          <div className="stickersheet-overview flex-col align-center">
+          <div className="stickersheet-overview flex-col width-55 align-center">
             <h2 className="poppins-bold text-uppercase width-full">
               Sticker Sheet
             </h2>
@@ -364,7 +363,6 @@ let TutorLink = () => {
             image="Stickersheet_-_Mockup_vthfyn"
           ></Image>
         </section>
-
         <section className="digital-mockup-section">
           <Slideshow
             width={430}
@@ -372,7 +370,7 @@ let TutorLink = () => {
             images={digitalMockups}
             slideshowClass={"digital-mockup-slides"}
           ></Slideshow>
-          <div className="digital-mockup-overview flex-col align-center">
+          <div className="digital-mockup-overview width-55 flex-col align-center">
             <h2 className="poppins-bold text-uppercase width-full">
               Digital Mockups
             </h2>
