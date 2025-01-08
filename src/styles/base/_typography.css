@@ -141,3 +141,15 @@
   font-weight: 900;
   font-style: italic;
 }
+
+.red-text{
+  color: var(--global-color-red);
+}
+
+.teal-text{
+  color: var(--global-color-teal);
+}
+
+.gold-text{
+  color: var(--global-color-gold);
+}

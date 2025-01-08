@@ -52,3 +52,39 @@
     box-shadow: 0px 3px 10px #00000055;
   }
 }
+
+.skills-list{
+  padding: unset;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+
+  margin-top: 24px;
+  .skills-list-item{
+    text-transform: uppercase;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: var(--global-box-shadow);
+    color: var(--global-color-white);
+    font-size: 18px;
+    font-weight: 600;
+
+    &:nth-child(1) {
+      background-color: var(--global-color-teal);
+    }
+    &:nth-child(2) {
+      background-color: var(--global-color-slate);
+    }
+    &:nth-child(3) {
+      background-color: var(--global-color-red);
+    }
+    &:nth-child(4) {
+      background-color: var(--global-color-gold);
+    }
+    &:nth-child(5) {
+      background-color: var(--global-color-black);
+    }
+  }
+  
+}

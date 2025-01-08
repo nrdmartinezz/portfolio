@@ -42,7 +42,7 @@
 }
 
 .tutorlink-step-empathize {
-  max-height: 35vh;
+  /* max-height: 35vh; */
   border-radius: 10px;
   background-color: var(--tutorlink-color-blue);
 }
@@ -182,7 +182,7 @@
 }
 
 .tutorlink-step-define {
-  max-height: 35vh;
+  /* max-height: 35vh; */
   border-radius: 10px;
   background-color: var(--tutorlink-color-green);
 }
