@@ -7,16 +7,16 @@
   height: var(--global-header-max-height);
   max-height:var(--global-header-max-height);
   align-items: center;
-  padding:12px 0px;
-  margin:0 auto;
-
+  position: fixed;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
   .nav-logo-container {
     max-width: 30%;
     align-items: center;
     .logo {
-      width: 75px;
-      height: 75px;
-      background: var(--global-color-grey);
+      width: 100px;
+      height: 100px;
       border-radius: 100%;
       
     }
@@ -29,6 +29,15 @@
     max-width: 30%;
     justify-content: end;
     column-gap: 64px;
+
+    .nav-menu-button{
+      .btn-icon{
+        order:-1;
+      }
+      .btn-text{
+        font-size:16px;
+      }
+    }
 
     a{
       padding: 16px 32px;

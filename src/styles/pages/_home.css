@@ -1,5 +1,5 @@
 .hero-container{
-  min-height: 75vh;
+  min-height: 90vh;
   justify-content: flex-end;
   align-items: flex-end;
   padding:128px 0px;
@@ -9,6 +9,8 @@
 
 .hero-content-wrapper{
   flex-direction:column;
+  color:var(--global-color-white);
+  gap: 16px;
   h1{
     font-size: 64px;
   }
@@ -24,4 +26,8 @@
   img{
     border-radius: 100%;
   }
+}
+
+.hero-btns{
+  gap: 16px;
 }

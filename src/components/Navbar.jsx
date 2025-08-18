@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Image from "./Image";
 import Button from "./Button";
-import MenuIcon from "../assets/icon/apps.svg?react";
 
 let Navbar = () => {
   return (
@@ -10,8 +9,8 @@ let Navbar = () => {
         <Link to="/">
           <Image
             alt={"Nate Delgado Martinez"}
-            height={60}
-            width={64}
+            height={100}
+            width={107}
             image={"Asset_2_r4vxqf"}
             imgClass={"nav-logo"}
           ></Image>
@@ -19,7 +18,7 @@ let Navbar = () => {
       </div>
       <div className="nav-menu-container">
         <Button
-          icon={<MenuIcon />}
+          icon="menu"
           text="Menu"
           className="nav-menu-button"
           onClick={() => {

@@ -8,6 +8,7 @@
   cursor: pointer;
   flex-direction: row;
   max-width: max-content;
+  align-items: center;
   .btn-icon {
     fill: var(--global-color-white);
     svg {
@@ -16,8 +17,18 @@
     }
   }
   .btn-text {
-    margin-left: 16px;
-    font-size: 20px;
+    margin: 0 16px;
+    font-size: 18px;
+    font-weight: 400;;
     font-family: Outfit, sans-serif;
+
+  }
+}
+
+.white-btn{
+  background-color:var(--global-color-white);
+  color:var(--global-color-purple);
+  svg{
+    fill:var(--global-color-purple);
   }
 }
