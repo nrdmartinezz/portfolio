@@ -1,12 +1,14 @@
 .nav-container {
   display: flex;
   flex: 1;
-  width: 100%;
+  width: 1300px;
   flex-direction: row;
   justify-content: space-between;
   height: var(--global-header-max-height);
-  max-height:var(--global-header-max-height);;
+  max-height:var(--global-header-max-height);
   align-items: center;
+  padding:12px 0px;
+  margin:0 auto;
 
   .nav-logo-container {
     max-width: 30%;
@@ -49,6 +51,8 @@
     a:active{
       color:inherit
     }
+
+  
 
   }
 }

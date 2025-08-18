@@ -44,3 +44,7 @@
   #root, #__next {
     isolation: isolate;
   }
+
+  html{
+    font-family: Outfit, sans-serif;
+  }

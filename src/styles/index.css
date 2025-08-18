@@ -12,5 +12,6 @@
 @import "pages/_tutorlink.css";
 
 @import "components/_slideshow.css";
+@import "components/_button.css";
 
 @import "mobile/_mobile.css"

@@ -1,13 +1,11 @@
 :root{
 
     /* Global Colors */
-    --global-color-grey: #707070;
-    --global-color-slate: #444444;
-    --global-color-gold: #EDB131;
-    --global-color-black:#1B1212;
-    --global-color-teal: #177e89;
-    --global-color-white: #FFFFFF;
-    --global-color-red: #db3a34;
+    --global-color-grey: #ECECEC;
+    --global-color-slate: #35373F;
+    --global-color-black:#0C0C0C;
+    --global-color-purple: #413166;
+    --global-color-white: #F8FDFF;
     --global-box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12);
 
     /* TutorLink Colors */

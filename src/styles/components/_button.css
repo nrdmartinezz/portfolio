@@ -1,0 +1,23 @@
+.btn-standard {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--global-color-black);
+  color: white;
+  cursor: pointer;
+  flex-direction: row;
+  max-width: max-content;
+  .btn-icon {
+    fill: var(--global-color-white);
+    svg {
+      max-height: 30px;
+      max-width: 30px;
+    }
+  }
+  .btn-text {
+    margin-left: 16px;
+    font-size: 20px;
+    font-family: Outfit, sans-serif;
+  }
+}

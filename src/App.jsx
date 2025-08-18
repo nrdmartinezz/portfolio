@@ -4,28 +4,17 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import Home from "./pages/home";
-import Project from "./pages/Project";
-import TutorLink from "./pages/TutorLink";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<Home />} />
-      <Route path="/project" element={<Project />} />
-      <Route
-        path="/project/tutorlink"
-        element={<TutorLink></TutorLink>}
-      ></Route>
     </Route>
   )
 );
 
 function App() {
-  return (
-    <div className="app-container">
-      <RouterProvider router={router}></RouterProvider>
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 export default App;

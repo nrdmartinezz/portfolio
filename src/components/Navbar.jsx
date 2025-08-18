@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import Image from "./Image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faThreads,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import Button from "./Button";
+import MenuIcon from "../assets/icon/apps.svg?react";
 
 let Navbar = () => {
   return (
@@ -14,23 +10,22 @@ let Navbar = () => {
         <Link to="/">
           <Image
             alt={"Nate Delgado Martinez"}
-            height={50}
-            width={268}
-            image={"NRD.Martinez_n8pplu"}
+            height={60}
+            width={64}
+            image={"Asset_2_r4vxqf"}
             imgClass={"nav-logo"}
           ></Image>
         </Link>
       </div>
       <div className="nav-menu-container">
-        <a target="_blank" href="https://www.instagram.com/dyslyl.nate/">
-          <FontAwesomeIcon fontSize={36} icon={faInstagram} />
-        </a>
-        <a target="_blank" href="https://www.threads.net/@dyslyl.nate" >
-          <FontAwesomeIcon fontSize={36} icon={faThreads} />
-        </a>
-        <a target="_blank" href="https://www.linkedin.com/in/nathanael-delgado/">
-          <FontAwesomeIcon fontSize={36} icon={faLinkedin} />
-        </a>
+        <Button
+          icon={<MenuIcon />}
+          text="Menu"
+          className="nav-menu-button"
+          onClick={() => {
+            console.log("menu clicked!");
+          }}
+        />
       </div>
     </nav>
   );
