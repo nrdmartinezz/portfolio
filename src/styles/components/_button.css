@@ -32,3 +32,8 @@
     fill:var(--global-color-purple);
   }
 }
+
+
+.btn-standard-link{
+  text-decoration: none;
+}

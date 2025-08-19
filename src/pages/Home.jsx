@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Image from "../components/Image";
 
@@ -7,7 +6,7 @@ let Home = () => {
   return (
     <div className="flex-col">
       <Navbar></Navbar>
-      <div className="hero-container">
+      <section className="hero-container">
         <div className="hero-content-wrapper content-wrapper">
           <Image
             imgClass="hero-image"
@@ -26,7 +25,28 @@ let Home = () => {
             <Button icon={"arrow"} text={"Contact Me"}></Button>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="about-container">
+        <div className="content-wrapper flex-row">
+          <Image
+            imgClass="about-image"
+            image="1689533209966_uszpqy"
+            width={352}
+            height={352}
+          ></Image>
+          <div className="about-text flex-col">
+            <h2>About Me</h2>
+            <p>
+              I am a passionate web developer with a focus on creating
+              user-friendly and accessible web applications. My goal is to
+              deliver high-quality software solutions that meet the needs of
+              users and businesses alike.
+            </p>
+            <Button icon={"arrow"} text="View Work" link="/about" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import ArrowRight from "../assets/icon/arrow-circle-right.svg?react";
 import Menu from "../assets/icon/apps.svg?react";
 import Send from "../assets/icon/paper-plane-top.svg?react";
+import { Link } from "react-router-dom";
 
-const Button = ({ icon, text, onClick, ...props }) => {
+const Button = ({ icon, text, onClick, link, ...props }) => {
   let IconElement;
   switch (icon) {
     case "arrow":
@@ -18,7 +19,8 @@ const Button = ({ icon, text, onClick, ...props }) => {
     default:
       IconElement = null;
   }
-  return (
+
+  const buttonContent = (
     <div
       onClick={onClick}
       {...props}
@@ -30,6 +32,21 @@ const Button = ({ icon, text, onClick, ...props }) => {
       {icon && <span className="btn-icon">{IconElement}</span>}
     </div>
   );
+
+  if (link) {
+    return (
+      <Link
+        to={link}
+        className={
+          "btn-standard-link" + (props.className ? ` ${props.className}` : "")
+        }
+      >
+        {buttonContent}
+      </Link>
+    );
+  }
+
+  return buttonContent;
 };
 
 Button.propTypes = {
@@ -37,6 +54,7 @@ Button.propTypes = {
   text: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  link: PropTypes.string,
 };
 
 export default Button;

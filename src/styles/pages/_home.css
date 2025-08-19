@@ -1,33 +1,49 @@
-.hero-container{
+.hero-container {
   min-height: 90vh;
   justify-content: flex-end;
   align-items: flex-end;
-  padding:128px 0px;
+  padding: 128px 0px;
   background: url("../../assets/img/mesh-gradient 2.jpg");
   object-fit: cover;
 }
 
-.hero-content-wrapper{
-  flex-direction:column;
-  color:var(--global-color-white);
+.hero-content-wrapper {
+  flex-direction: column;
+  color: var(--global-color-white);
   gap: 16px;
-  h1{
+  h1 {
     font-size: 64px;
   }
-  .portfolio-titles{
-    list-style:none;
-    padding:0px;
+  .portfolio-titles {
+    list-style: none;
+    padding: 0px;
     font-size: 20px;
     /* margin: 8px 0; */
   }
 }
 
-.hero-image{
-  img{
+.hero-image {
+  img {
     border-radius: 100%;
   }
 }
 
-.hero-btns{
+.hero-btns {
   gap: 16px;
+}
+
+/* About Me Section */
+.about-container {
+  .content-wrapper {
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+.about-image {
+  max-width: max-content;
+}
+
+.about-text {
+  max-width: 50%;
 }

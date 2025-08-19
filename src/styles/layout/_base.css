@@ -1,6 +1,9 @@
 .flex-col {
   flex-direction: column;
 }
+.flex-row {
+  flex-direction: row;
+}
 
 .accent-text {
   color: var(--global-color-gold);
@@ -14,7 +17,7 @@ section {
   display: flex;
   flex: 1;
   flex-direction: row;
-  padding: 64px 24px;
+  padding: 124px 24px;
   width: 100%;
 }
 
