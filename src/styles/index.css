@@ -13,5 +13,6 @@
 
 @import "components/_slideshow.css";
 @import "components/_button.css";
+@import "components/_heading.css";
 
-@import "mobile/_mobile.css"
+/* @import "mobile/_mobile.css" */

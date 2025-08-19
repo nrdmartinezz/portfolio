@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Image from "./Image"; // Assuming Image.jsx is in the same directory
+import Image from "../components/Image"; // Assuming Image.jsx is in the same directory
 
 const Slideshow = ({ width,height,images, slideshowClass }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

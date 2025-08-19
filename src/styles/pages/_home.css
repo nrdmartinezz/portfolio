@@ -1,9 +1,10 @@
 .hero-container {
-  min-height: 90vh;
+  min-height: 100vh;
   justify-content: flex-end;
   align-items: flex-end;
   padding: 128px 0px;
-  background: url("../../assets/img/mesh-gradient 2.jpg");
+  background: url("../../assets/img/mesh-gradient 2.jpg")
+    var(--global-color-purple);
   object-fit: cover;
 }
 
@@ -46,4 +47,10 @@
 
 .about-text {
   max-width: 50%;
+  justify-content: center;
+  margin-left: 32px;
+  p {
+    margin: 12px 0px;
+    margin-bottom: 36px;
+  }
 }

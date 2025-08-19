@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../components/Button";
 import  useKeyDown  from "../hooks/useKeyDown";
 import PropTypes from 'prop-types';
 

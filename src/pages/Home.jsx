@@ -1,6 +1,7 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../layout/Navbar";
 import Button from "../components/Button";
 import Image from "../components/Image";
+import Heading from "../components/Heading";
 
 let Home = () => {
   return (
@@ -21,8 +22,12 @@ let Home = () => {
             <li>Open Source Enthusiast</li>
           </ul>
           <div className="flex-row hero-btns">
-            <Button className="white-btn" icon={"arrow"} text={"View Work"}></Button>
-            <Button icon={"arrow"} text={"Contact Me"}></Button>
+            <Button icon={"arrow"} text={"View Work"}></Button>
+            <Button
+              className="white-btn"
+              icon={"arrow"}
+              text={"Contact Me"}
+            ></Button>
           </div>
         </div>
       </section>
@@ -36,7 +41,7 @@ let Home = () => {
             height={352}
           ></Image>
           <div className="about-text flex-col">
-            <h2>About Me</h2>
+            <Heading level={2}>About Me</Heading>
             <p>
               I am a passionate web developer with a focus on creating
               user-friendly and accessible web applications. My goal is to
@@ -44,6 +49,48 @@ let Home = () => {
               users and businesses alike.
             </p>
             <Button icon={"arrow"} text="View Work" link="/about" />
+          </div>
+        </div>
+      </section>
+
+      <section className="case-studies-container">
+        <div className="content-wrapper flex-row">
+          <Heading level={2}>Case Studies</Heading>
+
+          <div className="flex-row case-study">
+            <div className="case-study-content">
+              <h3>Case Study Title</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus rhoncus fringilla vehicula. Curabitur rutrum in nisl
+                nec auctor. Aenean semper mauris mauris, faucibus fermentum diam
+                iaculis feugiat. Aenean non tempor libero. Phasellus semper
+                libero at turpis maximus, vitae interdum purus venenatis. Nulla
+                facilisi. Suspendisse nec felis eleifend, maximus ligula nec,
+                fringilla mauris. Etiam ultricies enim ac lacus molestie rutrum.
+                Sed gravida eros ac dui porttitor, ac pretium odio tincidunt.
+                Donec in lorem lectus. Sed gravida nunc eu magna fringilla, sed
+                vehicula ipsum ultricies. Aliquam at elementum ex.
+              </p>
+              <div className="flex-row">
+                <div className="flex-col">
+                  <h4>Technologies Used</h4>
+                  <ul>
+                    <li>Technology 1</li>
+                    <li>Technology 2</li>
+                    <li>Technology 3</li>
+                  </ul>
+                </div>
+                <div className="flex-col">
+                  <h4>Roles</h4>
+                  <ul>
+                    <li>Role 1</li>
+                    <li>Role 2</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="case-study-image"></div>
           </div>
         </div>
       </section>

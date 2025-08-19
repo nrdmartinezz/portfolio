@@ -1,0 +1,11 @@
+h2 {
+    font-size: 36px;
+  .deco-text-heading {
+    z-index: -1;
+    color: var(--global-color-grey);
+    font-weight: bold;
+    font-size: 124px;
+    position: absolute;
+    transform: translateY(-60%);
+  }
+}

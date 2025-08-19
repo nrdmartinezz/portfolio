@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Image from "./Image";
-import Button from "./Button";
+import Image from "../components/Image";
+import Button from "../components/Button";
 
 let Navbar = () => {
   return (
