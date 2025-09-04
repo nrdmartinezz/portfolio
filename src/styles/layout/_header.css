@@ -10,6 +10,7 @@
   position: fixed;
   top: 6px;
   left: 50%;
+  z-index: 1000;
   transform: translateX(-50%);
   .nav-logo-container {
     max-width: 30%;

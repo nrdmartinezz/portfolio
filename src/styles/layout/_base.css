@@ -66,9 +66,11 @@ section {
   min-height: calc(100vh - 100px);
   box-sizing: border-box;
 }
+
 .gap-row-12 {
   row-gap: 12px;
 }
+
 .gap-col-24 {
   column-gap: 24px;
 }

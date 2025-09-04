@@ -7,6 +7,7 @@
 @import "layout/_header.css";
 @import "layout/_footer.css";
 @import "layout/_base.css";
+@import "layout/_carousel.css";
 
 @import "pages/_home.css";
 @import "pages/_tutorlink.css";
@@ -15,4 +16,4 @@
 @import "components/_button.css";
 @import "components/_heading.css";
 
-/* @import "mobile/_mobile.css" */
+@import "mobile/_mobile.css";

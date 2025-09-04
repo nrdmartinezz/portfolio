@@ -19,7 +19,6 @@
     list-style: none;
     padding: 0px;
     font-size: 20px;
-    /* margin: 8px 0; */
   }
 }
 
@@ -53,4 +52,114 @@
     margin: 12px 0px;
     margin-bottom: 36px;
   }
+}
+
+.case-studies-container {
+  .content-wrapper {
+    justify-content: center;
+  }
+}
+
+.case-study {
+  margin: 0 auto;
+  margin-top: 64px;
+  justify-content: space-between;
+  .case-study-image {
+    max-width: max-content;
+    height: auto;
+  }
+  .case-study-content {
+    .role-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      /* display: flex; */
+
+      .role-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        span {
+          background: var(--global-color-black);
+          border-radius: 1000px;
+          margin-right: 12px;
+          svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--global-color-white);
+            padding: 12px;
+            box-sizing: content-box;
+          }
+        }
+      }
+      .role-item + .role-item {
+        margin-top: 8px;
+      }
+    }
+    .tech-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      .tech-item {
+        padding: 4px 8px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        /* max-width: 49%; */
+        svg {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+        }
+      }
+    }
+    .case-study-link {
+      color: var(--tutor-link-blue);
+      text-decoration: none;
+      max-width: max-content;
+      padding: 12px 0px;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:after {
+        content: "→";
+        margin-left: 4px;
+        transition: margin-left 0.3s ease;
+      }
+      &:hover:after {
+        margin-left: 8px;
+      }
+      & + .case-study-link {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+.case-study + .case-study {
+  margin-top: 124px;
+}
+
+.work-content {
+  justify-content: center;
+}
+
+.work-slideshow-container {
+  .carousel-slide {
+    min-height: 650px;
+  }
+}
+.work-slide-img {
+  img {
+    border-radius: 10px;
+  }
+}
+
+.work-slide-btn {
+  margin: 0 auto;
 }
