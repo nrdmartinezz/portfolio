@@ -1,3 +1,4 @@
+
 @keyframes carouselFadeZoomIn {
   0% {
     opacity: 0;
@@ -47,6 +48,7 @@
   position: relative;
   min-height: 220px;
   overflow: hidden;
+  padding: 12px;
 }
 
 .carousel-item {
@@ -58,6 +60,7 @@
   border-radius: 10px;
   opacity: 0;
   pointer-events: none;
+  
   z-index: 1;
   display: flex;
   align-items: center;
@@ -124,3 +127,5 @@
   background: var(--global-color-purple);
   transform: scale(1.2);
 }
+
+

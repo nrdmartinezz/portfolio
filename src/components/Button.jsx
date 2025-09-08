@@ -4,7 +4,7 @@ import Menu from "../assets/icon/apps.svg?react";
 import Send from "../assets/icon/paper-plane-top.svg?react";
 import { Link } from "react-router-dom";
 
-const Button = ({ icon, text, onClick, link, ...props }) => {
+const Button = ({ icon, text, onClick, link, target, ...props }) => {
   let IconElement;
   switch (icon) {
     case "arrow":
@@ -40,6 +40,7 @@ const Button = ({ icon, text, onClick, link, ...props }) => {
         className={
           "btn-standard-link" + (props.className ? ` ${props.className}` : "")
         }
+        {...(target ? { target } : {})}
       >
         {buttonContent}
       </Link>
@@ -55,6 +56,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   link: PropTypes.string,
+  target: PropTypes.string,
 };
 
 export default Button;

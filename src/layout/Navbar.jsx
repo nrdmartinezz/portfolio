@@ -9,8 +9,8 @@ let Navbar = () => {
         <Link to="/">
           <Image
             alt={"Nate Delgado Martinez"}
-            height={100}
-            width={107}
+            height={83}
+            width={89}
             image={"Asset_2_r4vxqf"}
             imgClass={"nav-logo"}
           ></Image>

@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../layout/Navbar";
 import Image from "../components/Image";
-import Slideshow from "../components/Slideshow";
+import Slideshow from "../layout/Slideshow";
 
 let paperwireframes = [
   "Home_v2_xull2w",
@@ -420,7 +420,7 @@ let TutorLink = () => {
               <br />
               <br />
               From here I would begin to create a prototype and test it with a
-              user groupn that matches the personas. This will help refine the
+              user group that matches the personas. This will help refine the
               design more and create an even better experience.
             </p>
           </div>

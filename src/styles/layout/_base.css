@@ -90,3 +90,7 @@ section {
 .margin-center {
   margin: 0 auto;
 }
+
+.width-content {
+  max-width: max-content;
+}

@@ -2,7 +2,8 @@ import Navbar from "../layout/Navbar";
 import Button from "../components/Button";
 import Image from "../components/Image";
 import Heading from "../components/Heading";
-import WorkCarousel from "../layout/Carousel";
+import Carousel from "../layout/Carousel";
+import YoutubeVideo from "../components/YoutubeVideo";
 
 import FigmaSVG from "../assets/icon/figma.svg?react";
 import ElementorSVG from "../assets/icon/elementor.svg?react";
@@ -12,6 +13,7 @@ import JSLogoSVG from "../assets/icon/js.svg?react";
 import IllustratorSVG from "../assets/icon/illustrator.svg?react";
 import PhotoshopSVG from "../assets/icon/photoshop.svg?react";
 import XDSVG from "../assets/icon/xd.svg?react";
+import WordpressSVG from "../assets/icon/wordpress.svg?react";
 
 import UXSVG from "../assets/icon/ux.svg?react";
 import UISVG from "../assets/icon/ui.svg?react";
@@ -26,7 +28,7 @@ let Home = () => {
         <div className="hero-content-wrapper content-wrapper">
           <Image
             imgClass="hero-image"
-            image="1689533209966_uszpqy"
+            image="seoul-korea-nami-island-01_wk7omi"
             width={225}
             height={225}
           ></Image>
@@ -51,7 +53,7 @@ let Home = () => {
         <div className="content-wrapper flex-row">
           <Image
             imgClass="about-image"
-            image="1689533209966_uszpqy"
+            image="seoul-korea-nami-island-03_u2xtwg"
             width={352}
             height={352}
           ></Image>
@@ -75,26 +77,22 @@ let Home = () => {
           <div className="flex-row case-study">
             <div className="case-study-content width-55 flex-col gap-row-12">
               <Image
-                imgClass="case-study-img"
+                imgClass="case-study-logo tutorlink-logo"
                 image="TutorLink_Simple_Icon_3x_ngvoqz"
                 width={150}
+                height={50}
               ></Image>
               <h3>TutorLink</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus rhoncus fringilla vehicula. Curabitur rutrum in nisl
-                nec auctor. Aenean semper mauris mauris, faucibus fermentum diam
-                iaculis feugiat. Aenean non tempor libero. Phasellus semper
-                libero at turpis maximus, vitae interdum purus venenatis. Nulla
-                facilisi. Suspendisse nec felis eleifend, maximus ligula nec,
-                fringilla mauris. Etiam ultricies enim ac lacus molestie rutrum.
-                Sed gravida eros ac dui porttitor, ac pretium odio tincidunt.
-                Donec in lorem lectus. Sed gravida nunc eu magna fringilla, sed
-                vehicula ipsum ultricies. Aliquam at elementum ex.
+              <p className="easy-to-read">
+                TutorLink was designed to make the tutoring search effortless by
+                giving parents and students a centralized hub to discover,
+                connect with, and book qualified tutors. Instead of juggling
+                multiple platforms or messages, users can manage everything—from
+                browsing to scheduling—within one streamlined application.
               </p>
-              <Link className="case-study-link" to="/case-study/momentum">
-                  View Case Study
-                </Link>
+              <Link className="case-study-link" to="/projects/tutorlink">
+                View Case Study
+              </Link>
               <div className="flex-row">
                 <div className="flex-col width-35">
                   <h4>Technologies Used</h4>
@@ -138,36 +136,52 @@ let Home = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-col case-study-image gap-row-12">
-              <Image
-                imgClass="case-study-img"
-                image="1689533209966_uszpqy"
-                width={352}
-              ></Image>
+            <div className="flex-col tutorlink-carousel-container gap-row-12">
+              <Carousel autoStep={true} className="tutorlink-carousel">
+                <Image
+                  imgClass="case-study-image"
+                  image="home-iphone_fulpuw"
+                  width={350}
+                ></Image>
+                <Image
+                  imgClass="case-study-image"
+                  image="bookings-iphone_ywzxnn"
+                  width={350}
+                ></Image>
+                <Image
+                  imgClass="case-study-image"
+                  image="search-iphone_zuetwp"
+                  width={350}
+                ></Image>
+                <Image
+                  imgClass="case-study-image"
+                  image="favorites-iphone_fndohg"
+                  width={350}
+                ></Image>
+              </Carousel>
             </div>
           </div>
-          <div className="flex-row case-study">
+          <div className="flex-row case-study momentum-case-study">
             <div className="case-study-content width-55 flex-col gap-row-12">
               <Image
-                imgClass="case-study-img"
+                imgClass="momentum-logo"
                 image="Momentum_Logo_tdrlee"
                 width={200}
               ></Image>
-              <h3>Momentum</h3>
-              <p>
-                Momentum is a smart Pomodoro-based productivity app designed to
-                help people—especially those with ADHD—get things done without
-                feeling overwhelmed. Unlike a simple timer, Momentum integrates
-                task tracking and encourages users to use their Pomodoro breaks
-                to knock out quick household chores while staying focused on
-                work. It bridges the gap between professional productivity and
-                everyday life, making it easier to build momentum, one task at a
-                time.
+              <h3>Momentum - WIP</h3>
+              <p className="easy-to-read">
+                Momentum&apos;s goal is to help people with ADHD find better
+                work-life balance by pairing focused work sessions with
+                meaningful breaks. Instead of just counting minutes, Momentum
+                uses the Pomodoro method to nudge users toward small, rewarding
+                actions; Like drinking water, taking out the trash, or
+                guilt-free scrolling helping keep both productivity and daily
+                life on track.
               </p>
-              <span className="flex-row gap-col-12">
-                <Link className="case-study-link" to="/case-study/momentum">
+              <div className="case-links-container flex-row gap-col-12">
+                {/* <Link className="case-study-link" to="/case-study/momentum">
                   View Case Study
-                </Link>
+                </Link> */}
                 <Link
                   className="case-study-link"
                   to="https://momentum-pmdr.web.app/"
@@ -176,7 +190,7 @@ let Home = () => {
                 >
                   Visit Site
                 </Link>
-              </span>
+              </div>
               <div className="flex-row">
                 <div className="flex-col">
                   <h4>Technologies Used</h4>
@@ -244,71 +258,18 @@ let Home = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-col case-study-image gap-row-12">
-              <Image
-                imgClass="case-study-img"
-                image="1689533209966_uszpqy"
-                width={352}
-              ></Image>
-            </div>
-          </div>
-          <div className="flex-row case-study">
-            <div className="case-study-content width-55 flex-col gap-row-12">
-              <h3>Shafer Orthodontics</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus rhoncus fringilla vehicula. Curabitur rutrum in nisl
-                nec auctor. Aenean semper mauris mauris, faucibus fermentum diam
-                iaculis feugiat. Aenean non tempor libero. Phasellus semper
-                libero at turpis maximus, vitae interdum purus venenatis. Nulla
-                facilisi. Suspendisse nec felis eleifend, maximus ligula nec,
-                fringilla mauris. Etiam ultricies enim ac lacus molestie rutrum.
-                Sed gravida eros ac dui porttitor, ac pretium odio tincidunt.
-                Donec in lorem lectus. Sed gravida nunc eu magna fringilla, sed
-                vehicula ipsum ultricies. Aliquam at elementum ex.
-              </p>
-              <div className="flex-row">
-                <div className="flex-col">
-                  <h4>Technologies Used</h4>
-                  <ul>
-                    <li>Technology 1</li>
-                    <li>Technology 2</li>
-                    <li>Technology 3</li>
-                  </ul>
-                </div>
-                <div className="flex-col">
-                  <h4>Roles</h4>
-                  <ul className="role-list">
-                    <li className="role-item">
-                      <span>
-                        <UXSVG></UXSVG>
-                      </span>
-                      UX Researcher
-                    </li>
-                    <li className="role-item">
-                      <span>
-                        <UISVG></UISVG>
-                      </span>
-                      UI Designer
-                    </li>
-                    <li className="role-item">
-                      <span>
-                        <DevSVG></DevSVG>
-                      </span>
-                      Web Developer
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="flex-col case-study-image gap-row-12">
-              <Image
-                imgClass="case-study-img"
-                image="1689533209966_uszpqy"
-                width={352}
-                height={352}
-              ></Image>
-              <Button icon={"arrow"} text={"View Case Study"}></Button>
+            <div className="flex-col momentum-video-container gap-row-12">
+              <YoutubeVideo
+                link="https://youtu.be/RUJv0duEK-E"
+                autoplay={true}
+                isMute={true}
+                lazyload={true}
+                facade={false}
+                playbackrate={2}
+                showControls={false}
+                start={5}
+                className="youtube-video"
+              />
             </div>
           </div>
         </div>
@@ -316,66 +277,116 @@ let Home = () => {
 
       <section className="work-samples-container">
         <div className="content-wrapper flex-row">
-          <div className="work-content flex-col">
+          <div className="work-content width-55 flex-col">
             <Heading level={2}>My Work</Heading>
-            <h3>Short Scope, 3 Months</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              pharetra odio id lacus auctor pharetra. Donec varius, sapien id
-              dignissim efficitur, metus lorem gravida quam,
-            </p>
-            <h4>Tech</h4>
-            <ul className="flex-row work-tech">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>HTML</li>
-              <li>Git</li>
-            </ul>
+            <div className="work-description flex-col gap-row-12">
+              <p className="easy-to-read">
+                <strong>
+                  I design and build engaging websites for orthodontic and
+                  dental practices that elevate the patient experience.
+                </strong>
+                <br /> Using Figma, I create custom layouts that highlight each
+                practice’s unique brand, then collaborate with my team to bring
+                those designs to life in WordPress with Elementor. The result is
+                a site that not only looks great, but also helps practices
+                connect with patients in a meaningful way.
+              </p>
+            </div>
+
+            <div className="flex-col width-35">
+              <h4>Technologies Used</h4>
+              <ul className="tech-list">
+                <li className="tech-item">
+                  <span>
+                    <FigmaSVG></FigmaSVG>
+                  </span>
+                  Figma
+                </li>
+                <li className="tech-item">
+                  <span>
+                    <ElementorSVG></ElementorSVG>
+                  </span>
+                  Elementor
+                </li>
+                <li className="tech-item">
+                  <span>
+                    <WordpressSVG></WordpressSVG>
+                  </span>
+                  Wordpress
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="work-slideshow-container">
-            <WorkCarousel className="work-carousel">
-              <div className="work-slide flex-col gap-row-12">
-                <Image
-                  imgClass="work-slide-img"
-                  image="1689533209966_uszpqy"
-                  width={325}
-                  height={570}
-                ></Image>
-                <Button
-                  className="work-slide-btn"
-                  icon={"arrow"}
-                  text={"View Site"}
-                ></Button>
+            <Carousel className="work-carousel">
+              <div className="work-slide">
+                <div className="work-slide-img">
+                  <Link
+                    target="_blank"
+                    to={"https://shafer.newpatientgroup.dev/"}
+                  >
+                    <Image
+                      image="screencapture-shafer-newpatientgroup-dev-2025-09-05-14_31_28-1_rudfok"
+                      width={1192}
+                      height={3880}
+                    />
+                  </Link>
+                </div>
               </div>
               <div className="work-slide flex-col gap-row-12">
-                <Image
-                  imgClass="work-slide-img"
-                  image="1689533209966_uszpqy"
-                  width={325}
-                  height={570}
-                ></Image>
-                <Button
-                  className="work-slide-btn"
-                  icon={"arrow"}
-                  text={"View Site"}
-                ></Button>
+                <div className="work-slide-img">
+                  <Link target="_blank" to={"https://coombsorthoco.com/"}>
+                    <Image
+                      image="screencapture-coombsorthoco-2025-09-05-14_34_03-1_psb7h5"
+                      width={1192}
+                      height={2824}
+                    />
+                  </Link>
+                </div>
               </div>
               <div className="work-slide flex-col gap-row-12">
-                <Image
-                  imgClass="work-slide-img"
-                  image="1689533209966_uszpqy"
-                  width={325}
-                  height={570}
-                ></Image>
-                <Button
-                  className="work-slide-btn"
-                  icon={"arrow"}
-                  text={"View Site"}
-                ></Button>
+                <div className="work-slide-img">
+                  <Link target="_blank" to={"https://olsenortho.com/"}>
+                    <Image image="Home-page_eddyha" width={960} height={1820} />
+                  </Link>
+                </div>
               </div>
-            </WorkCarousel>
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-us-container">
+        <div className="content-wrapper flex-row">
+          <div className="flex-col width-55">
+            <Heading level={2}>Let&#39;s Work Together</Heading>
+
+            <div className="flex-row">
+              <ul className="social-list">
+                <li className="social-item">tik tok</li>
+                <li className="social-item">instagram</li>
+                <li className="social-item">linkedin</li>
+              </ul>
+            </div>
+            <p>
+              I am currently available for freelance work and open to new
+              opportunities. If you have a project in mind, feel free to reach
+              out!
+            </p>
+            <Link
+              className="case-study-link"
+              to="mailto:nrd.martinezz@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email Me
+            </Link>
+          </div>
+          <div className="flex-col width-content contact-image">
+            <Image
+              image="seoul-korea-nami-island-vert_mxkyiu"
+              width={400}
+            ></Image>
           </div>
         </div>
       </section>

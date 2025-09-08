@@ -153,3 +153,9 @@
 .gold-text{
   color: var(--global-color-gold);
 }
+
+.easy-to-read {
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
