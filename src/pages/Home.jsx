@@ -39,11 +39,26 @@ let Home = () => {
             <li>Open Source Enthusiast</li>
           </ul>
           <div className="flex-row hero-btns">
-            <Button icon={"arrow"} text={"View Work"}></Button>
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("my-work")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+              icon={"arrow"}
+              text={"View Work"}
+            ></Button>
             <Button
               className="white-btn"
               icon={"arrow"}
               text={"Contact Me"}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("contact-me")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
             ></Button>
           </div>
         </div>
@@ -276,7 +291,7 @@ let Home = () => {
         </div>
       </section>
 
-      <section className="work-samples-container">
+      <section id="my-work" className="work-samples-container">
         <div className="content-wrapper flex-row">
           <div className="work-content width-55 flex-col">
             <Heading level={2}>My Work</Heading>
@@ -357,16 +372,28 @@ let Home = () => {
         </div>
       </section>
 
-      <section className="contact-us-container">
+      <section id="contact-me" className="contact-us-container">
         <div className="content-wrapper flex-row">
           <div className="flex-col width-55">
             <Heading level={2}>Let&#39;s Work Together</Heading>
 
             <div className="flex-row">
               <ul className="social-list">
-                <li className="social-item">tik tok</li>
-                <li className="social-item">instagram</li>
-                <li className="social-item">linkedin</li>
+                <li className="social-item">
+                  <Link to={"https://www.tiktok.com/@dyslyl.nate"}>
+                    tik tok
+                  </Link>
+                </li>
+                <li className="social-item">
+                  <Link to={"https://www.linkedin.com/in/nrdmartinez/"}>
+                    linkedin
+                  </Link>
+                </li>
+                <li className="social-item">
+                  <Link to={"https://www.instagram.com/dyslyl.nate/"}>
+                    instagram
+                  </Link>
+                </li>
               </ul>
             </div>
             <p>

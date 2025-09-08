@@ -301,6 +301,9 @@
   font-size: 18px;
   cursor: pointer;
   transition: color 0.2s;
+  a{
+    color: var(--global-color-purple);
+  }
 }
 .social-item:hover {
   color: var(--global-color-black);
