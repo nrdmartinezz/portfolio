@@ -17,14 +17,14 @@ let Navbar = () => {
         </Link>
       </div>
       <div className="nav-menu-container">
-        <Button
+        {/* <Button
           icon="menu"
           text="Menu"
           className="nav-menu-button"
           onClick={() => {
             console.log("menu clicked!");
           }}
-        />
+        /> */}
       </div>
     </nav>
   );

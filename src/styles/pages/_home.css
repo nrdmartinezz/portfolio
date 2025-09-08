@@ -184,12 +184,12 @@
 }
 
 .momentum-video-container {
-  max-width: 600px;
+  max-width: 750px;
   max-height: max-content;
   border-radius: 10px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  .youtube-video iframe{
+  .youtube-video iframe {
     min-height: 420px;
   }
 }

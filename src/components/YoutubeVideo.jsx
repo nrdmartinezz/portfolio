@@ -19,6 +19,7 @@ const YoutubeVideo = ({
     playbackrate,
     showControls = true,
     start = 0,
+    loop = false,
 }) => {
     const videoId = getYoutubeId(link);
 
@@ -54,6 +55,8 @@ const YoutubeVideo = ({
                     playsinline: 1,
                     controls: showControls ? 1 : 0,
                     start: start > 0 ? start : undefined,
+                    loop: loop ? 1 : 0,
+                    playlist: loop ? videoId : undefined,
                 },
                 events: {
                     onReady: (event) => {
@@ -80,7 +83,7 @@ const YoutubeVideo = ({
             }
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [videoId, autoplay, isMute, playbackrate, facade, showControls, start]);
+    }, [videoId, autoplay, isMute, playbackrate, facade, showControls, start, loop]);
 
     if (facade) {
         // Facade: show thumbnail, load iframe on click
@@ -91,6 +94,8 @@ const YoutubeVideo = ({
             isMute ? 'mute=1' : '',
             showControls ? '' : 'controls=0',
             start > 0 ? `start=${start}` : '',
+            loop ? 'loop=1' : '',
+            loop ? `playlist=${videoId}` : '',
             'rel=0',
             'modestbranding=1',
             'playsinline=1',
@@ -149,6 +154,7 @@ YoutubeVideo.propTypes = {
     playbackrate: PropTypes.number,
     showControls: PropTypes.bool,
     start: PropTypes.number,
+    loop: PropTypes.bool,
 };
 
 export default YoutubeVideo;

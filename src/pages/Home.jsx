@@ -94,7 +94,7 @@ let Home = () => {
                 View Case Study
               </Link>
               <div className="flex-row">
-                <div className="flex-col width-35">
+                <div className="flex-col case-details width-35">
                   <h4>Technologies Used</h4>
                   <ul className="tech-list">
                     <li className="tech-item">
@@ -192,7 +192,7 @@ let Home = () => {
                 </Link>
               </div>
               <div className="flex-row">
-                <div className="flex-col">
+                <div className="flex-col case-details width-35">
                   <h4>Technologies Used</h4>
                   <ul className="tech-list">
                     <li className="tech-item">
@@ -233,7 +233,7 @@ let Home = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="flex-col">
+                <div className="flex-col case-details width-65">
                   <h4>Roles</h4>
                   <ul className="role-list">
                     <li className="role-item">
@@ -268,6 +268,7 @@ let Home = () => {
                 playbackrate={2}
                 showControls={false}
                 start={5}
+                loop={true}
                 className="youtube-video"
               />
             </div>
