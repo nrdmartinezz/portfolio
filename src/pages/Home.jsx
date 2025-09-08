@@ -279,7 +279,7 @@ let Home = () => {
                 autoplay={true}
                 isMute={true}
                 lazyload={true}
-                facade={false}
+                facade={true}
                 playbackrate={2}
                 showControls={false}
                 start={5}

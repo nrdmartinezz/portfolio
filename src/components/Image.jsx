@@ -26,7 +26,7 @@ const Image = (props) => {
       </div>
     );
   } else {
-    return <AdvancedImage cldImg={img} />;
+    return <AdvancedImage cldImg={img} loading="lazy" />;
   }
 };
 
