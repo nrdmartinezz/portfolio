@@ -34,9 +34,10 @@ let Home = () => {
           ></Image>
           <h1>Hello, I&#39;m Nate Martinez</h1>
           <ul className="portfolio-titles">
-            <li>Web Developer</li>
+            <li>Web Designer & Developer</li>
             <li>UI/UX Designer</li>
-            <li>Open Source Enthusiast</li>
+            <li>Full Stack Developer</li>
+            
           </ul>
           <div className="flex-row hero-btns">
             <Button
