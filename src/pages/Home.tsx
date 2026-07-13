@@ -17,13 +17,13 @@ import {
 } from "lucide-react";
 
 const assets = {
-  logoDark: "/manus-storage/nate-logo-dark_b3f43e9f.png",
-  hero: "/manus-storage/nate-hero-kinetic-architecture_cded2dfa.png",
-  quest: "/manus-storage/quest-orthodontics-user-supplied_96c0183e.png",
-  multiLocation: "/manus-storage/myorthodontist-user-supplied_8775b137.png",
-  kirkco: "/manus-storage/kirkco-site-screen_3b2f1656.webp",
-  process: "/manus-storage/process-full-stack-spectrum_1d6a0276.png",
-  resume: "/manus-storage/Nate_Martinez_Resume_4bbe95c7.pdf",
+  logoDark: "/images/nate-logo-dark_b3f43e9f.png",
+  hero: "/images/nate-hero-kinetic-architecture_cded2dfa.webp",
+  quest: "/images/quest-orthodontics-user-supplied_96c0183e.png",
+  multiLocation: "/images/myorthodontist-user-supplied_8775b137.png",
+  kirkco: "/images/kirkco-site-screen_3b2f1656.webp",
+  process: "/images/process-full-stack-spectrum_1d6a0276.png",
+  resume: "/images/Nate_Martinez_Resume.pdf",
 };
 
 const navItems = [
