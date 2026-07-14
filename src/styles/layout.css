@@ -1,0 +1,44 @@
+/*
+ * Layout: page-level structural wrappers.
+ * Container controls max-width and inline padding.
+ * Site-shell is the full-page backdrop with the film-grain overlay.
+ */
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 2.5rem);
+    max-width: 1480px;
+  }
+
+  .flex {
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: clip;
+  background: var(--near-black);
+}
+
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image:
+    repeating-radial-gradient(circle at 20% 30%, transparent 0, transparent 1px, #fff 1px, #fff 1.4px),
+    repeating-radial-gradient(circle at 80% 70%, transparent 0, transparent 1px, #fff 1px, #fff 1.35px);
+  background-size: 7px 7px, 11px 11px;
+  mix-blend-mode: soft-light;
+}
+
+.section-pad {
+  padding-inline: clamp(1.25rem, 5vw, 5rem);
+}

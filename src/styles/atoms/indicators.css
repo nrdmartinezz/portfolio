@@ -1,0 +1,76 @@
+/*
+ * Atoms — indicators: signal dots, eyebrow labels, and section labels.
+ * All are small annotation/status elements that punctuate the layout.
+ */
+
+/* --- Signal --- */
+.signal-stack {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.signal-stack--horizontal {
+  flex-direction: row;
+}
+
+.signal {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+.signal--yellow {
+  background: var(--signal-yellow);
+}
+
+.signal--red {
+  background: var(--signal-red);
+}
+
+.signal--blue {
+  background: var(--signal-blue);
+}
+
+/* --- Eyebrow --- */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+  color: rgba(244, 241, 232, 0.66);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* --- Section label --- */
+.section-label {
+  display: grid;
+  grid-template-columns: auto minmax(40px, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: clamp(3.5rem, 7vw, 6.5rem);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.section-label span:first-child {
+  min-width: 2rem;
+  color: var(--signal-blue);
+  font-weight: 600;
+}
+
+.section-label__rule {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.24;
+}
+
+.section-label p {
+  margin: 0;
+}

@@ -1,0 +1,48 @@
+/*
+ * Organism — contact: contact section page wrapper and primary content.
+ * Contact-specific UI atoms (rail, kicker, email link, links list) live in molecules/contact.css.
+ */
+
+.contact-section {
+  position: relative;
+  min-height: 86vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 0.34fr);
+  gap: clamp(3rem, 8vw, 10rem);
+  align-items: end;
+  padding-top: clamp(7rem, 12vw, 13rem);
+  padding-bottom: clamp(4rem, 7vw, 7rem);
+  background: var(--signal-yellow);
+  color: var(--ink);
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 7%;
+  right: 4%;
+  width: clamp(190px, 25vw, 420px);
+  aspect-ratio: 1;
+  border: clamp(24px, 4vw, 66px) solid rgba(9, 9, 9, 0.08);
+  border-left-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-38deg);
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-content h2 {
+  max-width: 1100px;
+  font-size: clamp(4rem, 9.5vw, 10.8rem);
+  line-height: 0.82;
+}
+
+.contact-content > p:not(.contact-kicker) {
+  max-width: 650px;
+  margin: 2.5rem 0;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.7;
+}

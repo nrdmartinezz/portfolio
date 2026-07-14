@@ -1,0 +1,61 @@
+﻿/*
+ * Design philosophy: Kinetic Bauhaus Blueprint.
+ * Entry point — imports only. Edit individual files in src/styles/ to modify specific components.
+ *
+ * Structure:
+ *   styles/tokens.css              <- colour palette, type scale, radii, easing
+ *   styles/base.css                <- global reset + shared display-heading rule
+ *   styles/layout.css              <- container, site-shell, section-pad
+ *   styles/atoms/interactive.css   <- button, text-link
+ *   styles/atoms/indicators.css    <- signal, eyebrow, section-label
+ *   styles/molecules/wordmark.css  <- logo lockup
+ *   styles/molecules/project.css   <- visual-art, site-shot, project card + index
+ *   styles/molecules/content.css   <- section-intro, capability-list, education-entry
+ *   styles/molecules/contact.css   <- contact rail, kicker, email, links
+ *   styles/organisms/header.css    <- site header + desktop nav + mobile toggle
+ *   styles/organisms/hero.css      <- hero section
+ *   styles/organisms/sections.css  <- work, capabilities, experience sections
+ *   styles/organisms/contact.css   <- contact section wrapper
+ *   styles/organisms/footer.css    <- site footer
+ *   styles/responsive/desktop.css  <- <=1080px + short-screen hero
+ *   styles/responsive/mobile.css   <- <=820px + <=560px
+ *   styles/responsive/accessibility.css  <- prefers-reduced-motion + platform override
+ */
+
+/* External */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Tokens */
+@import "./styles/tokens.css";
+
+/* Base */
+@import "./styles/base.css";
+
+/* Layout */
+@import "./styles/layout.css";
+
+/* Atoms */
+@import "./styles/atoms/interactive.css";
+@import "./styles/atoms/indicators.css";
+
+/* Molecules */
+@import "./styles/molecules/wordmark.css";
+@import "./styles/molecules/project.css";
+@import "./styles/molecules/content.css";
+@import "./styles/molecules/contact.css";
+
+/* Organisms */
+@import "./styles/organisms/header.css";
+@import "./styles/organisms/hero.css";
+@import "./styles/organisms/sections.css";
+@import "./styles/organisms/contact.css";
+@import "./styles/organisms/footer.css";
+
+/* Responsive */
+@import "./styles/responsive/desktop.css";
+@import "./styles/responsive/mobile.css";
+@import "./styles/responsive/accessibility.css";

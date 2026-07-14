@@ -1,0 +1,91 @@
+/*
+ * Molecule — contact: rail markers, kicker label, email link, and social links list.
+ */
+
+.contact-rail {
+  position: absolute;
+  top: 0;
+  left: clamp(1.25rem, 5vw, 5rem);
+  display: flex;
+  gap: 9px;
+}
+
+.contact-rail span {
+  width: clamp(28px, 3vw, 46px);
+  height: 15px;
+}
+
+.contact-rail span:nth-child(1) {
+  background: var(--bone);
+}
+
+.contact-rail span:nth-child(2) {
+  background: var(--signal-red);
+}
+
+.contact-rail span:nth-child(3) {
+  background: var(--signal-blue);
+}
+
+.contact-kicker {
+  margin: 0 0 1.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 3px solid var(--ink);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.8rem, 1.3vw, 1.05rem);
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 180ms var(--ease-out), color 180ms var(--ease-out);
+}
+
+.contact-email:hover {
+  gap: 1.15rem;
+  color: #0d3c6e;
+}
+
+.contact-links {
+  position: relative;
+  z-index: 1;
+  border-top: 4px solid var(--ink);
+}
+
+.contact-links a {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 76px;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.35);
+  color: var(--ink);
+  text-decoration: none;
+  transition: padding 180ms var(--ease-out), background 180ms var(--ease-out), color 180ms var(--ease-out);
+}
+
+.contact-links a:hover {
+  padding-inline: 0.8rem;
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.contact-links span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-links strong {
+  font-size: 0.78rem;
+}
