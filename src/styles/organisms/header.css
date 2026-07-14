@@ -1,0 +1,84 @@
+/*
+ * Organism — header: fixed site header, desktop nav, contact CTA, and mobile nav toggle.
+ * Mobile nav full styles (display, layout, links) are revealed in responsive/mobile.css.
+ */
+
+.site-header {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  display: grid;
+  grid-template-columns: minmax(248px, 1fr) auto minmax(248px, 1fr);
+  align-items: center;
+  gap: 2rem;
+  padding: 0 clamp(1.25rem, 4vw, 4.25rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(7, 7, 7, 0.92);
+  color: var(--bone);
+  backdrop-filter: blur(18px);
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.3rem, 2.5vw, 2.8rem);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.desktop-nav a {
+  position: relative;
+  color: rgba(244, 241, 232, 0.68);
+  text-decoration: none;
+  transition: color 180ms var(--ease-out);
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -8px;
+  height: 2px;
+  background: var(--signal-yellow);
+  transition: right 180ms var(--ease-out);
+}
+
+.desktop-nav a:hover {
+  color: var(--bone);
+}
+
+.desktop-nav a:hover::after {
+  right: 0;
+}
+
+.header-contact {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--signal-yellow);
+  color: var(--bone);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.header-contact:hover {
+  color: var(--signal-yellow);
+  transform: translateY(-2px);
+}
+
+/* Hidden by default; toggled and styled in responsive/mobile.css */
+.menu-toggle,
+.mobile-nav {
+  display: none;
+}

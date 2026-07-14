@@ -1,0 +1,124 @@
+/*
+ * Molecule — content: section intros, capability list items, and education entries.
+ * These are repeatable content blocks used inside the work, capabilities, and experience sections.
+ */
+
+/* --- Section intro --- */
+.section-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  align-items: end;
+  gap: clamp(2rem, 8vw, 9rem);
+  max-width: 1320px;
+  margin-bottom: clamp(5rem, 10vw, 10rem);
+}
+
+.section-intro h2 {
+  max-width: 850px;
+  font-size: clamp(2.8rem, 5.8vw, 6.2rem);
+  line-height: 0.94;
+}
+
+/* Shared body copy: applies to both section intro and experience statement */
+.section-intro p,
+.experience-statement p {
+  margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.17rem);
+  line-height: 1.75;
+}
+
+.section-intro--stacked {
+  display: block;
+  margin-bottom: 3.5rem;
+}
+
+.section-intro--stacked h2 {
+  max-width: 780px;
+  font-size: clamp(2.9rem, 5.3vw, 5.9rem);
+}
+
+.section-intro--stacked p {
+  max-width: 650px;
+  margin-top: 2rem;
+  color: rgba(244, 241, 232, 0.7);
+}
+
+/* --- Capability list --- */
+.capability-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.capability-list article {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 1.25rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.capability-list article > span {
+  color: var(--signal-yellow);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+}
+
+.capability-list h3 {
+  margin: 0;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.capability-list p {
+  max-width: 660px;
+  margin: 0.85rem 0 1rem;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.capability-list small {
+  color: var(--signal-yellow);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.58rem;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --- Education entry --- */
+.education-entry {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  min-height: 154px;
+  padding: 1.5rem;
+}
+
+.education-entry + .education-entry {
+  border-left: 1px solid rgba(244, 241, 232, 0.2);
+}
+
+.education-entry--credential {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(41, 96, 148, 0.23) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41, 96, 148, 0.23) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.education-entry--credential span {
+  color: var(--signal-blue);
+}
+
+.education-entry--credential::after {
+  content: "UX / 01";
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  color: rgba(244, 241, 232, 0.26);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+}

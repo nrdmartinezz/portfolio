@@ -1,0 +1,370 @@
+/*
+ * Responsive — mobile: layout collapses for phones and small tablets.
+ * max-width: 820px  →  single-column hero/projects, show mobile nav
+ * max-width: 560px  →  further type and spacing reductions for small phones
+ */
+
+@media (max-width: 820px) {
+  /*
+   * Kinetic Bauhaus mobile type guard: preserve the oversized editorial voice
+   * while allowing long display words to break only when the viewport demands it.
+   */
+  .hero h1,
+  .section-intro h2,
+  .experience-statement h2,
+  .contact-content h2,
+  .project__copy h3,
+  .experience-record__top h3,
+  .capability-list h3,
+  .project-index > a > strong {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .site-header {
+    height: 72px;
+    padding-inline: 1.1rem;
+  }
+
+  .wordmark img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .menu-toggle {
+    justify-self: end;
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: transparent;
+    color: var(--bone);
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 71px;
+    left: 0;
+    right: 0;
+    display: grid;
+    padding: 1.2rem 1.1rem 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    background: var(--near-black);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  }
+
+  .mobile-nav__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 1rem;
+    color: rgba(244, 241, 232, 0.48);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav a {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    min-height: 64px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    color: var(--bone);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .mobile-nav a span {
+    color: var(--signal-yellow);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6rem;
+  }
+
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero::before {
+    top: 72px;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    padding-top: 4rem;
+  }
+
+  .hero__copy {
+    padding-left: 1rem;
+  }
+
+  .hero__intro,
+  .hero__actions {
+    margin-left: 0;
+  }
+
+  .hero__art {
+    width: calc(100% - 1rem);
+    height: min(62vw, 530px);
+    min-height: 360px;
+    justify-self: end;
+  }
+
+  .hero__footer {
+    grid-template-columns: 1fr auto;
+  }
+
+  .hero__footer p:nth-child(2) {
+    display: none;
+  }
+
+  .section-intro {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .section-intro p {
+    max-width: 620px;
+  }
+
+  .project,
+  .project--reverse {
+    grid-template-columns: 1fr;
+    gap: 3.25rem;
+  }
+
+  .project--reverse .project__image,
+  .project--reverse .project__copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project--reverse .project__copy {
+    order: 2;
+  }
+
+  .project-index > a {
+    grid-template-columns: 46px 1fr auto;
+  }
+
+  .project-index > a > small {
+    display: none;
+  }
+
+  .capabilities-layout {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .capabilities-art {
+    position: relative;
+    top: auto;
+    max-width: 700px;
+  }
+
+  .contact-section {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .contact-links {
+    margin-top: 1rem;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-footer > p {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .section-pad {
+    padding-inline: 1.2rem;
+  }
+
+  .wordmark__type strong {
+    font-size: 0.78rem;
+  }
+
+  .experience-register {
+    display: none;
+  }
+
+  .work-section::after {
+    display: none;
+  }
+
+  .hero::before {
+    left: 1.2rem;
+  }
+
+  .hero__copy {
+    padding-left: 0.75rem;
+  }
+
+  .eyebrow {
+    align-items: flex-start;
+    margin-bottom: 2.4rem;
+    line-height: 1.65;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 11.2vw, 3.75rem);
+    line-height: 0.9;
+  }
+
+  .hero__intro {
+    font-size: 0.95rem;
+  }
+
+  .hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .hero__art {
+    width: calc(100% - 0.75rem);
+    height: 105vw;
+    min-height: 390px;
+    max-height: 520px;
+  }
+
+  .hero__art-note {
+    left: -0.75rem;
+    bottom: 1.2rem;
+    min-width: 185px;
+    box-shadow: 9px 10px 0 var(--signal-blue);
+  }
+
+  .hero__footer {
+    min-height: 64px;
+    padding-left: 0.75rem;
+  }
+
+  .hero__footer p {
+    display: none;
+  }
+
+  .section-label {
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+  }
+
+  .section-label p {
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+  }
+
+  .section-intro h2,
+  .experience-statement h2,
+  .section-intro--stacked h2 {
+    font-size: clamp(2.05rem, 10.5vw, 3.75rem);
+    line-height: 0.96;
+  }
+
+  .project__image {
+    box-shadow: 11px 12px 0 var(--project-accent);
+  }
+
+  .project__image:hover {
+    transform: translate(-2px, -3px);
+    box-shadow: 15px 17px 0 var(--project-accent);
+  }
+
+  .project__copy h3 {
+    font-size: clamp(1.85rem, 9.6vw, 3.25rem);
+    line-height: 0.98;
+  }
+
+  .project-index > a {
+    grid-template-columns: 34px 1fr auto;
+    min-height: 92px;
+  }
+
+  .project-index > a > strong {
+    font-size: 1.35rem;
+  }
+
+  .project-index > a:hover {
+    padding-inline: 0.5rem;
+  }
+
+  .capabilities-art img {
+    box-shadow: 11px 12px 0 var(--signal-yellow);
+  }
+
+  .capability-list article {
+    grid-template-columns: 30px 1fr;
+  }
+
+  .experience-record__top {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .experience-record__top h3 {
+    font-size: clamp(1.6rem, 8.2vw, 2.5rem);
+    line-height: 1.04;
+  }
+
+  .experience-record__education {
+    grid-template-columns: 1fr;
+  }
+
+  .education-entry + .education-entry {
+    border-top: 1px solid rgba(244, 241, 232, 0.2);
+    border-left: 0;
+  }
+
+  .contact-section::after {
+    top: 4%;
+    right: -18%;
+  }
+
+  .contact-rail {
+    left: 1.2rem;
+  }
+
+  .contact-content h2 {
+    font-size: clamp(2.35rem, 12vw, 4.2rem);
+    line-height: 0.9;
+  }
+
+  .contact-email {
+    max-width: 100%;
+    font-size: 0.72rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-links a {
+    grid-template-columns: 22px 1fr;
+  }
+
+  .contact-links strong {
+    grid-column: 2;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-inline: 1.2rem;
+  }
+
+  .site-footer > div:last-child {
+    justify-self: start;
+  }
+}

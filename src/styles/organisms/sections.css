@@ -1,0 +1,254 @@
+/*
+ * Organisms — sections: work, capabilities, and experience page sections.
+ * These three sections share the bone/ink light theme and a similar scroll rhythm.
+ */
+
+/* ============================================================
+   Shared: work + experience use the same base background
+   ============================================================ */
+
+.work-section,
+.experience-section {
+  position: relative;
+  background: var(--bone);
+  color: var(--ink);
+}
+
+/* ============================================================
+   Work section
+   ============================================================ */
+
+.work-section {
+  padding-top: clamp(6rem, 11vw, 10rem);
+  padding-bottom: clamp(7rem, 11vw, 11rem);
+  isolation: isolate;
+}
+
+.work-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 18%;
+  right: -8vw;
+  width: clamp(170px, 24vw, 390px);
+  aspect-ratio: 0.82;
+  border: clamp(22px, 3.8vw, 58px) solid var(--signal-blue);
+  border-bottom-width: clamp(14px, 2.6vw, 38px);
+  border-radius: 48% 48% 3% 3%;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+.work-section::after {
+  content: "SELECTED WORK / 01—03";
+  position: absolute;
+  z-index: -1;
+  top: 44%;
+  left: clamp(0.35rem, 1.2vw, 1.25rem);
+  color: var(--signal-blue);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  opacity: 0.55;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+
+.project-list {
+  display: grid;
+  gap: clamp(6rem, 12vw, 12rem);
+}
+
+/* ============================================================
+   Capabilities section
+   ============================================================ */
+
+.capabilities-section {
+  position: relative;
+  padding-top: clamp(6rem, 10vw, 10rem);
+  padding-bottom: clamp(7rem, 11vw, 11rem);
+  background: #0d2846;
+  color: var(--bone);
+}
+
+.capabilities-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.capabilities-section .section-label,
+.capabilities-layout {
+  position: relative;
+  z-index: 1;
+}
+
+.capabilities-section .section-label span:first-child {
+  color: var(--signal-yellow);
+}
+
+.capabilities-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(3rem, 7vw, 8rem);
+}
+
+.capabilities-art {
+  position: sticky;
+  top: 125px;
+}
+
+.capabilities-art img,
+.capabilities-art .visual-art {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  display: block;
+  object-fit: cover;
+  box-shadow: 18px 18px 0 var(--signal-yellow);
+}
+
+.capabilities-art > span {
+  display: block;
+  margin-top: 2.2rem;
+  color: rgba(244, 241, 232, 0.62);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Experience section
+   ============================================================ */
+
+.experience-section {
+  padding-top: clamp(6rem, 10vw, 10rem);
+  padding-bottom: clamp(7rem, 11vw, 11rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.experience-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto 0 0;
+  width: min(38vw, 620px);
+  opacity: 0.1;
+  background-image:
+    linear-gradient(var(--signal-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--signal-blue) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to right, black, transparent 88%);
+}
+
+.experience-register {
+  position: absolute;
+  top: clamp(2rem, 3.4vw, 3.5rem);
+  right: clamp(1.25rem, 5vw, 5rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(9, 9, 9, 0.55);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.57rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.experience-register .signal {
+  width: 8px;
+  height: 8px;
+}
+
+.experience-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  align-items: start;
+}
+
+.experience-statement h2 {
+  font-size: clamp(2.9rem, 5.1vw, 5.6rem);
+  line-height: 0.94;
+}
+
+.experience-statement p {
+  max-width: 650px;
+  margin-top: 2rem;
+  color: rgba(9, 9, 9, 0.67);
+}
+
+.experience-record {
+  border-top: 5px solid var(--ink);
+}
+
+.experience-record__top {
+  display: grid;
+  /* grid-template-columns: 1fr auto; */
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.24);
+}
+
+.experience-record__top span,
+.experience-record__top > strong,
+.experience-record__education span,
+.experience-record__education small {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experience-record__top h3 {
+  max-width: 650px;
+  margin: 0.75rem 0 0;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 3.3rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.experience-record__top > strong {
+  color: var(--signal-red);
+}
+
+.experience-record__body > p {
+  margin: 2rem 0;
+  color: rgba(9, 9, 9, 0.67);
+  font-size: 0.96rem;
+  line-height: 1.78;
+}
+
+.experience-record__education {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.experience-record__education span {
+  color: var(--signal-yellow);
+}
+
+.experience-record__education strong {
+  max-width: 29ch;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.experience-record__education small {
+  color: rgba(244, 241, 232, 0.62);
+  line-height: 1.6;
+}
