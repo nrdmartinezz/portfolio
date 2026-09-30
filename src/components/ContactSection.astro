@@ -1,6 +1,6 @@
 ---
-import Icon from "./Icon.astro";
-import type { ContactLinkItem } from "../data/home";
+import Icon from './Icon.astro';
+import type { ContactLinkItem } from '../data/home';
 
 interface Props {
   kicker: string;
@@ -25,14 +25,19 @@ const { kicker, heading, body, email, links } = Astro.props;
     <h2 id="contact-title">{heading}</h2>
     <p>{body}</p>
     <a class="contact-email" href={`mailto:${email}`}>
-      {email} <Icon name="arrow-up-right" size={18} />
+      {email}
+      <Icon name="arrow-up-right" size={18} />
     </a>
   </div>
 
   <div class="contact-links">
     {
       links.map((link) => (
-        <a href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined}>
+        <a
+          href={link.href}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noreferrer' : undefined}
+        >
           <Icon name={link.icon} size={17} />
           <span>{link.label}</span>
           <strong>{link.value}</strong>

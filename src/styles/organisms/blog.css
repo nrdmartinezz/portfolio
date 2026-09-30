@@ -4,14 +4,21 @@
  */
 
 .blog-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: calc(90px + clamp(2.5rem, 6vw, 5rem));
   padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.blog-page > * {
+  width: min(42rem, 100%);
 }
 
 .blog-kicker {
   margin: 0 0 1.5rem;
   color: rgba(244, 241, 232, 0.62);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -30,7 +37,7 @@
 .blog-page h1 {
   margin: 0;
   max-width: 16ch;
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-weight: 400;
   font-size: clamp(2.6rem, 6vw, 5rem);
   letter-spacing: -0.062em;
@@ -65,14 +72,14 @@
 .blog-list time,
 .blog-list small {
   color: rgba(244, 241, 232, 0.55);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .blog-list strong {
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-size: clamp(1.4rem, 2.4vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -98,7 +105,7 @@
 
 .blog-prose h2 {
   margin: 2.2rem 0 0.75rem;
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -118,7 +125,7 @@
   justify-content: space-between;
   gap: 1rem;
   margin-top: 2rem;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;

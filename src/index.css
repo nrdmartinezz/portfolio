@@ -17,45 +17,45 @@
  *   styles/organisms/sections.css  <- work, capabilities, experience sections
  *   styles/organisms/contact.css   <- contact section wrapper
  *   styles/organisms/footer.css    <- site footer
- *   styles/responsive/desktop.css  <- <=1080px + short-screen hero
+ *   styles/responsive/desktop.css  <- <=1080px menu + short-screen hero
  *   styles/responsive/mobile.css   <- <=820px + <=560px
  *   styles/responsive/accessibility.css  <- prefers-reduced-motion + platform override
  */
 
 /* External */
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
 
 /* Tokens */
-@import "./styles/tokens.css";
+@import './styles/tokens.css';
 
 /* Base */
-@import "./styles/base.css";
+@import './styles/base.css';
 
 /* Layout */
-@import "./styles/layout.css";
+@import './styles/layout.css';
 
 /* Atoms */
-@import "./styles/atoms/interactive.css";
-@import "./styles/atoms/indicators.css";
+@import './styles/atoms/interactive.css';
+@import './styles/atoms/indicators.css';
 
 /* Molecules */
-@import "./styles/molecules/wordmark.css";
-@import "./styles/molecules/project.css";
-@import "./styles/molecules/content.css";
-@import "./styles/molecules/contact.css";
+@import './styles/molecules/wordmark.css';
+@import './styles/molecules/project.css';
+@import './styles/molecules/content.css';
+@import './styles/molecules/contact.css';
 
 /* Organisms */
-@import "./styles/organisms/header.css";
-@import "./styles/organisms/hero.css";
-@import "./styles/organisms/sections.css";
-@import "./styles/organisms/contact.css";
-@import "./styles/organisms/footer.css";
-@import "./styles/organisms/blog.css";
+@import './styles/organisms/header.css';
+@import './styles/organisms/hero.css';
+@import './styles/organisms/sections.css';
+@import './styles/organisms/contact.css';
+@import './styles/organisms/footer.css';
+@import './styles/organisms/blog.css';
 
 /* Responsive */
-@import "./styles/responsive/desktop.css";
-@import "./styles/responsive/mobile.css";
-@import "./styles/responsive/accessibility.css";
+@import './styles/responsive/desktop.css';
+@import './styles/responsive/mobile.css';
+@import './styles/responsive/accessibility.css';

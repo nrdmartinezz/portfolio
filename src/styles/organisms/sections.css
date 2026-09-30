@@ -25,7 +25,7 @@
 }
 
 .work-section::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   top: 18%;
@@ -40,13 +40,13 @@
 }
 
 .work-section::after {
-  content: "SELECTED WORK / 01—03";
+  content: 'SELECTED WORK / 01—03';
   position: absolute;
   z-index: -1;
   top: 44%;
   left: clamp(0.35rem, 1.2vw, 1.25rem);
   color: var(--signal-blue);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.55rem;
   letter-spacing: 0.16em;
   opacity: 0.55;
@@ -72,7 +72,7 @@
 }
 
 .capabilities-section::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -118,7 +118,7 @@
   display: block;
   margin-top: 2.2rem;
   color: rgba(244, 241, 232, 0.62);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -136,7 +136,7 @@
 }
 
 .experience-section::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   inset: 0 auto 0 0;
@@ -157,7 +157,7 @@
   align-items: center;
   gap: 1rem;
   color: rgba(9, 9, 9, 0.55);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.57rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -204,7 +204,7 @@
 .experience-record__top > strong,
 .experience-record__education span,
 .experience-record__education small {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.63rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -213,7 +213,7 @@
 .experience-record__top h3 {
   max-width: 650px;
   margin: 0.75rem 0 0;
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-size: clamp(1.8rem, 3vw, 3.3rem);
   font-weight: 400;
   line-height: 1;

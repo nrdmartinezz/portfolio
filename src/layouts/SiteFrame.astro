@@ -1,9 +1,9 @@
 ---
-import SiteFooter from "../components/SiteFooter.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import { assets, contactHref, footer, nav } from "../data/home";
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { assets, contactHref, footer, nav } from '../data/home';
 
-const onHome = Astro.url.pathname === "/";
+const onHome = Astro.url.pathname === '/';
 ---
 
 <div id="top" class="site-shell">
@@ -15,6 +15,6 @@ const onHome = Astro.url.pathname === "/";
     logoSrc={footer.logoSrc}
     tagline={footer.tagline}
     copyrightName={footer.copyrightName}
-    homeHref={onHome ? "#top" : "/#top"}
+    homeHref={onHome ? '#top' : '/#top'}
   />
 </div>

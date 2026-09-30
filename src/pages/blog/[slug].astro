@@ -1,10 +1,10 @@
 ---
-import type { GetStaticPaths } from "astro";
-import { render } from "astro:content";
-import { site } from "../../config/site";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteFrame from "../../layouts/SiteFrame.astro";
-import { getPublished, postDateFormat, readingTime, type PostEntry } from "../../lib/posts";
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFrame from '../../layouts/SiteFrame.astro';
+import { getPublished, postDateFormat, readingTime, type PostEntry } from '../../lib/posts';
+import { blogPostingJsonLd } from '../../lib/schema';
 
 export const getStaticPaths = (async () => {
   const entries = await getPublished();
@@ -21,21 +21,12 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const minutes = await readingTime(entry);
-const canonical = new URL(`/blog/${entry.id}/`, site.url).href;
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: entry.data.title,
+const jsonLd = blogPostingJsonLd({
+  id: entry.id,
+  title: entry.data.title,
   description: entry.data.description,
-  datePublished: entry.data.date.toISOString(),
-  author: {
-    "@type": "Person",
-    name: site.name,
-    url: site.url,
-  },
-  mainEntityOfPage: canonical,
-  image: new URL(site.defaultOgImage, site.url).href,
-};
+  date: entry.data.date,
+});
 ---
 
 <BaseLayout
@@ -43,14 +34,16 @@ const jsonLd = {
   description={entry.data.description}
   ogType="article"
   publishedTime={entry.data.date.toISOString()}
+  jsonLd={jsonLd}
 >
-  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
   <SiteFrame>
     <article class="blog-page section-pad">
       <p class="blog-kicker">
         <a href="/blog/">Blog</a>
         <span aria-hidden="true"> / </span>
-        <time datetime={entry.data.date.toISOString()}>{postDateFormat.format(entry.data.date)}</time>
+        <time datetime={entry.data.date.toISOString()}
+          >{postDateFormat.format(entry.data.date)}</time
+        >
         <span> · {minutes}</span>
       </p>
       <header class="section-intro section-intro--stacked">

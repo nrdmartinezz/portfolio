@@ -10,7 +10,7 @@
   max-width: max-content;
   align-items: center;
   .btn-icon {
-    padding-right:8px;
+    padding-right: 8px;
     fill: var(--global-color-white);
     svg {
       max-height: 30px;
@@ -25,15 +25,14 @@
   }
 }
 
-.white-btn{
-  background-color:var(--global-color-white);
-  color:var(--global-color-black);
-  svg{
-    fill:var(--global-color-black);
+.white-btn {
+  background-color: var(--global-color-white);
+  color: var(--global-color-black);
+  svg {
+    fill: var(--global-color-black);
   }
 }
 
-
-.btn-standard-link{
+.btn-standard-link {
   text-decoration: none;
 }

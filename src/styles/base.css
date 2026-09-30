@@ -19,7 +19,7 @@
     @apply bg-background text-foreground;
     margin: 0;
     min-width: 320px;
-    font-family: "Manrope", sans-serif;
+    font-family: 'Manrope', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -30,14 +30,14 @@
   }
 
   button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  [type='button']:not(:disabled),
+  [type='submit']:not(:disabled),
+  [type='reset']:not(:disabled),
   a[href],
   select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
+  input[type='checkbox']:not(:disabled),
+  input[type='radio']:not(:disabled) {
     @apply cursor-pointer;
   }
 
@@ -59,7 +59,7 @@
 .experience-statement h2,
 .contact-content h2 {
   margin: 0;
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-weight: 400;
   letter-spacing: -0.062em;
 }

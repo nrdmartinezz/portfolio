@@ -26,16 +26,30 @@
 }
 
 .site-shell::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   z-index: 50;
   pointer-events: none;
   opacity: 0.05;
   background-image:
-    repeating-radial-gradient(circle at 20% 30%, transparent 0, transparent 1px, #fff 1px, #fff 1.4px),
-    repeating-radial-gradient(circle at 80% 70%, transparent 0, transparent 1px, #fff 1px, #fff 1.35px);
-  background-size: 7px 7px, 11px 11px;
+    repeating-radial-gradient(
+      circle at 20% 30%,
+      transparent 0,
+      transparent 1px,
+      #fff 1px,
+      #fff 1.4px
+    ),
+    repeating-radial-gradient(
+      circle at 80% 70%,
+      transparent 0,
+      transparent 1px,
+      #fff 1px,
+      #fff 1.35px
+    );
+  background-size:
+    7px 7px,
+    11px 11px;
   mix-blend-mode: soft-light;
 }
 

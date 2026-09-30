@@ -1,8 +1,8 @@
 ---
-import Icon from "./Icon.astro";
-import SignalStack from "./SignalStack.astro";
-import Wordmark from "./Wordmark.astro";
-import type { NavItem } from "../data/home";
+import Icon from './Icon.astro';
+import SignalStack from './SignalStack.astro';
+import Wordmark from './Wordmark.astro';
+import type { NavItem } from '../data/home';
 
 interface Props {
   nav: NavItem[];
@@ -11,23 +11,19 @@ interface Props {
 }
 
 const { nav, logoSrc, contactHref } = Astro.props;
-const onHome = Astro.url.pathname === "/";
+const onHome = Astro.url.pathname === '/';
 
 function resolveHref(href: string) {
-  if (href.startsWith("#") && !onHome) return `/${href}`;
+  if (href.startsWith('#') && !onHome) return `/${href}`;
   return href;
 }
 ---
 
 <header class="site-header">
-  <Wordmark logoSrc={logoSrc} href={onHome ? "#top" : "/#top"} />
+  <Wordmark logoSrc={logoSrc} href={onHome ? '#top' : '/#top'} />
 
   <nav class="desktop-nav" aria-label="Primary navigation">
-    {
-      nav.map((item) => (
-        <a href={resolveHref(item.href)}>{item.label}</a>
-      ))
-    }
+    {nav.map((item) => <a href={resolveHref(item.href)}>{item.label}</a>)}
   </nav>
 
   <a class="header-contact" href={contactHref}>
@@ -63,25 +59,25 @@ function resolveHref(href: string) {
 </header>
 
 <script>
-  const headers = document.querySelectorAll<HTMLElement>(".site-header");
+  const headers = document.querySelectorAll<HTMLElement>('.site-header');
 
   headers.forEach((header) => {
-    const button = header.querySelector<HTMLButtonElement>(".menu-toggle");
-    const links = header.querySelectorAll<HTMLAnchorElement>(".mobile-nav a");
+    const button = header.querySelector<HTMLButtonElement>('.menu-toggle');
+    const links = header.querySelectorAll<HTMLAnchorElement>('.mobile-nav a');
     if (!button) return;
 
     const setOpen = (open: boolean) => {
-      header.classList.toggle("is-menu-open", open);
-      button.setAttribute("aria-expanded", String(open));
-      button.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      header.classList.toggle('is-menu-open', open);
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     };
 
-    button.addEventListener("click", () => {
-      setOpen(!header.classList.contains("is-menu-open"));
+    button.addEventListener('click', () => {
+      setOpen(!header.classList.contains('is-menu-open'));
     });
 
     links.forEach((link) => {
-      link.addEventListener("click", () => setOpen(false));
+      link.addEventListener('click', () => setOpen(false));
     });
   });
 </script>

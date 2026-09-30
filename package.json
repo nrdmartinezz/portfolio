@@ -13,6 +13,9 @@
     "prebuild": "node scripts/build-tokens.mjs",
     "build": "astro build",
     "preview": "astro preview",
+    "preverify": "node scripts/build-tokens.mjs",
+    "verify": "astro check && prettier --check .",
+    "format": "prettier --write .",
     "new:entry": "node scripts/new-entry.mjs"
   },
   "dependencies": {
@@ -24,6 +27,10 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "style-dictionary": "^4.4.0",
     "typescript": "^5.9.3"
   }

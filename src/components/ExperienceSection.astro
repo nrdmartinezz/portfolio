@@ -1,7 +1,7 @@
 ---
-import SectionLabel from "./SectionLabel.astro";
-import SignalStack from "./SignalStack.astro";
-import type { EducationEntry, WorkRole } from "../data/home";
+import SectionLabel from './SectionLabel.astro';
+import SignalStack from './SignalStack.astro';
+import type { EducationEntry, WorkRole } from '../data/home';
 
 interface Props {
   tag: { index: string; label: string };
@@ -48,7 +48,12 @@ const { tag, register, heading, intro, roles, bodyText, education } = Astro.prop
         <div class="experience-record__education">
           {
             education.map((entry) => (
-              <div class:list={["education-entry", entry.variant && `education-entry--${entry.variant}`]}>
+              <div
+                class:list={[
+                  'education-entry',
+                  entry.variant && `education-entry--${entry.variant}`,
+                ]}
+              >
                 <span>{entry.type}</span>
                 <strong>{entry.credential}</strong>
                 <small>{entry.detail}</small>

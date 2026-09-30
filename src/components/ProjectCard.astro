@@ -1,7 +1,7 @@
 ---
-import Icon from "./Icon.astro";
-import SignalStack from "./SignalStack.astro";
-import type { FeaturedProject } from "../data/home";
+import Icon from './Icon.astro';
+import SignalStack from './SignalStack.astro';
+import type { FeaturedProject } from '../data/home';
 
 interface Props {
   project: FeaturedProject;
@@ -11,7 +11,9 @@ interface Props {
 const { project, reverse = false } = Astro.props;
 ---
 
-<article class:list={["project", "reveal", `project--${project.tone}`, { "project--reverse": reverse }]}>
+<article
+  class:list={['project', 'reveal', `project--${project.tone}`, { 'project--reverse': reverse }]}
+>
   <a
     class="project__image"
     href={project.url}

@@ -12,7 +12,7 @@
 }
 
 .hero::before {
-  content: "";
+  content: '';
   position: absolute;
   left: clamp(1.25rem, 5vw, 5rem);
   top: 84px;
@@ -72,7 +72,7 @@
 }
 
 .hero__art::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   inset: 6% -10% -4% 10%;
@@ -103,7 +103,7 @@
 
 .hero__art-note span,
 .hero__art-note strong {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.66rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -122,7 +122,7 @@
   padding-left: clamp(1rem, 3.5vw, 3.75rem);
   border-top: 1px solid rgba(255, 255, 255, 0.13);
   color: rgba(244, 241, 232, 0.54);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;

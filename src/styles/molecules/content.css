@@ -58,13 +58,13 @@
 
 .capability-list article > span {
   color: var(--signal-yellow);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
 }
 
 .capability-list h3 {
   margin: 0;
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-size: clamp(1.45rem, 2vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -80,7 +80,7 @@
 
 .capability-list small {
   color: var(--signal-yellow);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.58rem;
   line-height: 1.7;
   letter-spacing: 0.08em;
@@ -113,12 +113,12 @@
 }
 
 .education-entry--credential::after {
-  content: "UX / 01";
+  content: 'UX / 01';
   position: absolute;
   right: 1rem;
   bottom: 0.75rem;
   color: rgba(244, 241, 232, 0.26);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.5rem;
   letter-spacing: 0.12em;
 }

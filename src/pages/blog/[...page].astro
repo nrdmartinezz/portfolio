@@ -1,8 +1,9 @@
 ---
-import type { GetStaticPaths, Page } from "astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteFrame from "../../layouts/SiteFrame.astro";
-import { getPublished, postDateFormat, readingTime, type PostEntry } from "../../lib/posts";
+import type { GetStaticPaths, Page } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFrame from '../../layouts/SiteFrame.astro';
+import { getPublished, postDateFormat, readingTime, type PostEntry } from '../../lib/posts';
+import { blogJsonLd } from '../../lib/schema';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getPublished();
@@ -20,7 +21,8 @@ const items = await Promise.all(
 
 <BaseLayout
   title="Blog — Nate Martinez"
-  description="Notes on designing and building websites that have a lot to explain."
+  description="Notes on designing and building websites, from Nate Martinez in Lake Elsinore, California."
+  jsonLd={blogJsonLd()}
 >
   <SiteFrame>
     <section class="blog-page section-pad" aria-labelledby="blog-title">
@@ -28,8 +30,8 @@ const items = await Promise.all(
       <div class="section-intro section-intro--stacked">
         <h1 id="blog-title">Notes from the work</h1>
         <p>
-          How a site gets from a messy brief to something a visitor can actually use. New posts are files in
-          the repo.
+          How a site gets from a messy brief to something a visitor can actually use. New posts are
+          files in the repo.
         </p>
       </div>
 
@@ -38,7 +40,9 @@ const items = await Promise.all(
           items.map(({ post, minutes }) => (
             <li>
               <a href={`/blog/${post.id}/`}>
-                <time datetime={post.data.date.toISOString()}>{postDateFormat.format(post.data.date)}</time>
+                <time datetime={post.data.date.toISOString()}>
+                  {postDateFormat.format(post.data.date)}
+                </time>
                 <strong>{post.data.title}</strong>
                 <span>{post.data.description}</span>
                 <small>{minutes}</small>

@@ -1,7 +1,7 @@
 ---
-import SectionLabel from "./SectionLabel.astro";
-import VisualArtwork from "./VisualArtwork.astro";
-import type { Capability } from "../data/home";
+import SectionLabel from './SectionLabel.astro';
+import VisualArtwork from './VisualArtwork.astro';
+import type { Capability } from '../data/home';
 
 interface Props {
   tag: { index: string; label: string };
@@ -16,7 +16,11 @@ interface Props {
 const { tag, artVariant, artLabel, artCaption, heading, intro, items } = Astro.props;
 ---
 
-<section id="capabilities" class="capabilities-section section-pad" aria-labelledby="capabilities-title">
+<section
+  id="capabilities"
+  class="capabilities-section section-pad"
+  aria-labelledby="capabilities-title"
+>
   <SectionLabel index={tag.index}>{tag.label}</SectionLabel>
 
   <div class="capabilities-layout">

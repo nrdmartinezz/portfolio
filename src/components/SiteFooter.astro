@@ -1,6 +1,6 @@
 ---
-import SignalStack from "./SignalStack.astro";
-import Wordmark from "./Wordmark.astro";
+import SignalStack from './SignalStack.astro';
+import Wordmark from './Wordmark.astro';
 
 interface Props {
   logoSrc: string;
@@ -9,7 +9,7 @@ interface Props {
   homeHref?: string;
 }
 
-const { logoSrc, tagline, copyrightName, homeHref = "#top" } = Astro.props;
+const { logoSrc, tagline, copyrightName, homeHref = '#top' } = Astro.props;
 const year = new Date().getFullYear();
 ---
 

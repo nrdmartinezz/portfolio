@@ -1,17 +1,20 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import SiteFrame from "../layouts/SiteFrame.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFrame from '../layouts/SiteFrame.astro';
 ---
 
 <BaseLayout
   title="Page not found — Nate Martinez"
   description="That address is not on this site."
+  noIndex
 >
   <SiteFrame>
     <section class="blog-page section-pad" aria-labelledby="not-found-title">
       <p class="blog-kicker">04 / Missing</p>
       <h1 id="not-found-title">Page not found</h1>
-      <p class="blog-lead">That address is not on this site. It may have moved, or it was never here.</p>
+      <p class="blog-lead">
+        That address is not on this site. It may have moved, or it was never here.
+      </p>
       <a class="button button--primary" href="/">Back home</a>
     </section>
   </SiteFrame>
