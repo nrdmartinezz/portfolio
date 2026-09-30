@@ -27,6 +27,7 @@
     height: calc(72px + env(safe-area-inset-top, 0px));
     padding: env(safe-area-inset-top, 0px) 1.1rem 0;
     background: #070707;
+    backdrop-filter: none;
   }
 
   .wordmark img {

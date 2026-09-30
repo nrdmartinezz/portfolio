@@ -6,8 +6,8 @@ import { assets, contactHref, footer, nav } from '../data/home';
 const onHome = Astro.url.pathname === '/';
 ---
 
+<SiteHeader nav={nav} logoSrc={assets.logoDark} contactHref={contactHref} />
 <div id="top" class="site-shell">
-  <SiteHeader nav={nav} logoSrc={assets.logoDark} contactHref={contactHref} />
   <main>
     <slot />
   </main>
