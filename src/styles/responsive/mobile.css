@@ -43,6 +43,10 @@
     padding-inline: 1.1rem;
   }
 
+  .site-shell {
+    scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+  }
+
   .hero {
     padding-top: calc(72px + env(safe-area-inset-top, 0px));
   }

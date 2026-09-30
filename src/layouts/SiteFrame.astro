@@ -7,7 +7,8 @@ const onHome = Astro.url.pathname === '/';
 ---
 
 <SiteHeader nav={nav} logoSrc={assets.logoDark} contactHref={contactHref} />
-<div id="top" class="site-shell">
+<div class="site-shell">
+  <div id="top"></div>
   <main>
     <slot />
   </main>

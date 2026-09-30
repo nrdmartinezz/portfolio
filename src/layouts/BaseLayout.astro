@@ -35,6 +35,9 @@ const imageAlt = `${site.name}, web designer and full-stack developer in ${site.
     <meta name="robots" content={noIndex ? 'noindex, follow' : 'index, follow'} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#070707" />
+    <meta name="theme-color" content="#070707" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#070707" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />

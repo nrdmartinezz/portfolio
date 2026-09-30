@@ -11,14 +11,19 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden;
     background: var(--near-black);
     color-scheme: dark;
+    overscroll-behavior: none;
   }
 
   body {
     @apply bg-background text-foreground;
+    height: 100%;
     margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
     min-width: 320px;
     font-family: 'Manrope', sans-serif;
     text-rendering: optimizeLegibility;
