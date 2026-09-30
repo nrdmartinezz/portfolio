@@ -29,7 +29,7 @@ const imageAlt = `${site.name}, web designer and full-stack developer in ${site.
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={noIndex ? 'noindex, follow' : 'index, follow'} />
@@ -72,6 +72,7 @@ const imageAlt = `${site.name}, web designer and full-stack developer in ${site.
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!reduce) {
         const nodes = document.querySelectorAll<HTMLElement>('.reveal');
+        const mobile = window.matchMedia('(max-width: 820px)').matches;
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -80,7 +81,9 @@ const imageAlt = `${site.name}, web designer and full-stack developer in ${site.
               observer.unobserve(entry.target);
             });
           },
-          { threshold: 0.18 },
+          mobile
+            ? { threshold: 0, rootMargin: '0px 0px 160px 0px' }
+            : { threshold: 0.18 },
         );
         nodes.forEach((node) => observer.observe(node));
       }

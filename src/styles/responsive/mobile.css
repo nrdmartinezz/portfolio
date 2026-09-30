@@ -24,8 +24,9 @@
   }
 
   .site-header {
-    height: 72px;
-    padding-inline: 1.1rem;
+    height: calc(72px + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) 1.1rem 0;
+    background: #070707;
   }
 
   .wordmark img {
@@ -42,11 +43,11 @@
   }
 
   .hero {
-    padding-top: 72px;
+    padding-top: calc(72px + env(safe-area-inset-top, 0px));
   }
 
   .hero::before {
-    top: 72px;
+    top: calc(72px + env(safe-area-inset-top, 0px));
   }
 
   .hero__grid {
