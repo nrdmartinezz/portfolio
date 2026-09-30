@@ -81,9 +81,7 @@ const imageAlt = `${site.name}, web designer and full-stack developer in ${site.
               observer.unobserve(entry.target);
             });
           },
-          mobile
-            ? { threshold: 0, rootMargin: '0px 0px 160px 0px' }
-            : { threshold: 0.18 },
+          mobile ? { threshold: 0, rootMargin: '0px 0px 160px 0px' } : { threshold: 0.18 },
         );
         nodes.forEach((node) => observer.observe(node));
       }

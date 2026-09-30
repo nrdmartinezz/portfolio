@@ -23,7 +23,7 @@
 
 /* Covers the iOS status bar when the visual viewport draws content above the header. */
 .site-header::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   left: 0;
