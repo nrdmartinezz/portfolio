@@ -11,6 +11,6 @@ npm run format
 npm run new:entry -- "Post title"
 ```
 
-`npm run verify` rebuilds design tokens, then runs `astro check` and `prettier --check`. GitHub Actions runs it before every Firebase Hosting deploy.
+`npm run verify` rebuilds design tokens, then runs `astro check` and `prettier --check`. A push to `master` runs that check, builds, and deploys the live Firebase Hosting site.
 
 `site` in `astro.config.mjs` and `url` in `src/config/site.ts` must stay the same production origin. Firebase Hosting serves `dist/` for project `portfolio-dd896`.

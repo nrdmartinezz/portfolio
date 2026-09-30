@@ -1,16 +1,15 @@
-# Deploys the production site when commits land on master.
+# Pushing to master publishes the live site.
 # Requires the FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_DD896 repository secret.
 
-name: Deploy to Firebase Hosting on merge
+name: Deploy
 
 on:
   push:
     branches:
       - master
-  workflow_dispatch:
 
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: deploy-live
   cancel-in-progress: false
 
 permissions:
@@ -18,7 +17,7 @@ permissions:
   contents: read
 
 jobs:
-  build_and_deploy:
+  deploy:
     name: Verify, build, and deploy
     runs-on: ubuntu-latest
     steps:
