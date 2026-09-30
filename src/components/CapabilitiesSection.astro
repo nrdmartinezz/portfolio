@@ -1,0 +1,50 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+import VisualArtwork from "./VisualArtwork.astro";
+import type { Capability } from "../data/home";
+
+interface Props {
+  tag: { index: string; label: string };
+  artVariant: string;
+  artLabel: string;
+  artCaption: string;
+  heading: string;
+  intro: string;
+  items: Capability[];
+}
+
+const { tag, artVariant, artLabel, artCaption, heading, intro, items } = Astro.props;
+---
+
+<section id="capabilities" class="capabilities-section section-pad" aria-labelledby="capabilities-title">
+  <SectionLabel index={tag.index}>{tag.label}</SectionLabel>
+
+  <div class="capabilities-layout">
+    <div class="capabilities-art reveal">
+      <VisualArtwork variant={artVariant} label={artLabel} />
+      <span>{artCaption}</span>
+    </div>
+
+    <div class="capabilities-copy">
+      <div class="section-intro section-intro--stacked reveal">
+        <h2 id="capabilities-title">{heading}</h2>
+        <p>{intro}</p>
+      </div>
+
+      <div class="capability-list">
+        {
+          items.map((item) => (
+            <article class="reveal">
+              <span>{item.number}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <small>{item.tools}</small>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

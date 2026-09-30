@@ -25,7 +25,6 @@
 /* External */
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -54,6 +53,7 @@
 @import "./styles/organisms/sections.css";
 @import "./styles/organisms/contact.css";
 @import "./styles/organisms/footer.css";
+@import "./styles/organisms/blog.css";
 
 /* Responsive */
 @import "./styles/responsive/desktop.css";

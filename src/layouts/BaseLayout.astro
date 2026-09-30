@@ -1,0 +1,62 @@
+---
+import "../index.css";
+import { site } from "../config/site";
+
+interface Props {
+  title: string;
+  description: string;
+  ogType?: "website" | "article";
+  publishedTime?: string;
+}
+
+const { title, description, ogType = "website", publishedTime } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const image = new URL(site.defaultOgImage, site.url).href;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#070707" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    <link rel="icon" type="image/png" href="/images/nate-logo-dark_b3f43e9f.png" />
+    <link rel="apple-touch-icon" href="/images/nate-logo-dark_b3f43e9f.png" />
+    <link rel="alternate" type="application/rss+xml" title={`${site.name} — Blog`} href="/blog/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+    <script>
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce) {
+        const nodes = document.querySelectorAll<HTMLElement>(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-in");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.18 },
+        );
+        nodes.forEach((node) => observer.observe(node));
+      }
+    </script>
+  </body>
+</html>

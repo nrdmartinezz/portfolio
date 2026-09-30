@@ -1,0 +1,23 @@
+---
+import SignalStack from "./SignalStack.astro";
+import Wordmark from "./Wordmark.astro";
+
+interface Props {
+  logoSrc: string;
+  tagline: string;
+  copyrightName: string;
+  homeHref?: string;
+}
+
+const { logoSrc, tagline, copyrightName, homeHref = "#top" } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <Wordmark logoSrc={logoSrc} href={homeHref} />
+  <p>{tagline}</p>
+  <div>
+    <SignalStack horizontal />
+    <span>© {year} {copyrightName}</span>
+  </div>
+</footer>

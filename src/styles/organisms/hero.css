@@ -116,7 +116,7 @@
 .hero__footer {
   min-height: 70px;
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 2rem;
   padding-left: clamp(1rem, 3.5vw, 3.75rem);

@@ -2,6 +2,30 @@
  * Responsive — accessibility: reduced motion and platform overrides.
  */
 
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  .js .reveal.reveal-x {
+    transform: translateX(28px);
+  }
+
+  .js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.58s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.58s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .js .reveal.reveal-x.is-in {
+    transition-duration: 0.72s;
+    transition-delay: 0.12s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

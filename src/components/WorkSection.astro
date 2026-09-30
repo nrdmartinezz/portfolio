@@ -1,0 +1,47 @@
+---
+import Icon from "./Icon.astro";
+import ProjectCard from "./ProjectCard.astro";
+import SectionLabel from "./SectionLabel.astro";
+import SignalStack from "./SignalStack.astro";
+import type { AdditionalProject, FeaturedProject } from "../data/home";
+
+interface Props {
+  tag: { index: string; label: string };
+  heading: string;
+  intro: string;
+  featured: FeaturedProject[];
+  additional: AdditionalProject[];
+}
+
+const { tag, heading, intro, featured, additional } = Astro.props;
+---
+
+<section id="work" class="work-section section-pad" aria-labelledby="work-title">
+  <SectionLabel index={tag.index}>{tag.label}</SectionLabel>
+
+  <div class="section-intro reveal">
+    <h2 id="work-title">{heading}</h2>
+    <p>{intro}</p>
+  </div>
+
+  <div class="project-list">
+    {featured.map((project, index) => <ProjectCard project={project} reverse={index % 2 === 1} />)}
+  </div>
+
+  <div class="project-index" aria-label="Additional projects">
+    <div class="project-index__heading">
+      <span>Also in the folio</span>
+      <SignalStack horizontal />
+    </div>
+    {
+      additional.map((project) => (
+        <a href={project.url} target="_blank" rel="noreferrer">
+          <span>{project.number}</span>
+          <strong>{project.title}</strong>
+          <small>{project.meta}</small>
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+import Icon from "./Icon.astro";
+import type { ContactLinkItem } from "../data/home";
+
+interface Props {
+  kicker: string;
+  heading: string;
+  body: string;
+  email: string;
+  links: ContactLinkItem[];
+}
+
+const { kicker, heading, body, email, links } = Astro.props;
+---
+
+<section id="contact" class="contact-section section-pad" aria-labelledby="contact-title">
+  <div class="contact-rail" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="contact-content reveal">
+    <p class="contact-kicker">{kicker}</p>
+    <h2 id="contact-title">{heading}</h2>
+    <p>{body}</p>
+    <a class="contact-email" href={`mailto:${email}`}>
+      {email} <Icon name="arrow-up-right" size={18} />
+    </a>
+  </div>
+
+  <div class="contact-links">
+    {
+      links.map((link) => (
+        <a href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined}>
+          <Icon name={link.icon} size={17} />
+          <span>{link.label}</span>
+          <strong>{link.value}</strong>
+        </a>
+      ))
+    }
+  </div>
+</section>

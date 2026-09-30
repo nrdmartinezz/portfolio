@@ -1,0 +1,23 @@
+---
+import CapabilitiesSection from "../components/CapabilitiesSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import HeroSection from "../components/HeroSection.astro";
+import WorkSection from "../components/WorkSection.astro";
+import { capabilities, contact, experience, hero, work } from "../data/home";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteFrame from "../layouts/SiteFrame.astro";
+---
+
+<BaseLayout
+  title="Nate Martinez — Web Designer & Full-stack Developer"
+  description="Portfolio of Nate Martinez, a web designer, full-stack developer, and UX/UI specialist creating clear, capable digital experiences."
+>
+  <SiteFrame>
+    <HeroSection {...hero} />
+    <WorkSection {...work} />
+    <CapabilitiesSection {...capabilities} />
+    <ExperienceSection {...experience} />
+    <ContactSection {...contact} />
+  </SiteFrame>
+</BaseLayout>

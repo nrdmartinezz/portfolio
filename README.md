@@ -1,8 +1,12 @@
-# React + Vite
+# Nate Martinez portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Static site built with [Astro](https://astro.build). The home page keeps the existing layout. Blog posts are MDX files in `src/content/posts/`.
 
-Currently, two official plugins are available:
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run new:entry -- "Post title"
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`site` in `astro.config.mjs` and `url` in `src/config/site.ts` must stay the same production origin. Firebase Hosting serves `dist/` for project `portfolio-dd896`.

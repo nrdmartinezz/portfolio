@@ -82,3 +82,15 @@
 .mobile-nav {
   display: none;
 }
+
+.menu-toggle .icon--x {
+  display: none;
+}
+
+.site-header.is-menu-open .menu-toggle .icon--menu {
+  display: none;
+}
+
+.site-header.is-menu-open .menu-toggle .icon--x {
+  display: block;
+}

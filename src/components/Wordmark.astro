@@ -1,0 +1,16 @@
+---
+interface Props {
+  logoSrc: string;
+  href?: string;
+}
+
+const { logoSrc, href = "#top" } = Astro.props;
+---
+
+<a class="wordmark" href={href} aria-label="Nate Martinez, back to top">
+  <img src={logoSrc} alt="Nate Martinez monogram" />
+  <span class="wordmark__type">
+    <strong>NATE</strong>
+    <strong>MARTINEZ</strong>
+  </span>
+</a>

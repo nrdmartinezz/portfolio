@@ -1,0 +1,139 @@
+/*
+ * Blog index and article pages. Uses the same type, palette, and section padding
+ * as the home page. Home sections do not use these classes.
+ */
+
+.blog-page {
+  padding-top: calc(90px + clamp(2.5rem, 6vw, 5rem));
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.blog-kicker {
+  margin: 0 0 1.5rem;
+  color: rgba(244, 241, 232, 0.62);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blog-kicker a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-kicker a:hover {
+  color: var(--signal-yellow);
+}
+
+.blog-page h1 {
+  margin: 0;
+  max-width: 16ch;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  letter-spacing: -0.062em;
+  line-height: 0.92;
+}
+
+.blog-lead,
+.blog-page .section-intro p {
+  max-width: 42rem;
+}
+
+.blog-list {
+  display: grid;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-list a {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--bone);
+  text-decoration: none;
+}
+
+.blog-list li:last-child a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.blog-list time,
+.blog-list small {
+  color: rgba(244, 241, 232, 0.55);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-list strong {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.blog-list span {
+  max-width: 42rem;
+  color: rgba(244, 241, 232, 0.78);
+  line-height: 1.55;
+}
+
+.blog-list a:hover strong {
+  color: var(--signal-yellow);
+}
+
+.blog-prose {
+  max-width: 42rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  color: rgba(244, 241, 232, 0.88);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.blog-prose h2 {
+  margin: 2.2rem 0 0.75rem;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.blog-prose p {
+  margin: 0 0 1rem;
+}
+
+.blog-prose a {
+  color: var(--signal-yellow);
+}
+
+.blog-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-pager a {
+  color: var(--bone);
+}
+
+.blog-page .button {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 820px) {
+  .blog-page {
+    padding-top: calc(72px + 2.5rem);
+  }
+}

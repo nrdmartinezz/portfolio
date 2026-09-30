@@ -1,0 +1,64 @@
+---
+import type { GetStaticPaths, Page } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteFrame from "../../layouts/SiteFrame.astro";
+import { getPublished, postDateFormat, readingTime, type PostEntry } from "../../lib/posts";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getPublished();
+  return paginate(posts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page<PostEntry> };
+const items = await Promise.all(
+  page.data.map(async (post) => ({
+    post,
+    minutes: await readingTime(post),
+  })),
+);
+---
+
+<BaseLayout
+  title="Blog — Nate Martinez"
+  description="Notes on designing and building websites that have a lot to explain."
+>
+  <SiteFrame>
+    <section class="blog-page section-pad" aria-labelledby="blog-title">
+      <p class="blog-kicker">Writing / selected notes</p>
+      <div class="section-intro section-intro--stacked">
+        <h1 id="blog-title">Notes from the work</h1>
+        <p>
+          How a site gets from a messy brief to something a visitor can actually use. New posts are files in
+          the repo.
+        </p>
+      </div>
+
+      <ol class="blog-list">
+        {
+          items.map(({ post, minutes }) => (
+            <li>
+              <a href={`/blog/${post.id}/`}>
+                <time datetime={post.data.date.toISOString()}>{postDateFormat.format(post.data.date)}</time>
+                <strong>{post.data.title}</strong>
+                <span>{post.data.description}</span>
+                <small>{minutes}</small>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+
+      {
+        (page.url.prev || page.url.next) && (
+          <nav class="blog-pager" aria-label="Blog pages">
+            {page.url.prev ? <a href={page.url.prev}>Newer</a> : <span>Newer</span>}
+            <span>
+              {page.currentPage} / {page.lastPage}
+            </span>
+            {page.url.next ? <a href={page.url.next}>Older</a> : <span>Older</span>}
+          </nav>
+        )
+      }
+    </section>
+  </SiteFrame>
+</BaseLayout>

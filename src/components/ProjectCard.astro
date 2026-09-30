@@ -1,0 +1,57 @@
+---
+import Icon from "./Icon.astro";
+import SignalStack from "./SignalStack.astro";
+import type { FeaturedProject } from "../data/home";
+
+interface Props {
+  project: FeaturedProject;
+  reverse?: boolean;
+}
+
+const { project, reverse = false } = Astro.props;
+---
+
+<article class:list={["project", "reveal", `project--${project.tone}`, { "project--reverse": reverse }]}>
+  <a
+    class="project__image"
+    href={project.url}
+    target="_blank"
+    rel="noreferrer"
+    aria-label={`Visit ${project.title}`}
+  >
+    <div class="site-shot">
+      <div class="site-shot__chrome" aria-hidden="true">
+        <span class="site-shot__dots">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span class="site-shot__address">{project.domain}</span>
+        <span class="site-shot__status">Live</span>
+      </div>
+      <div class="site-shot__viewport">
+        <img src={project.image} alt={project.imageAlt} loading="lazy" />
+      </div>
+      <span class="site-shot__caption" aria-hidden="true">Homepage / live build</span>
+    </div>
+    <span class="project__screen-index" aria-hidden="true">{project.number}</span>
+    <span class="project__visit">
+      Visit live site <Icon name="external" size={17} />
+    </span>
+  </a>
+  <div class="project__copy">
+    <div class="project__meta">
+      <span>{project.number}</span>
+      <span>{project.category}</span>
+    </div>
+    <h3>{project.title}</h3>
+    <p>{project.description}</p>
+    <div class="project__outcome">
+      <span>Focus</span>
+      <strong>{project.outcome}</strong>
+    </div>
+    <a class="project__link" href={project.url} target="_blank" rel="noreferrer">
+      Open project <Icon name="arrow-up-right" size={18} />
+    </a>
+  </div>
+</article>

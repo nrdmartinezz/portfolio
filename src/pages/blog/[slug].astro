@@ -1,0 +1,65 @@
+---
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+import { site } from "../../config/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteFrame from "../../layouts/SiteFrame.astro";
+import { getPublished, postDateFormat, readingTime, type PostEntry } from "../../lib/posts";
+
+export const getStaticPaths = (async () => {
+  const entries = await getPublished();
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  entry: PostEntry;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const minutes = await readingTime(entry);
+const canonical = new URL(`/blog/${entry.id}/`, site.url).href;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: entry.data.title,
+  description: entry.data.description,
+  datePublished: entry.data.date.toISOString(),
+  author: {
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+  },
+  mainEntityOfPage: canonical,
+  image: new URL(site.defaultOgImage, site.url).href,
+};
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Nate Martinez`}
+  description={entry.data.description}
+  ogType="article"
+  publishedTime={entry.data.date.toISOString()}
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <SiteFrame>
+    <article class="blog-page section-pad">
+      <p class="blog-kicker">
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true"> / </span>
+        <time datetime={entry.data.date.toISOString()}>{postDateFormat.format(entry.data.date)}</time>
+        <span> · {minutes}</span>
+      </p>
+      <header class="section-intro section-intro--stacked">
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+      </header>
+      <div class="blog-prose">
+        <Content />
+      </div>
+    </article>
+  </SiteFrame>
+</BaseLayout>

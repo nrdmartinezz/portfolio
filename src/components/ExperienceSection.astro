@@ -1,0 +1,62 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+import SignalStack from "./SignalStack.astro";
+import type { EducationEntry, WorkRole } from "../data/home";
+
+interface Props {
+  tag: { index: string; label: string };
+  register: string;
+  heading: string;
+  intro: string;
+  roles: WorkRole[];
+  bodyText: string;
+  education: EducationEntry[];
+}
+
+const { tag, register, heading, intro, roles, bodyText, education } = Astro.props;
+---
+
+<section id="experience" class="experience-section section-pad" aria-labelledby="experience-title">
+  <div class="experience-register" aria-hidden="true">
+    <span>{register}</span>
+    <SignalStack horizontal />
+  </div>
+
+  <SectionLabel index={tag.index}>{tag.label}</SectionLabel>
+
+  <div class="experience-layout">
+    <div class="experience-statement reveal">
+      <h2 id="experience-title">{heading}</h2>
+      <p>{intro}</p>
+    </div>
+
+    <div class="experience-record reveal">
+      <div class="experience-record__top">
+        {
+          roles.map((role) => (
+            <div>
+              <span>
+                {role.company} <strong>{role.period}</strong>
+              </span>
+              <h3>{role.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+      <div class="experience-record__body">
+        <p>{bodyText}</p>
+        <div class="experience-record__education">
+          {
+            education.map((entry) => (
+              <div class:list={["education-entry", entry.variant && `education-entry--${entry.variant}`]}>
+                <span>{entry.type}</span>
+                <strong>{entry.credential}</strong>
+                <small>{entry.detail}</small>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
