@@ -63,13 +63,13 @@ export const assets = {
 
 export const nav: NavItem[] = [
   { label: 'Work', href: '#work' },
-  { label: 'Capabilities', href: '#capabilities' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Areas', href: '/areas/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '#contact' },
 ];
 
-export const contactHref = 'mailto:nrd.martinezz@gmail.com';
+export const contactHref = '/#contact';
 
 export const hero = {
   eyebrow: 'Web designer · Full-stack developer',
@@ -77,6 +77,8 @@ export const hero = {
   headlineHighlight: 'Capable systems.',
   intro:
     'I design and build websites for teams with a lot to explain. I can take a project from rough ideas and wireframes through the frontend, backend, hosting, and launch.',
+  localLine:
+    'Based in Lake Elsinore. Websites, local SEO, and social media for Temecula, Murrieta, Menifee, Wildomar, and Corona.',
   primaryCta: { label: 'View selected work', href: '#work' },
   secondaryCta: { label: 'Résumé', href: assets.resume },
   artSrc: assets.hero,

@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ContactSection from '../../components/ContactSection.astro';
+import PracticeDetail from '../../components/PracticeDetail.astro';
+import { areas } from '../../data/areas';
+import { contact } from '../../data/home';
+import { services } from '../../data/services';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFrame from '../../layouts/SiteFrame.astro';
+import { servicePageJsonLd } from '../../lib/schema';
+
+export const getStaticPaths = (() => {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  service: (typeof services)[number];
+}
+
+const { service } = Astro.props;
+
+const related = [
+  ...services
+    .filter((item) => item.slug !== service.slug)
+    .map((item) => ({ href: `/services/${item.slug}/`, label: item.label })),
+  { href: '/areas/', label: 'Service area' },
+  ...areas.map((area) => ({ href: `/areas/${area.slug}/`, label: area.city })),
+];
+---
+
+<BaseLayout
+  title={service.title}
+  description={service.description}
+  jsonLd={servicePageJsonLd(service)}
+>
+  <SiteFrame>
+    <PracticeDetail
+      parent={{ href: '/services/', label: 'Services' }}
+      kicker={service.kicker}
+      heading={service.heading}
+      answer={service.answer}
+      blockHeading="What is included"
+      blocks={[...service.included]}
+      steps={service.steps}
+      proof={service.proof}
+      faqs={service.faqs}
+      related={related}
+    />
+    <ContactSection {...contact} defaultService={service.slug} />
+  </SiteFrame>
+</BaseLayout>

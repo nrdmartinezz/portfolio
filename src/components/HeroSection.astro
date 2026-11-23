@@ -7,6 +7,7 @@ interface Props {
   headlineMain: string;
   headlineHighlight: string;
   intro: string;
+  localLine: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
   artSrc: string;
@@ -21,6 +22,7 @@ const {
   headlineMain,
   headlineHighlight,
   intro,
+  localLine,
   primaryCta,
   secondaryCta,
   artSrc,
@@ -44,6 +46,7 @@ const {
         <span>{headlineHighlight}</span>
       </h1>
       <p class="hero__intro">{intro}</p>
+      <p class="hero__local">{localLine}</p>
       <div class="hero__actions">
         <a class="button button--primary" href={primaryCta.href}>
           {primaryCta.label}

@@ -1,0 +1,48 @@
+---
+interface Item {
+  href: string;
+  label: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  kicker: { href: string; label: string };
+  heading: string;
+  answer: string;
+  items: Item[];
+  asideHeading: string;
+  aside: Item[];
+}
+
+const { kicker, heading, answer, items, asideHeading, aside } = Astro.props;
+---
+
+<article class="practice-page section-pad">
+  <p class="practice-kicker">
+    <a href={kicker.href}>{kicker.label}</a>
+  </p>
+  <h1>{heading}</h1>
+  <p class="practice-answer">{answer}</p>
+
+  <ul class="practice-index">
+    {
+      items.map((item) => (
+        <li>
+          <a href={item.href}>
+            <span>{item.label}</span>
+            <strong>{item.title}</strong>
+            <p>{item.text}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <section class="practice-block">
+    <h2>{asideHeading}</h2>
+    <div class="practice-related">
+      {aside.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+  </section>
+</article>

@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const image = new URL(site.defaultOgImage, site.url).href;
-const imageAlt = `${site.name}, web designer and full-stack developer in ${site.location.locality}, ${site.location.regionName}`;
+const imageAlt = `${site.name}, ${site.jobTitle} in ${site.location.locality}, ${site.location.regionName}`;
 ---
 
 <!doctype html>

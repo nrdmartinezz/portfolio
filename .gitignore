@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Secrets
+.env
+.env.*
+functions/.secret.local
+
 # Astro
 .astro/
 
@@ -30,3 +35,4 @@ src/styles/theme.css
 *.sw?
 
 .firebase/*
+functions/lib

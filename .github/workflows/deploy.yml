@@ -41,3 +41,14 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_DD896 }}
           channelId: live
           projectId: portfolio-dd896
+
+      # Requires Blaze and the RESEND_API_KEY secret on portfolio-dd896.
+      - name: Deploy contact function
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-sa.json"
+          npm ci --prefix functions
+          npm run build --prefix functions
+          npx --yes firebase-tools@14 deploy --only functions --project portfolio-dd896 --non-interactive
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_DD896 }}

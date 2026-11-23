@@ -1,8 +1,29 @@
 {
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22",
+    "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"]
+  },
   "hosting": {
     "site": "portfolio-dd896",
     "public": "dist",
     "trailingSlash": true,
+    "rewrites": [
+      {
+        "source": "/api/contact",
+        "function": {
+          "functionId": "contact",
+          "region": "us-west1"
+        }
+      },
+      {
+        "source": "/api/contact/",
+        "function": {
+          "functionId": "contact",
+          "region": "us-west1"
+        }
+      }
+    ],
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
