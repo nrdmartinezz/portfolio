@@ -11,6 +11,11 @@ export interface GalleryProject {
   domain: string;
   image: string;
   imageAlt: string;
+  previewDomain?: string;
+  comparison?: {
+    before: { image: string; alt: string; domain: string };
+    after: { image: string; alt: string; domain: string };
+  };
   tone: 'yellow' | 'blue' | 'red';
   fullPage: boolean;
 }
@@ -43,8 +48,21 @@ export const galleryProjects: GalleryProject[] = [
     focus: myortho.outcome,
     url: myortho.url,
     domain: myortho.domain,
-    image: '/images/gallery/myortho.webp',
-    imageAlt: 'Screenshot of the MyOrthodontist website',
+    image: '/images/gallery/myortho-after.webp',
+    imageAlt: 'Screenshot of the redesigned MyOrthodontist site at site.myorthodontistnc.com',
+    previewDomain: 'site.myorthodontistnc.com',
+    comparison: {
+      before: {
+        image: '/images/gallery/myortho.webp',
+        alt: 'MyOrthodontist website before the redesign',
+        domain: 'myorthodontistnc.com',
+      },
+      after: {
+        image: '/images/gallery/myortho-after.webp',
+        alt: 'MyOrthodontist website after the redesign',
+        domain: 'site.myorthodontistnc.com',
+      },
+    },
     tone: myortho.tone,
     fullPage: true,
   },

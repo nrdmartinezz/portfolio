@@ -82,7 +82,7 @@ const next = galleryProjects[(index + 1) % galleryProjects.length];
         <div class="case-study__browser">
           <div class="case-study__chrome" aria-hidden="true">
             <span class="case-study__dots"><i></i><i></i><i></i></span>
-            <span>{project.domain}</span>
+            <span>{project.previewDomain ?? project.domain}</span>
             <span>Preview</span>
           </div>
           <div
@@ -101,6 +101,52 @@ const next = galleryProjects[(index + 1) % galleryProjects.length];
               : 'Homepage screenshot · Visit the live site for the full experience'
           }
         </p>
+
+        {
+          project.comparison && (
+            <section class="case-comparison" aria-labelledby="comparison-heading">
+              <div class="case-study__preview-heading">
+                <div>
+                  <span class="case-study__label">The transformation</span>
+                  <h2 id="comparison-heading">Before &amp; after.</h2>
+                </div>
+                <p>Scroll each frame to explore the two versions.</p>
+              </div>
+              <div class="case-comparison__grid">
+                {(['before', 'after'] as const).map((version) => {
+                  const shot = project.comparison![version];
+                  return (
+                    <div class="case-comparison__item">
+                      <div class="case-comparison__caption">
+                        <strong>{version}</strong>
+                        <span>{shot.domain}</span>
+                      </div>
+                      <div class="case-study__browser case-comparison__browser">
+                        <div class="case-study__chrome" aria-hidden="true">
+                          <span class="case-study__dots">
+                            <i />
+                            <i />
+                            <i />
+                          </span>
+                          <span>{shot.domain}</span>
+                          <span>Preview</span>
+                        </div>
+                        <div
+                          class="case-study__viewport case-comparison__viewport"
+                          tabindex="0"
+                          role="region"
+                          aria-label={`${project.title} ${version} screenshot. Scroll to explore.`}
+                        >
+                          <img src={shot.image} alt={shot.alt} loading="lazy" />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )
+        }
 
         <div class="case-study__next">
           <span>More from the folio</span>
