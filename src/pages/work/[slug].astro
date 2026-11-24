@@ -1,0 +1,187 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Icon from '../../components/Icon.astro';
+import { galleryProjects, type GalleryProject } from '../../data/gallery';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFrame from '../../layouts/SiteFrame.astro';
+
+export const getStaticPaths = (() =>
+  galleryProjects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  project: GalleryProject;
+}
+
+const { project } = Astro.props;
+const index = galleryProjects.findIndex((item) => item.slug === project.slug);
+const next = galleryProjects[(index + 1) % galleryProjects.length];
+---
+
+<BaseLayout title={`${project.title} — Nate Martinez`} description={project.description}>
+  <SiteFrame>
+    <article class:list={['case-study', `case-study--${project.tone}`]}>
+      <div class="case-study__inner section-pad">
+        <a class="case-study__back" href="/#work">
+          <span aria-hidden="true">←</span> Back to all work
+        </a>
+
+        <div class="case-study__head">
+          <div>
+            <p class="case-study__eyebrow">
+              Selected work / {project.number}
+              <span>—</span>
+              {project.category}
+            </p>
+            <h1>{project.title}</h1>
+          </div>
+          <span class="case-study__index" aria-hidden="true">{project.number}</span>
+        </div>
+
+        <div class="case-study__intro">
+          <div class="case-study__about">
+            <span class="case-study__label">The project</span>
+            <p>{project.description}</p>
+          </div>
+          <div class="case-study__facts">
+            {
+              project.focus && (
+                <div>
+                  <>
+                    <span class="case-study__label">Focus</span>
+                    <strong>{project.focus}</strong>
+                  </>
+                </div>
+              )
+            }
+            <div>
+              <span class="case-study__label">Website</span><strong>{project.domain}</strong>
+            </div>
+            <a class="case-study__live" href={project.url} target="_blank" rel="noreferrer">
+              Visit live site <Icon name="arrow-up-right" size={17} />
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="case-study__preview-heading">
+          <div>
+            <span class="case-study__label">The visual</span>
+            <h2>A closer look.</h2>
+          </div>
+          <p>
+            {
+              project.fullPage
+                ? 'Scroll inside the frame to explore the page.'
+                : 'A snapshot of the homepage.'
+            }
+          </p>
+        </div>
+        <div class="case-study__browser">
+          <div class="case-study__chrome" aria-hidden="true">
+            <span class="case-study__dots"><i></i><i></i><i></i></span>
+            <span>{project.previewDomain ?? project.domain}</span>
+            <span>Preview</span>
+          </div>
+          <div
+            class="case-study__viewport"
+            tabindex="0"
+            role="region"
+            aria-label={`${project.title} website screenshot. Scroll to explore the visual preview.`}
+          >
+            <img src={project.image} alt={project.imageAlt} loading="eager" />
+          </div>
+        </div>
+        <p class="case-study__note">
+          {
+            project.fullPage
+              ? 'Website screenshot · Scroll within the frame'
+              : 'Homepage screenshot · Visit the live site for the full experience'
+          }
+        </p>
+
+        {
+          project.comparison && (
+            <section class="case-comparison" aria-labelledby="comparison-heading">
+              <div class="case-study__preview-heading">
+                <div>
+                  <span class="case-study__label">The transformation</span>
+                  <h2 id="comparison-heading">Before &amp; after.</h2>
+                </div>
+                <p>Scroll each frame to explore the two versions.</p>
+              </div>
+              <div class="case-comparison__grid">
+                {(['before', 'after'] as const).map((version) => {
+                  const shot = project.comparison![version];
+                  return (
+                    <div class="case-comparison__item">
+                      <div class="case-comparison__caption">
+                        <strong>{version}</strong>
+                        <span>{shot.domain}</span>
+                      </div>
+                      <div class="case-study__browser case-comparison__browser">
+                        <div class="case-study__chrome" aria-hidden="true">
+                          <span class="case-study__dots">
+                            <i />
+                            <i />
+                            <i />
+                          </span>
+                          <span>{shot.domain}</span>
+                          <span>Preview</span>
+                        </div>
+                        <div
+                          class="case-study__viewport case-comparison__viewport"
+                          tabindex="0"
+                          role="region"
+                          aria-label={`${project.title} ${version} screenshot. Scroll to explore.`}
+                        >
+                          <img src={shot.image} alt={shot.alt} loading="lazy" />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )
+        }
+
+        <div class="case-study__next">
+          <span>More from the folio</span>
+          <a href={`/work/${next.slug}/`}>
+            <span><small>Next project / {next.number}</small><strong>{next.title}</strong></span>
+            <Icon name="arrow-up-right" size={28} />
+          </a>
+        </div>
+      </div>
+    </article>
+  </SiteFrame>
+</BaseLayout>
+
+<script>
+  // The site uses a fixed scroll shell rather than the document as its page scroller.
+  // Forward page-scrolling keys only when focus has not yet entered the shell.
+  const shell = document.querySelector<HTMLElement>('.site-shell');
+  document.addEventListener('keydown', (event) => {
+    if (!shell || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+    const target = event.target as HTMLElement | null;
+    if (target !== document.body && !target?.closest('.site-header')) return;
+    if (target?.closest('.site-header.is-menu-open')) return;
+
+    const distance: Record<string, number> = {
+      ArrowDown: 48,
+      ArrowUp: -48,
+      PageDown: shell.clientHeight * 0.85,
+      PageUp: -shell.clientHeight * 0.85,
+    };
+    if (event.key in distance) {
+      event.preventDefault();
+      shell.scrollBy({ top: distance[event.key] });
+    } else if (event.key === 'Home' || event.key === 'End') {
+      event.preventDefault();
+      shell.scrollTo({ top: event.key === 'Home' ? 0 : shell.scrollHeight });
+    }
+  });
+</script>

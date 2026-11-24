@@ -40,7 +40,7 @@
 }
 
 .work-section::after {
-  content: 'SELECTED WORK / 01—03';
+  content: 'SELECTED WORK / 01—06';
   position: absolute;
   z-index: -1;
   top: 44%;

@@ -29,6 +29,8 @@ jobs:
           cache: npm
 
       - run: npm ci
+      # Astro checks the functions source too, so its types must be installed first.
+      - run: npm ci --prefix functions
 
       # preverify rebuilds theme.css, then astro check and prettier --check.
       - run: npm run verify
@@ -47,7 +49,6 @@ jobs:
         run: |
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-sa.json"
-          npm ci --prefix functions
           npm run build --prefix functions
           npx --yes firebase-tools@14 deploy --only functions --project portfolio-dd896 --non-interactive
         env:
