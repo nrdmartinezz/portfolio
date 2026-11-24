@@ -56,6 +56,7 @@
 @import './styles/organisms/practice.css';
 @import './styles/organisms/footer.css';
 @import './styles/organisms/blog.css';
+@import './styles/organisms/gallery.css';
 
 /* Responsive */
 @import './styles/responsive/desktop.css';

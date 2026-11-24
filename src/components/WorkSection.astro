@@ -1,8 +1,7 @@
 ---
 import Icon from './Icon.astro';
-import ProjectCard from './ProjectCard.astro';
 import SectionLabel from './SectionLabel.astro';
-import SignalStack from './SignalStack.astro';
+import { galleryProjects } from '../data/gallery';
 import type { AdditionalProject, FeaturedProject } from '../data/home';
 
 interface Props {
@@ -13,7 +12,7 @@ interface Props {
   additional: AdditionalProject[];
 }
 
-const { tag, heading, intro, featured, additional } = Astro.props;
+const { tag, heading, intro } = Astro.props;
 ---
 
 <section id="work" class="work-section section-pad" aria-labelledby="work-title">
@@ -24,23 +23,33 @@ const { tag, heading, intro, featured, additional } = Astro.props;
     <p>{intro}</p>
   </div>
 
-  <div class="project-list">
-    {featured.map((project, index) => <ProjectCard project={project} reverse={index % 2 === 1} />)}
+  <div class="gallery-heading">
+    <span>Project gallery / 01—06</span>
+    <span>Select a project to explore <Icon name="arrow-down-right" size={16} /></span>
   </div>
-
-  <div class="project-index" aria-label="Additional projects">
-    <div class="project-index__heading">
-      <span>Also in the folio</span>
-      <SignalStack horizontal />
-    </div>
+  <div class="gallery-grid">
     {
-      additional.map((project) => (
-        <a href={project.url} target="_blank" rel="noreferrer">
-          <span>{project.number}</span>
-          <strong>{project.title}</strong>
-          <small>{project.meta}</small>
-          <Icon name="arrow-up-right" size={18} />
-        </a>
+      galleryProjects.map((project) => (
+        <article class:list={['gallery-card', `gallery-card--${project.tone}`]}>
+          <a class="gallery-card__link" href={`/work/${project.slug}/`}>
+            <div class="gallery-card__image">
+              <img src={project.image} alt="" loading="lazy" />
+              <span class="gallery-card__number">{project.number}</span>
+              <span class="gallery-card__open" aria-hidden="true">
+                View project <Icon name="arrow-up-right" size={16} />
+              </span>
+            </div>
+            <div class="gallery-card__info">
+              <div>
+                <span class="gallery-card__category">{project.category}</span>
+                <h3>{project.title}</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">
+                <Icon name="arrow-up-right" size={22} />
+              </span>
+            </div>
+          </a>
+        </article>
       ))
     }
   </div>
