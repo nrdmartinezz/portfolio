@@ -10,12 +10,13 @@ interface Props {
   kicker: { href: string; label: string };
   heading: string;
   answer: string;
+  note?: string;
   items: Item[];
   asideHeading: string;
   aside: Item[];
 }
 
-const { kicker, heading, answer, items, asideHeading, aside } = Astro.props;
+const { kicker, heading, answer, note, items, asideHeading, aside } = Astro.props;
 ---
 
 <article class="practice-page section-pad">
@@ -24,6 +25,7 @@ const { kicker, heading, answer, items, asideHeading, aside } = Astro.props;
   </p>
   <h1>{heading}</h1>
   <p class="practice-answer">{answer}</p>
+  {note && <p class="practice-answer">{note}</p>}
 
   <ul class="practice-index">
     {

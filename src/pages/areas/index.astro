@@ -8,14 +8,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFrame from '../../layouts/SiteFrame.astro';
 import { collectionJsonLd } from '../../lib/schema';
 
-const heading = 'Lake Elsinore and southwest Riverside County';
+const heading = 'Based in Lake Elsinore. Working across southwest Riverside County.';
 const answer =
-  'Nate Martinez is based in Lake Elsinore and works with businesses in Temecula, Murrieta, Menifee, Wildomar, and Corona. Each city page describes that place. He does not publish a street address.';
+  'I’m based in Lake Elsinore and work with businesses in Temecula, Murrieta, Menifee, Wildomar, and Corona. I can help with web design and development, local SEO, and social media, whether you need one piece of the work or a site that brings the whole story together.';
+const note =
+  'I don’t publish a street address. Contact me to talk through your project and whether an in-person or remote conversation makes the most sense.';
+const title = 'Service Areas in Southwest Riverside County | Nate Martinez';
+const description =
+  'I’m based in Lake Elsinore and work with businesses in Temecula, Murrieta, Menifee, Wildomar, and Corona.';
 
 const jsonLd = collectionJsonLd({
   path: '/areas/',
   name: heading,
-  description: answer,
+  description,
   items: areaLinks.map((item) => ({
     name: item.label,
     url: new URL(item.href, site.url).href,
@@ -23,12 +28,13 @@ const jsonLd = collectionJsonLd({
 });
 ---
 
-<BaseLayout title={`${heading} — Nate Martinez`} description={answer} jsonLd={jsonLd}>
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
   <SiteFrame>
     <PracticeIndex
       kicker={{ href: '/', label: 'Home' }}
       heading={heading}
       answer={answer}
+      note={note}
       items={areaLinks}
       asideHeading="Services"
       aside={serviceLinks}

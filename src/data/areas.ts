@@ -6,6 +6,7 @@ export interface AreaPage {
   city: string;
   title: string;
   description: string;
+  card: string;
   kicker: string;
   heading: string;
   answer: string;
@@ -19,13 +20,14 @@ export const areas = [
   {
     slug: 'lake-elsinore',
     city: 'Lake Elsinore',
-    title: 'Web design, SEO, and social media in Lake Elsinore — Nate Martinez',
+    title: 'Web Design & Local SEO in Lake Elsinore | Nate Martinez',
     description:
-      'Nate Martinez lives in Lake Elsinore and builds websites, local SEO, and social media for businesses there, from downtown and the lake out to the hillside tracts.',
+      'I’m based in Lake Elsinore and help local businesses with web design, development, local SEO, and social media.',
+    card: 'I build websites and help local businesses connect their services to search and social.',
     kicker: 'Lake Elsinore',
     heading: 'Web design, SEO, and social media in Lake Elsinore',
     answer:
-      'Nate Martinez lives in Lake Elsinore and builds websites, local SEO, and social media for businesses here. The city runs from the historic downtown and the lakefront out through Lakeland Village, Tuscany Hills, Rosetta Canyon, Summerly, and Canyon Hills. A site has to be understandable across that spread, not only on one block.',
+      'I’m based in Lake Elsinore and help businesses here with web design, development, local SEO, and social media. Whether someone needs to call, book, or understand a complicated service, I build the site around the next step that matters.',
     local: [
       {
         title: 'Downtown and the lakefront',
@@ -66,35 +68,36 @@ export const areas = [
       {
         question: 'Are you based in Lake Elsinore?',
         answer:
-          'Yes. Nate Martinez lives in Lake Elsinore. There is no published street address. The Google Business Profile, when set up, is a service-area listing.',
+          'Yes. I’m based in Lake Elsinore. I don’t publish a street address, so please get in touch before arranging a meeting.',
       },
       {
-        question: 'Do you cover the whole city?',
+        question: 'Do you work with businesses throughout Lake Elsinore?',
         answer:
-          'Yes. Engagements can name downtown, the lakefront, Lakeland Village, Tuscany Hills, Rosetta Canyon, Summerly, and Canyon Hills when those are places you actually serve.',
+          'Yes. I work with businesses across the area. When we talk about local content, I’ll focus on the places your business actually serves rather than adding neighborhood names just to fill a page.',
       },
       {
         question: 'What kinds of Lake Elsinore businesses are a fit?',
         answer:
-          'Practices, local services, shops, and companies with a lot to explain. The published sites are orthodontic, chiropractic, and industrial work. They show the build. They are not a list of Lake Elsinore clients.',
+          'I can help practices, local services, shops, and businesses with a lot to explain. My published work includes orthodontic, chiropractic, and industrial sites; those examples are not a list of Lake Elsinore clients.',
       },
       {
-        question: 'Can you also handle search and social?',
+        question: 'Can you also help with search and social?',
         answer:
-          'Yes. Web development, local SEO, and social media management are separate services, and the same person does all three.',
+          'Yes. I offer local SEO and social media management as separate services, and we can discuss how either one fits with your website.',
       },
     ],
   },
   {
     slug: 'temecula',
     city: 'Temecula',
-    title: 'Web design, SEO, and social media in Temecula — Nate Martinez',
+    title: 'Web Design & Local SEO for Temecula | Nate Martinez',
     description:
-      'Nate Martinez, based in Lake Elsinore, builds websites and sets up local SEO and social media for Temecula businesses in Old Town, wine country, and the residential neighborhoods.',
+      'I work with Temecula businesses on websites, local SEO, and social media from my base in nearby Lake Elsinore.',
+    card: 'I help Temecula businesses make their offers clear and give visitors a useful next step.',
     kicker: 'Temecula',
     heading: 'Websites, search, and social for Temecula',
     answer:
-      'Nate Martinez, based in Lake Elsinore, designs websites and sets up local SEO and social media for Temecula businesses. Temecula searches split between Old Town, the wine country, and neighborhoods such as Redhawk, Harveston, and Paloma del Sol. A tasting room and a local practice do not need the same page.',
+      'I’m based in nearby Lake Elsinore and work with Temecula businesses on websites, local SEO, and social media. I’ll build around the way your customers find you and the action you want them to take.',
     local: [
       {
         title: 'Old Town',
@@ -128,32 +131,34 @@ export const areas = [
     ],
     faqs: [
       {
-        question: 'Do you meet in Temecula?',
+        question: 'Do you meet with clients in Temecula?',
         answer:
-          'Yes. The practice is in neighboring Lake Elsinore, and Temecula engagements can be in person or remote.',
+          'Yes. I can discuss in-person or remote meetings for Temecula projects. We’ll choose what works for the project.',
       },
       {
-        question: 'Is a wine-country site different from a local service site?',
+        question:
+          'Would a visitor-focused business need a different website from a local service business?',
         answer:
-          'Yes. Visitor businesses need a booking or visit path and a social feed that shows the place. A local practice needs the city, the service, and a way to call. We do not use one layout for both.',
+          'Often, yes. A visitor-focused business may need to make booking or visiting easy, while a local service business may need to make its service area and contact options clear. I start with the customer’s goal rather than assuming one layout works for both.',
       },
       {
-        question: 'Will you promise Temecula rankings?',
+        question: 'Will you guarantee Temecula search rankings?',
         answer:
-          'No. The pages, the profile, and the technical setup are the work. A position is not part of the agreement.',
+          'No. I can work on the pages, business profile, and technical setup, but I can’t promise a search position.',
       },
     ],
   },
   {
     slug: 'murrieta',
     city: 'Murrieta',
-    title: 'Web design, SEO, and social media in Murrieta — Nate Martinez',
+    title: 'Web Design & Local SEO for Murrieta | Nate Martinez',
     description:
-      'Nate Martinez builds websites, local SEO, and social media for Murrieta businesses from his practice in Lake Elsinore. One person does the design, the code, and the marketing.',
+      'I help Murrieta businesses design and build useful websites and connect them to local search and social media.',
+    card: 'I work with Murrieta businesses from my base in Lake Elsinore, with the same person involved in design and development.',
     kicker: 'Murrieta',
     heading: 'An independent practice for Murrieta businesses',
     answer:
-      'Nate Martinez builds websites and sets up local SEO and social media for Murrieta businesses from Lake Elsinore. Murrieta already has established agencies. The difference is one person, named client work you can open, and no handoff between a designer, a developer, and a marketer.',
+      'I work with Murrieta businesses from my base in Lake Elsinore. If your site needs a clearer structure, a fresh design, or a full rebuild, you’ll work directly with me on the project.',
     local: [
       {
         title: 'Professional practices',
@@ -187,32 +192,33 @@ export const areas = [
     ],
     faqs: [
       {
-        question: 'Why hire someone in Lake Elsinore for a Murrieta business?',
+        question: 'Can you work with my Murrieta business if you’re based in Lake Elsinore?',
         answer:
-          'The cities share a service area, and the work is the site, the profile, and the posts, not a storefront on Jefferson Avenue. In-person meetings are still practical.',
+          'Yes. Murrieta is part of the area I serve. We can discuss whether an in-person or remote meeting is the best fit.',
       },
       {
-        question: 'How is this different from a Murrieta agency?',
+        question: 'What is it like working with you instead of a larger agency?',
         answer:
-          'You work with the person who designs and builds the site. Published work is named: Quest Orthodontics, MyOrthodontist, and Kirkco Corporation. There is no account team in between.',
+          'You’ll work directly with me on the design and development. I’ll be clear about the project scope and any other contributors involved, so you know who is doing what.',
       },
       {
-        question: 'Do you sell a cheap template package?',
+        question: 'Do you sell a standard template package?',
         answer:
-          'No. Prices are quoted for the project. The site is designed and built for the business.',
+          'I quote projects based on the work involved. I design around your business and its needs rather than starting with a standard template package.',
       },
     ],
   },
   {
     slug: 'menifee',
     city: 'Menifee',
-    title: 'Web design, SEO, and social media in Menifee — Nate Martinez',
+    title: 'Web Design & Local SEO for Menifee | Nate Martinez',
     description:
-      'Nate Martinez serves Menifee from Lake Elsinore with websites, local SEO, and social media for home services, new practices, and local shops.',
+      'I work with Menifee businesses on websites, local SEO, and social media from my base in Lake Elsinore.',
+    card: 'I help Menifee businesses turn a confusing offer or an outdated site into something customers can use.',
     kicker: 'Menifee',
     heading: 'Websites and local search for Menifee',
     answer:
-      'Nate Martinez serves Menifee from Lake Elsinore with websites, local SEO, and social media. Menifee is still adding households. The businesses that show up are often home services, new practices, and local shops whose sites do not yet explain the offer.',
+      'I help Menifee businesses with web design, local SEO, and social media from my base in Lake Elsinore. Whether you have an established site or are starting with a social profile, we can talk through the most useful next step.',
     local: [
       {
         title: 'Newer neighborhoods',
@@ -246,36 +252,37 @@ export const areas = [
     ],
     faqs: [
       {
-        question: 'Is Menifee close enough for in-person work?',
+        question: 'Can we meet in person for a Menifee project?',
         answer:
-          'Yes. Menifee is in the same southwest Riverside County service area as the Lake Elsinore practice.',
+          'Yes. Menifee is in my service area. We can discuss an in-person or remote meeting when we talk about the project.',
       },
       {
         question: 'What if I only have a Facebook page?',
         answer:
-          'Social can continue, but it needs a page to land on. We build that page before the posting cadence depends on it.',
+          'That’s a starting point. If customers need more detail or a place to contact you, I can help you plan a website or landing page that works alongside the social profile.',
       },
       {
         question: 'Do you guarantee a Menifee map ranking?',
         answer:
-          'No. The work is the site, the Google Business Profile, and pages that name Menifee accurately.',
+          'No. I can help improve your website and Google Business Profile, but I can’t guarantee a particular map position.',
       },
     ],
   },
   {
     slug: 'wildomar',
     city: 'Wildomar',
-    title: 'Web design, SEO, and social media in Wildomar — Nate Martinez',
+    title: 'Web Design & Local SEO for Wildomar | Nate Martinez',
     description:
-      'Nate Martinez builds websites and sets up local SEO and social media for Wildomar businesses, with the city named on the page and on the Google profile.',
+      'I help Wildomar businesses explain their services with useful websites, accurate local-search content, and social media.',
+    card: 'I help Wildomar businesses explain where they work and what they offer—without inventing local claims.',
     kicker: 'Wildomar',
     heading: 'A Wildomar page, not a Murrieta footnote',
     answer:
-      'Nate Martinez works with Wildomar businesses on websites, local SEO, and social media. Wildomar is often folded into a Murrieta or Lake Elsinore landing page. A page that names Wildomar, and a Google profile that does too, is how a business here shows up for its own city.',
+      'I work with Wildomar businesses from nearby Lake Elsinore. I can help you build a useful website and describe your services and service area clearly, without making claims your business can’t support.',
     local: [
       {
         title: 'The city name itself',
-        body: 'If the only mention of Wildomar is a bullet on a regional agency page, the business does not have a page of its own. This practice writes the city into the page, the title, and the profile.',
+        body: 'If the only mention of Wildomar is a bullet on a regional agency page, the business does not have a page of its own. I write the city into the page, the title, and the profile when that is accurate.',
       },
       {
         title: 'The corridor between Lake Elsinore and Murrieta',
@@ -305,31 +312,32 @@ export const areas = [
     ],
     faqs: [
       {
-        question: 'Why does naming Wildomar matter?',
+        question: 'Why does naming Wildomar matter on my website?',
         answer:
-          'People search the city they mean. A page aimed at Murrieta or Lake Elsinore answers a different question, even when the business will happily drive to Wildomar.',
+          'If your business genuinely serves Wildomar, saying so helps visitors understand where you work. I’ll include location details where they are useful and accurate, rather than repeating city names for their own sake.',
       },
       {
         question: 'Are you nearby?',
-        answer: 'Yes. The practice is in Lake Elsinore, which shares a border with Wildomar.',
+        answer: 'Yes. I’m based in neighboring Lake Elsinore and work with businesses in Wildomar.',
       },
       {
-        question: 'Will you invent Wildomar reviews or landmarks?',
+        question: 'How do you approach local content for Wildomar?',
         answer:
-          'No. The page names the city and the service you provide. It does not fake local clients or local rankings.',
+          'I use information that reflects your actual services and service area. I won’t invent reviews, local clients, or a business location you don’t have.',
       },
     ],
   },
   {
     slug: 'corona',
     city: 'Corona',
-    title: 'Web design, SEO, and social media in Corona — Nate Martinez',
+    title: 'Web Design & Local SEO for Corona | Nate Martinez',
     description:
-      'Nate Martinez designs websites and sets up local SEO and social media for Corona businesses along the 91 corridor, including companies with a technical or multi-step offer.',
+      'I help Corona businesses organize websites and connect their services to local search and social media.',
+    card: 'I help Corona businesses organize websites, including offers that take a little more explanation.',
     kicker: 'Corona',
     heading: 'Web design and local marketing in Corona',
     answer:
-      'Nate Martinez designs and builds websites, and sets up local SEO and social media, for Corona businesses. Corona sits on the 91 corridor between the Inland Empire and Orange County. The fit is local services that need to be found in Corona, and companies with something technical or multi-step to explain.',
+      'I work with Corona businesses from my base in Lake Elsinore. If your offer involves technical products or several steps, I can help organize the site so visitors can find what they need.',
     local: [
       {
         title: 'The 91 corridor',
@@ -363,19 +371,19 @@ export const areas = [
     ],
     faqs: [
       {
-        question: 'Do you work the Corona side of Riverside County?',
+        question: 'Do you work with businesses in Corona?',
         answer:
-          'Yes. Corona is part of the service area, along with Lake Elsinore, Temecula, Murrieta, Menifee, and Wildomar. The practice itself is in Lake Elsinore.',
+          'Yes. Corona is part of my service area, along with Lake Elsinore, Temecula, Murrieta, Menifee, and Wildomar.',
       },
       {
-        question: 'Is this an Orange County agency?',
+        question: 'Are you based in Corona?',
         answer:
-          'No. Meetings and remote work both happen, and the published phone is a 949 number, but the practice is Lake Elsinore. Corona clients are not routed through an Orange County office.',
+          'No. I’m based in Lake Elsinore. We can discuss whether an in-person or remote meeting makes sense for your project.',
       },
       {
-        question: 'Can you handle a technical product site and local SEO together?',
+        question: 'Can you help with a technical product site and local SEO together?',
         answer:
-          'Yes, when both are actually needed. The product structure and the local profile are different jobs, done by the same person, and neither includes a ranking guarantee.',
+          'Yes, if both fit the project. I can help organize product information for buyers and work on the separate local-search foundation. I’ll define the scope with you, and I won’t promise a ranking.',
       },
     ],
   },

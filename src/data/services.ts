@@ -22,6 +22,7 @@ export interface ServicePage {
   label: string;
   title: string;
   description: string;
+  card: string;
   kicker: string;
   heading: string;
   answer: string;
@@ -36,29 +37,30 @@ export const services = [
     slug: 'web-development',
     schemaName: 'Web design and development',
     label: 'Web development',
-    title: 'Web design and development in Lake Elsinore — Nate Martinez',
+    title: 'Web Design & Development in Lake Elsinore | Nate Martinez',
     description:
-      'Nate Martinez designs and builds websites for businesses in Lake Elsinore and southwest Riverside County. One person takes the work from the first conversation through launch.',
+      'I design and build websites for businesses in Lake Elsinore and southwest Riverside County, from the first conversation through launch.',
+    card: 'I design and build websites around your business and the people who use them. From the first conversation to the code and launch, you work with the person doing the work.',
     kicker: 'Web development',
     heading: 'Web design and development in Lake Elsinore',
     answer:
-      'Nate Martinez designs and builds websites for businesses in Lake Elsinore and southwest Riverside County. One person takes the work from the first conversation through the interface, the code, hosting, and launch.',
+      'I design and build websites for businesses in Lake Elsinore and throughout southwest Riverside County. I can help you sort out the pages and content, design an interface that fits your business, and carry the work through development and launch.',
     included: [
       {
-        title: 'Pages and paths',
-        body: 'The pages, the order of the story, and what a visitor should do next are settled before the build gets crowded.',
+        title: 'Page structure and user paths',
+        body: 'I help decide what belongs on each page and what you want a visitor to do next.',
       },
       {
         title: 'Interface design',
-        body: 'The interface comes from the brand and the content. It is not a template with the colors swapped.',
+        body: 'I design around your brand, your content, and the people who will use the site.',
       },
       {
-        title: 'Build and launch',
-        body: 'Frontend, server-side work, integrations, hosting, testing, and launch stay with the same person who designed the site.',
+        title: 'Development and launch',
+        body: 'I handle the frontend, backend work and integrations the project needs, along with hosting, testing, and launch as agreed in the project scope.',
       },
       {
-        title: 'A page search and social can use',
-        body: 'The site names the offer, the city, and a way to make contact, so later SEO and social work have somewhere honest to point.',
+        title: 'A foundation for search and social',
+        body: 'I make sure the site explains what you offer and gives visitors a clear way to get in touch.',
       },
     ],
     steps: [
@@ -88,22 +90,22 @@ export const services = [
       {
         question: 'Do you start from a template?',
         answer:
-          'No. The interface comes from the brand, the content, and whatever a visitor needs to do next.',
+          'I don’t start by picking a template and swapping the colors. I start with your brand, your content, and what visitors need to do, then design the interface around those needs.',
       },
       {
         question: 'Can you rebuild a site I already have?',
         answer:
-          'Yes. Some projects are new builds. Others are a structure or a path through the site that needs to be redone.',
+          'Yes. I can build a new site or work through a rebuild when the existing structure, design, or visitor path isn’t doing its job.',
       },
       {
-        question: 'What kinds of sites are in the published work?',
+        question: 'What kinds of websites have you worked on?',
         answer:
-          'Orthodontic and chiropractic practice sites, a multi-location practice, and an industrial product site. That is evidence of the build, not a limit on the next client.',
+          'My published work includes orthodontic and chiropractic practice sites, a multi-location practice, and an industrial product site. Those projects show how I approach different kinds of content; they aren’t a limit on who I work with.',
       },
       {
         question: 'Do you only work in Lake Elsinore?',
         answer:
-          'The practice is based in Lake Elsinore. Web development engagements also cover Temecula, Murrieta, Menifee, Wildomar, and Corona.',
+          'No. I’m based in Lake Elsinore and also work with businesses in Temecula, Murrieta, Menifee, Wildomar, and Corona. I’m open to remote projects elsewhere in the United States, too.',
       },
     ],
   },
@@ -111,29 +113,30 @@ export const services = [
     slug: 'local-seo',
     schemaName: 'Local SEO',
     label: 'Local SEO',
-    title: 'Local SEO in Lake Elsinore and southwest Riverside County — Nate Martinez',
+    title: 'Local SEO in Lake Elsinore | Nate Martinez',
     description:
-      'Nate Martinez sets up local SEO for businesses in Lake Elsinore, Temecula, Murrieta, Menifee, Wildomar, and Corona. The work covers the Google profile, the pages, and the technical setup. Rankings are not guaranteed.',
+      'I help local businesses improve website content, business information, and technical search foundations—without promising rankings.',
+    card: 'I help local businesses make their services easier to understand and find. That can include your Google Business Profile, website content, and technical search setup. I don’t guarantee rankings.',
     kicker: 'Local SEO',
-    heading: 'Local SEO for southwest Riverside County',
+    heading: 'Local SEO for Lake Elsinore and southwest Riverside County',
     answer:
-      'Nate Martinez sets up local SEO for businesses in Lake Elsinore, Temecula, Murrieta, Menifee, Wildomar, and Corona. The work covers the Google Business Profile, the pages people search for, and the technical setup that lets those pages be understood. Rankings are not guaranteed.',
+      'I help businesses make their services and locations clearer to people searching online. That work can include your Google Business Profile, the content on your site, and the technical setup behind it. I’ll be clear about what I change, and I won’t promise a specific ranking.',
     included: [
       {
         title: 'Google Business Profile',
-        body: 'Categories, the service area, and a name, phone, and city that match the website. You keep ownership of the profile.',
+        body: 'I help review the profile details and the areas your business actually serves. You keep ownership of your profile.',
       },
       {
-        title: 'Pages that answer the search',
-        body: 'Service and city pages written for the way people ask, with the offer and the city in the first paragraph.',
+        title: 'Service and location content',
+        body: 'I write or revise pages so they explain the service and the area accurately, without inventing local details.',
       },
       {
         title: 'On-page and structured data',
-        body: 'Titles, descriptions, internal links, and schema that describe the same business the visible page describes.',
+        body: 'I review titles, descriptions, internal links, and structured data so they reflect the business and match the visible content.',
       },
       {
-        title: 'Technical setup',
-        body: 'Indexation, canonicals, the sitemap, and obvious speed problems. This is the foundation, not a promise of a position.',
+        title: 'Technical foundation',
+        body: 'I review items such as indexing, canonical URLs, the sitemap, and obvious speed issues. The exact work depends on the site and project scope.',
       },
     ],
     steps: [
@@ -158,21 +161,22 @@ export const services = [
       {
         question: 'Do you guarantee first place on Google?',
         answer:
-          'No. Anyone who guarantees a specific position by a specific date is not describing how local search works.',
+          'No. Search results change, and no one can guarantee a particular position. I focus on improving the business information, content, and technical foundation that support visibility.',
       },
       {
         question: 'Do I need a new website first?',
         answer:
-          'Not always. If the current site cannot explain the offer or carry a service page, the SEO work starts by fixing that.',
+          'Not necessarily. I’ll look at what you already have. If the site makes it hard to understand your offer or add a useful service page, we can address that before—or alongside—the SEO work.',
       },
       {
         question: 'Will you own my Google Business Profile?',
-        answer: 'No. You keep the profile, the domain, and the analytics accounts.',
+        answer:
+          'No. You keep ownership of your Google Business Profile, domain, and analytics accounts. I can work with the access needed for the project.',
       },
       {
-        question: 'Which cities does this cover?',
+        question: 'Which cities do you serve?',
         answer:
-          'Lake Elsinore, Temecula, Murrieta, Menifee, Wildomar, and Corona. The practice is based in Lake Elsinore.',
+          'I’m based in Lake Elsinore and work with businesses in Lake Elsinore, Temecula, Murrieta, Menifee, Wildomar, and Corona.',
       },
     ],
   },
@@ -180,29 +184,30 @@ export const services = [
     slug: 'social-media',
     schemaName: 'Social media management',
     label: 'Social media',
-    title: 'Social media management in Lake Elsinore — Nate Martinez',
+    title: 'Social Media Management in Lake Elsinore | Nate Martinez',
     description:
-      'Nate Martinez manages social media for local businesses in Lake Elsinore and nearby cities, and points each post at the same offer as the website.',
+      'I create organic social content for local businesses and connect posts and profiles to a useful next step on their websites.',
+    card: 'I create organic social content that connects back to what your business actually offers—and gives people a clear next step on your website.',
     kicker: 'Social media',
-    heading: 'Social media management tied to the website',
+    heading: 'Social media management that connects to your website',
     answer:
-      'Nate Martinez manages social media for local businesses in Lake Elsinore, Temecula, Murrieta, Menifee, Wildomar, and Corona. Posts use the same offer, city, and next step as the website, so the public story does not split between a page and a feed.',
+      'I help local businesses keep their social media connected to the services they actually offer. The goal is a consistent story across your profiles and website, with a useful next step for the people who find you.',
     included: [
       {
-        title: 'A cadence you can keep',
-        body: 'A monthly set of posts for the networks the business already uses, most often Instagram and Facebook.',
+        title: 'A manageable posting plan',
+        body: 'I plan a monthly set of posts for the networks that make sense for your business.',
       },
       {
-        title: 'Words from the real offer',
-        body: 'Posts are written from the services, the city, and the work you want seen. They are not a generic content calendar.',
+        title: 'Content grounded in your offer',
+        body: 'I write about your services and the work you want people to see, rather than filling a generic calendar.',
       },
       {
-        title: 'Profiles that match the site',
-        body: 'Name, city, phone, and link are checked against the website so a visitor does not land on two different versions of the business.',
+        title: 'Consistent profiles',
+        body: 'I check that your business information and links align with your website.',
       },
       {
-        title: 'A path off the post',
-        body: 'Each post points at a specific page that can take a call or a message, not only the homepage.',
+        title: 'A clear next step',
+        body: 'When it makes sense, I direct people to the relevant page, not just a generic homepage.',
       },
     ],
     steps: [
@@ -227,21 +232,21 @@ export const services = [
       {
         question: 'Which networks do you manage?',
         answer:
-          'Instagram and Facebook for most local businesses. Other networks only if you already have an audience there.',
+          'I focus on Instagram and Facebook for most local businesses. If you already have an audience on another network, we can talk about whether it fits the project.',
       },
       {
         question: 'Do you run ads?',
         answer:
-          'No. This service is organic posting and profile details that match the website. Paid ads are a separate kind of work.',
+          'No. This service focuses on organic posts and profile information. Paid advertising is separate from the work described here.',
       },
       {
-        question: 'Can social start before the site is ready?',
+        question: 'Can social media start before my website is ready?',
         answer:
-          'The posts need a page to land on. If that page does not exist, the page comes first.',
+          'It can, but I want people who find your posts to have a useful place to go. If you need a landing page for the offer, we can work on that first.',
       },
       {
         question: 'Who approves what gets published?',
-        answer: 'You do, before it goes out.',
+        answer: 'You do. I’ll share the posts with you for approval before they go out.',
       },
     ],
   },

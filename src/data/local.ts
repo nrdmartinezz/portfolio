@@ -14,27 +14,27 @@ export const homeFaqs = [
   {
     question: 'Who is Nate Martinez?',
     answer:
-      'Nate Martinez is a web designer and full-stack developer in Lake Elsinore, California. He also sets up local SEO and manages social media. The same person does the design, the code, and the marketing.',
+      'I’m Nate, a web designer and full-stack developer based in Lake Elsinore. I design and build websites, and I also help businesses with local SEO and social media. If we work together, you’ll talk directly with me about the work.',
   },
   {
     question: 'Where do you work?',
     answer:
-      'The practice is based in Lake Elsinore and serves Temecula, Murrieta, Menifee, Wildomar, and Corona. Remote projects elsewhere in the United States are still possible. There is no published street address.',
+      'I’m based in Lake Elsinore and work with businesses in Temecula, Murrieta, Menifee, Wildomar, and Corona. I’m also open to remote projects elsewhere in the United States.',
   },
   {
     question: 'What can I hire you for?',
     answer:
-      'Web design and development, local SEO, and social media management. Each service has its own page describing what is included and how an engagement works.',
+      'You can hire me for web design and development, local SEO, or social media management. We can focus on one service or talk through how they fit together.',
   },
   {
     question: 'Do you guarantee the top spot on Google?',
     answer:
-      'No. Local SEO covers the Google Business Profile, the pages people search for, and the technical setup. A position is not something this practice promises.',
+      'No. I can improve the pages, business information, and technical setup that support local search, but I can’t promise a particular ranking.',
   },
   {
     question: 'How do I start?',
     answer:
-      'Use the form with what you are trying to make, what is not working, and which city the business serves. You can also call (949) 335-2555 or email nrd.martinezz@gmail.com.',
+      'Send me the messy version: what you’re trying to make, what isn’t working, and where your business serves customers. Use the contact form or email me at nrd.martinezz@gmail.com. You can also call me at (949) 335-2555.',
   },
 ] as const satisfies readonly Faq[];
 
@@ -42,12 +42,12 @@ export const serviceLinks = services.map((service) => ({
   href: `/services/${service.slug}/`,
   label: service.label,
   title: service.heading,
-  text: service.description,
+  text: service.card,
 }));
 
 export const areaLinks = areas.map((area) => ({
   href: `/areas/${area.slug}/`,
   label: area.city,
   title: area.heading,
-  text: area.description,
+  text: area.card,
 }));

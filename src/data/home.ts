@@ -76,9 +76,9 @@ export const hero = {
   headlineMain: 'Clear interfaces.',
   headlineHighlight: 'Capable systems.',
   intro:
-    'I design and build websites for teams with a lot to explain. I can take a project from rough ideas and wireframes through the frontend, backend, hosting, and launch.',
+    'I’m Nate Martinez, a web designer and full-stack developer based in Lake Elsinore, California. I design and build websites from the first rough idea through launch, and I help businesses connect their sites to local search and social media.',
   localLine:
-    'Based in Lake Elsinore. Websites, local SEO, and social media for Temecula, Murrieta, Menifee, Wildomar, and Corona.',
+    'Based in Lake Elsinore. I work with businesses in Temecula, Murrieta, Menifee, Wildomar, and Corona.',
   primaryCta: { label: 'View selected work', href: '#work' },
   secondaryCta: { label: 'Résumé', href: assets.resume },
   artSrc: assets.hero,
@@ -92,14 +92,14 @@ export const work = {
   tag: { index: '01', label: 'Selected work / 2026 folio' },
   heading: 'I design the site. Then I build it.',
   intro:
-    'No two projects arrive in the same shape. Some need the content untangled; others need a visual system or a rebuild. I work out what belongs where, then design and code the site around it.',
+    'Some projects need the content untangled. Others need a new interface, a clearer path for visitors, or a rebuild. I figure out what belongs where, then design and build the site around it.',
   featured: [
     {
       number: '01',
       title: 'Quest Orthodontics',
       category: 'Healthcare · Practice website and patient path',
       description:
-        'Quest was already an established practice. I built a new site for it and raised the design to where it is now, so the doctors, the technology, and booking a consultation are easy to find.',
+        'Quest was already an established practice. I built a new website and refined the design so visitors could find the doctors, understand the technology, and take the next step toward a consultation.',
       outcome: 'Practice website · Elevated design',
       image: assets.quest,
       domain: 'questorthodontics.com',
@@ -113,7 +113,7 @@ export const work = {
       title: 'MyOrthodontist',
       category: 'Healthcare · Multi-location practice website',
       description:
-        'MyOrthodontist serves patients across North Carolina, so location had to be easy to sort out. I organized the site around finding an office first, then kept the practice information consistent from one location page to the next.',
+        'MyOrthodontist serves patients across North Carolina, so finding the right office needed to be straightforward. I organized the experience around location first and kept the practice information consistent from one location page to the next.',
       outcome: 'Office finder · Consistent location pages',
       image: assets.multiLocation,
       domain: 'myorthodontistnc.com',
@@ -127,7 +127,7 @@ export const work = {
       title: 'Kirkco Corporation',
       category: 'Industrial · Product information for technical buyers',
       description:
-        "Kirkco's buyers already understand the equipment. The problem was getting them to the right product details faster, so I rebuilt the hierarchy around the way engineers and purchasing teams actually look for information.",
+        'Kirkco’s buyers already understand the equipment. I rebuilt the content hierarchy around the product information engineers and purchasing teams need.',
       outcome: 'Product hierarchy · Engineer-focused content',
       image: assets.kirkco,
       domain: 'kirkcocorp.com',
@@ -228,7 +228,7 @@ export const experience = {
 export const contact = {
   kicker: 'Got a website that is hard to explain—or harder to use?',
   heading: 'Send me the messy version.',
-  body: "You don't need to have the brief figured out. Tell me what you're trying to make, what's not working, and what a better result would look like.",
+  body: 'You don’t need a finished brief. Tell me what you’re trying to make, what isn’t working, and what a better result would look like. I’ll take it from there.',
   email: 'nrd.martinezz@gmail.com',
   links: [
     { href: 'tel:+19493352555', icon: 'phone', label: 'Call', value: '(949) 335-2555' },

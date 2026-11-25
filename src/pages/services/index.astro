@@ -8,14 +8,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFrame from '../../layouts/SiteFrame.astro';
 import { collectionJsonLd } from '../../lib/schema';
 
-const heading = 'Web development, local SEO, and social media';
+const heading = 'Web design, local SEO, and social media';
 const answer =
-  'Nate Martinez offers three services from Lake Elsinore: web design and development, local SEO, and social media management. Hire one, or more than one. The offer, the city, and the next step stay consistent either way.';
+  'I’m based in Lake Elsinore and offer web design and development, local SEO, and social media management. You can hire me for one part of the work or bring them together around the same goal.';
+const title = 'Web Design, Local SEO & Social Media | Nate Martinez';
+const description =
+  'Explore my web design and development, local SEO, and social media services for businesses in Lake Elsinore and nearby cities.';
 
 const jsonLd = collectionJsonLd({
   path: '/services/',
   name: heading,
-  description: answer,
+  description,
   items: serviceLinks.map((item) => ({
     name: item.label,
     url: new URL(item.href, site.url).href,
@@ -23,7 +26,7 @@ const jsonLd = collectionJsonLd({
 });
 ---
 
-<BaseLayout title={`${heading} — Nate Martinez`} description={answer} jsonLd={jsonLd}>
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
   <SiteFrame>
     <PracticeIndex
       kicker={{ href: '/', label: 'Home' }}
