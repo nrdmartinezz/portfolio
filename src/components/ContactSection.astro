@@ -1,0 +1,174 @@
+---
+import Icon from './Icon.astro';
+import { areaChoices, serviceChoices } from '../data/inquiries';
+import type { ContactLinkItem } from '../data/home';
+import { site } from '../config/site';
+
+interface Props {
+  kicker: string;
+  heading: string;
+  body: string;
+  email: string;
+  links: ContactLinkItem[];
+  defaultService?: string;
+  defaultCity?: string;
+}
+
+const { kicker, heading, body, email, links, defaultService = '', defaultCity = '' } = Astro.props;
+---
+
+<section id="contact" class="contact-section section-pad" aria-labelledby="contact-title">
+  <div class="contact-rail" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="contact-content reveal">
+    <p class="contact-kicker">{kicker}</p>
+    <h2 id="contact-title">{heading}</h2>
+    <p>{body}</p>
+
+    <form class="contact-form" action={site.formEndpoint} method="post" data-contact-form>
+      <p class="contact-hp" aria-hidden="true">
+        <label>
+          Company website
+          <input type="text" name="hp_field" tabindex="-1" autocomplete="off" />
+        </label>
+      </p>
+
+      <div class="contact-form__row">
+        <label>
+          Name
+          <input
+            type="text"
+            name="name"
+            autocomplete="name"
+            required
+            minlength="2"
+            maxlength="80"
+          />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required maxlength="200" />
+        </label>
+      </div>
+
+      <label>
+        <span>Phone, optional</span>
+        <input type="tel" name="phone" autocomplete="tel" maxlength="40" />
+      </label>
+
+      <div class="contact-form__row">
+        <label>
+          Service
+          <select name="service" required>
+            <option value="" disabled selected={!defaultService}>Select a service</option>
+            {
+              serviceChoices.map((choice) => (
+                <option value={choice.value} selected={choice.value === defaultService}>
+                  {choice.label}
+                </option>
+              ))
+            }
+          </select>
+        </label>
+        <label>
+          City
+          <select name="city" required>
+            <option value="" disabled selected={!defaultCity}>Select a city</option>
+            {
+              areaChoices.map((choice) => (
+                <option value={choice.value} selected={choice.value === defaultCity}>
+                  {choice.label}
+                </option>
+              ))
+            }
+          </select>
+        </label>
+      </div>
+
+      <label>
+        Message
+        <textarea name="message" required minlength="10" maxlength="4000" rows="5"></textarea>
+      </label>
+
+      <button class="button" type="submit">Send the messy version</button>
+      <p class="contact-form__status" data-contact-status role="status" hidden></p>
+      <p class="contact-form__fallback">
+        Prefer email?
+        <a href={`mailto:${email}`}>{email}</a>
+      </p>
+    </form>
+  </div>
+
+  <div class="contact-links">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noreferrer' : undefined}
+        >
+          <Icon name={link.icon} size={17} />
+          <span>{link.label}</span>
+          <strong>{link.value}</strong>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const forms = document.querySelectorAll<HTMLFormElement>('[data-contact-form]');
+
+  forms.forEach((form) => {
+    const status = form.querySelector<HTMLElement>('[data-contact-status]');
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (!status || !button) return;
+
+    const showStatus = (state: 'success' | 'error', message: string) => {
+      status.dataset.state = state;
+      status.textContent = message;
+      status.hidden = false;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      button.disabled = true;
+      status.hidden = true;
+
+      const payload = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+        const result = (await response.json().catch(() => null)) as {
+          ok?: boolean;
+          error?: string;
+        } | null;
+
+        if (!response.ok || !result?.ok) {
+          showStatus('error', result?.error || 'Message not sent. Call or email instead.');
+          return;
+        }
+
+        form.reset();
+        showStatus('success', 'Message sent. I will reply by email.');
+      } catch {
+        showStatus('error', 'Message not sent. Call or email instead.');
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+</script>

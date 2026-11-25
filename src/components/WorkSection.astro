@@ -1,0 +1,56 @@
+---
+import Icon from './Icon.astro';
+import SectionLabel from './SectionLabel.astro';
+import { galleryProjects } from '../data/gallery';
+import type { AdditionalProject, FeaturedProject } from '../data/home';
+
+interface Props {
+  tag: { index: string; label: string };
+  heading: string;
+  intro: string;
+  featured: FeaturedProject[];
+  additional: AdditionalProject[];
+}
+
+const { tag, heading, intro } = Astro.props;
+---
+
+<section id="work" class="work-section section-pad" aria-labelledby="work-title">
+  <SectionLabel index={tag.index}>{tag.label}</SectionLabel>
+
+  <div class="section-intro reveal">
+    <h2 id="work-title">{heading}</h2>
+    <p>{intro}</p>
+  </div>
+
+  <div class="gallery-heading">
+    <span>Project gallery / 01—06</span>
+    <span>Select a project to explore <Icon name="arrow-down-right" size={16} /></span>
+  </div>
+  <div class="gallery-grid">
+    {
+      galleryProjects.map((project) => (
+        <article class:list={['gallery-card', `gallery-card--${project.tone}`]}>
+          <a class="gallery-card__link" href={`/work/${project.slug}/`}>
+            <div class="gallery-card__image">
+              <img src={project.image} alt="" loading="lazy" />
+              <span class="gallery-card__number">{project.number}</span>
+              <span class="gallery-card__open" aria-hidden="true">
+                View project <Icon name="arrow-up-right" size={16} />
+              </span>
+            </div>
+            <div class="gallery-card__info">
+              <div>
+                <span class="gallery-card__category">{project.category}</span>
+                <h3>{project.title}</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">
+                <Icon name="arrow-up-right" size={22} />
+              </span>
+            </div>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>

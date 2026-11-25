@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webnrd.me/sitemap-index.xml

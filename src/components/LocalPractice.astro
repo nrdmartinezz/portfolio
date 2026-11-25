@@ -1,0 +1,59 @@
+---
+import SectionLabel from './SectionLabel.astro';
+import type { Faq } from '../data/services';
+
+interface Offer {
+  index: string;
+  label: string;
+  heading: string;
+  intro: string;
+}
+
+interface LinkCard {
+  href: string;
+  label: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  offer: Offer;
+  services: LinkCard[];
+  faqs: readonly Faq[];
+}
+
+const { offer, services, faqs } = Astro.props;
+---
+
+<section class="local-offer section-pad" aria-labelledby="services-title">
+  <SectionLabel index={offer.index}>{offer.label}</SectionLabel>
+  <div class="section-intro reveal">
+    <h2 id="services-title">{offer.heading}</h2>
+    <p>{offer.intro}</p>
+  </div>
+  <div class="local-offer__grid">
+    {
+      services.map((service) => (
+        <a href={service.href}>
+          <span>{service.label}</span>
+          <h3>{service.title}</h3>
+          <p>{service.text}</p>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<section class="home-faq section-pad" aria-labelledby="faq-title">
+  <h2 id="faq-title">Questions people ask before hiring</h2>
+  <div class="practice-faq">
+    {
+      faqs.map((faq) => (
+        <details>
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

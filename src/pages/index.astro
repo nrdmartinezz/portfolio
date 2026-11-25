@@ -1,0 +1,29 @@
+---
+import CapabilitiesSection from '../components/CapabilitiesSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import HeroSection from '../components/HeroSection.astro';
+import LocalPractice from '../components/LocalPractice.astro';
+import WorkSection from '../components/WorkSection.astro';
+import { homeFaqs, localOffer, serviceLinks } from '../data/local';
+import { capabilities, contact, experience, hero, work } from '../data/home';
+import { site } from '../config/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFrame from '../layouts/SiteFrame.astro';
+import { faqPageJsonLd } from '../lib/schema';
+---
+
+<BaseLayout
+  title={site.title}
+  description={site.description}
+  jsonLd={faqPageJsonLd(homeFaqs, `${site.url}/`)}
+>
+  <SiteFrame>
+    <HeroSection {...hero} />
+    <WorkSection {...work} />
+    <CapabilitiesSection {...capabilities} />
+    <ExperienceSection {...experience} />
+    <LocalPractice offer={localOffer} services={serviceLinks} faqs={homeFaqs} />
+    <ContactSection {...contact} />
+  </SiteFrame>
+</BaseLayout>

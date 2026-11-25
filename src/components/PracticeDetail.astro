@@ -1,0 +1,89 @@
+---
+import type { Faq, ProofItem, TextBlock } from '../data/services';
+
+interface Props {
+  parent: { href: string; label: string };
+  kicker: string;
+  heading: string;
+  answer: string;
+  blocks: TextBlock[];
+  blockHeading: string;
+  steps: readonly string[];
+  proof: readonly ProofItem[];
+  faqs: readonly Faq[];
+  related: { href: string; label: string }[];
+}
+
+const { parent, kicker, heading, answer, blocks, blockHeading, steps, proof, faqs, related } =
+  Astro.props;
+---
+
+<article class="practice-page section-pad">
+  <p class="practice-kicker">
+    <a href={parent.href}>{parent.label}</a>
+    <span aria-hidden="true"> / </span>
+    {kicker}
+  </p>
+  <h1>{heading}</h1>
+  <p class="practice-answer">{answer}</p>
+
+  <section class="practice-block">
+    <h2>{blockHeading}</h2>
+    <ul class="practice-list">
+      {
+        blocks.map((block) => (
+          <li>
+            <strong>{block.title}</strong>
+            <p>{block.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="practice-block">
+    <h2>How an engagement works</h2>
+    <ol class="practice-steps">
+      {steps.map((step) => <li>{step}</li>)}
+    </ol>
+  </section>
+
+  <section class="practice-block">
+    <h2>Published work</h2>
+    <p class="practice-note">
+      These sites are named so you can open them. They show the build. They are not a directory of
+      local clients, and they are not ranking claims.
+    </p>
+    <ul class="practice-list">
+      {
+        proof.map((item) => (
+          <li>
+            <a href={item.href} rel="noreferrer">
+              <strong>{item.title}</strong>
+            </a>
+            <p>{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="practice-block practice-faq">
+    <h2>Questions</h2>
+    {
+      faqs.map((faq) => (
+        <details>
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))
+    }
+  </section>
+
+  <nav class="practice-block" aria-label="Related pages">
+    <h2>Also on this site</h2>
+    <div class="practice-related">
+      {related.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+  </nav>
+</article>

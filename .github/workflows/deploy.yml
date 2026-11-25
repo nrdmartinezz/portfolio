@@ -1,0 +1,55 @@
+# Pushing to master publishes the live site.
+# Requires the FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_DD896 repository secret.
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: deploy-live
+  cancel-in-progress: false
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Verify, build, and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      # Astro checks the functions source too, so its types must be installed first.
+      - run: npm ci --prefix functions
+
+      # preverify rebuilds theme.css, then astro check and prettier --check.
+      - run: npm run verify
+
+      - run: npm run build
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_DD896 }}
+          channelId: live
+          projectId: portfolio-dd896
+
+      # Requires Blaze and the RESEND_API_KEY secret on portfolio-dd896.
+      - name: Deploy contact function
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-sa.json"
+          npm run build --prefix functions
+          npx --yes firebase-tools@14 deploy --only functions --project portfolio-dd896 --non-interactive
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_DD896 }}
