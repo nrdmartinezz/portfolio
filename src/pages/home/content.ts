@@ -46,7 +46,7 @@ export const hero: HeroSectionProps = {
   artNoteLabel: "Design + code",
   artNoteValue: "One person, start to finish",
   footerLine1: "Independent / Contract",
-  footerLine2: "Orthodontics · Chiropractic · Manufacturing",
+  footerLine2: "B2C · B2B · Healthcare · eCommerce · Small Business",
 };
 
 // ---------------------------------------------------------------------------
